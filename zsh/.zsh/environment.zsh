@@ -11,6 +11,8 @@ export VULKAN_SDK
 # set PATH
 typeset -U path;
 path+=($HOME/bin)
+path+=($HOME/sbin)
+path+=($HOME/gbin)
 path+=($HOME/.local/bin)
 path+=($HOME/.cargo/bin)
 path+=($HOME/.gem/ruby/2.5.0/bin)
