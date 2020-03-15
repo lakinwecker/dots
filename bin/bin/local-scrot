@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mkdir -p ~/tmp/
+scrot -d 2 -s ~/tmp/screenshot-`date +%Y-%m-%d-%H%M%S`.png
+

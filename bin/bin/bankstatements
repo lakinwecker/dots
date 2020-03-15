@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+import sys
+import os
+
+month_to_num = {
+        "Jan": '01',
+        "Feb": '02',
+        "Mar": '03',
+        "Apr": '04',
+        "May": '05',
+        "Jun": '06',
+        "Jul": '07',
+        "Aug": '08',
+        "Sep": '09',
+        "Oct": '10',
+        "Nov": '11',
+        "Dec": '12',
+    }
+
+# 016545011549-2007Dec24-2008Jan25
+def rbc_to_sane_date(name):
+    """
+    016545011549-2007Dec24-2008Jan25 -> 016545011549i 2007 Dec 24  2008 Jan 25
+    """
+    account, start, end = name.replace(".pdf", "").split("-")
+    start_year, start_month, start_day = start[:4], start[4:7], start[7:]
+    end_year, end_month, end_day = end[:4], end[4:7], end[7:]
+    new_name = "%s%s%s-%s%s%s-%s.pdf" % (
+            start_year,
+            month_to_num[start_month],
+            start_day,
+            end_year,
+            month_to_num[end_month],
+            end_day,
+            account
+        )
+    return new_name
+
+
+if __name__ == "__main__":
+    for name in sys.argv[1:]:
+        os.system('mv "%s" "%s"' % (name, rbc_to_sane_date(name)))
+        #os.system('mv %s %s.pdf' % (name, name.replace(".pdf", "")))
+
+

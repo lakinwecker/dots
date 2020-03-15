@@ -1,0 +1,2 @@
+#!/bin/bash
+pactl set-sink-volume `pactl list short sinks | grep RUNNING | python -c "import sys; print(sys.stdin.read().split()[0])"` 0%

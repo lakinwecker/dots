@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+hostname=`hostname`
+export KITTYCOLOR=dark
+kitty --config=/home/lakin/.config/kitty/kitty-$hostname.conf

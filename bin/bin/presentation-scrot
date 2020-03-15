@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BASE_DIR="/home/lakin/school/presentation/dggs-and-me/figures"
+BASE_NAME="dggs-sandbox"
+
+mkdir -p $BASE_DIR
+scrot -d 2 -s $BASE_DIR/$BASE_NAME`date +%Y-%m-%d-%H%M%S`.png
+

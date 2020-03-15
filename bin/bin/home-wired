@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo netctl stop-all
+sudo netctl start home
+~/bin/xrandr-triss.sh

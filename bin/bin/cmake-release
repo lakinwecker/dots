@@ -1,0 +1,5 @@
+#!/bin/bash
+#export CC=/usr/bin/clang
+#export CXX=/usr/bin/clang++
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_TOOLCHAIN_FILE=/home/lakin/software/vcpkg/scripts/buildsystems/vcpkg.cmake ..
+

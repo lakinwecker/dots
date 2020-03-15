@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+hostname=`hostname`
+alacritty --config-file=/home/lakin/.config/alacritty/alacritty-$hostname.yml
