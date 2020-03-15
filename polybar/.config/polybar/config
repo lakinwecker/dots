@@ -1,0 +1,557 @@
+;---------------------------------------------------------------------------------
+[bar/1080p]
+height = 27
+bottom = true
+width = 100%
+
+background = #CC000000
+foreground = #ccffffff
+
+line-color = ${bar/trunkie-4k.background}
+line-size = 2
+
+spacing = 1
+padding-right = 1
+module-margin-left = 0
+module-margin-right = 6
+
+font-0 = "Bitter-Regular:size=10;0"
+font-1 = FontAwesome:size=10;1
+font-2 = "Font Awesome 5 Free:style=Regular:size=10;1"
+font-3 = "Font Awesome 5 Free:style=Solid:size=10;1"
+font-4 = MaterialIcons:size=13;3
+font-5 = "Siji:size=10;0"
+font-6 = "DejaVu Sans:size=8;0"
+
+tray-position = right
+enable-ipc = true
+
+;---------------------------------------------------------------------------------
+[bar/4k]
+inherit = bar/1080p
+height = 40
+
+font-0 = "Bitter-Regular:size=14;0"
+font-1 = FontAwesome:size=14;1
+font-2 = "Font Awesome 5 Free:style=Regular:size=14;1"
+font-3 = "Font Awesome 5 Free:style=Solid:size=14;1"
+font-4 = MaterialIcons:size=20;3
+font-5 = "Siji:size=14;0"
+font-6 = "DejaVu Sans:size=12;0"
+
+;---------------------------------------------------------------------------------
+; TRUNKIE
+;---------------------------------------------------------------------------------
+[bar/trunkie-4k]
+inherit = bar/4k
+monitor = DP-2
+
+modules-left = i3
+modules-right = volume wired-network-trunkie temperature-1 temperature-2 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+[bar/trunkie-1080p-1]
+inherit = bar/1080p
+monitor = HDMI-1
+
+modules-left = i3
+modules-right = mydate mytime
+tray-position = right
+enable-ipc = true
+
+;---------------------------------------------------------------------------------
+[bar/trunkie-1080p-2]
+inherit = bar/1080p
+monitor = HDMI-0
+
+modules-left = i3
+modules-right = mydate mytime
+
+
+;---------------------------------------------------------------------------------
+; triss
+;---------------------------------------------------------------------------------
+[bar/triss]
+inherit = bar/1080p
+monitor = eDP-1
+
+modules-left = i3 
+modules-right = brightness volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+; sebbers
+;---------------------------------------------------------------------------------
+[bar/sebbers]
+inherit = bar/1080p
+monitor = eDP1
+
+modules-left = i3 
+modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+; arry
+;---------------------------------------------------------------------------------
+[bar/arry]
+inherit = bar/1080p
+monitor = HDMI-1
+
+modules-left = i3 
+modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+; scarlet
+;---------------------------------------------------------------------------------
+[bar/scarlet-dp-0]
+inherit = bar/1080p
+monitor = DP-0
+
+modules-left = i3
+modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+[bar/scarlet-dp-4]
+inherit = bar/4k
+monitor = HDMI-0
+
+modules-left = i3
+modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+
+;---------------------------------------------------------------------------------
+[bar/triss-2]
+inherit = bar/1080p
+monitor = HDMI-2
+
+modules-left = i3 
+modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+
+
+
+;---------------------------------------------------------------------------------
+; Modules
+;---------------------------------------------------------------------------------
+[module/brightness]
+type = custom/script
+exec = "printf "  %.0f" `light -G`"
+scroll-up = light -A 5
+scroll-down = light -U 5
+interval = 5.0
+
+[module/battery1]
+type = internal/battery
+full-at = 100
+battery = BAT0
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/battery2]
+type = internal/battery
+full-at = 90
+battery = BAT0
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2.0
+format = <label> <ramp-coreload>
+label = 
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/date]
+type = internal/date
+date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+[module/memory]
+type = internal/memory
+label =   %gb_used%
+format = <label> <ramp-used>
+
+; Only applies if <ramp-used> is used
+ramp-used-0 = ▁
+ramp-used-0-font = 2
+ramp-used-0-foreground = #aaff77
+ramp-used-1 = ▂
+ramp-used-1-font = 2
+ramp-used-1-foreground = #aaff77
+ramp-used-2 = ▃
+ramp-used-2-font = 2
+ramp-used-2-foreground = #aaff77
+ramp-used-3 = ▄
+ramp-used-3-font = 2
+ramp-used-3-foreground = #aaff77
+ramp-used-4 = ▅
+ramp-used-4-font = 2
+ramp-used-4-foreground = #fba922
+ramp-used-5 = ▆
+ramp-used-5-font = 2
+ramp-used-5-foreground = #fba922
+ramp-used-6 = ▇
+ramp-used-6-font = 2
+ramp-used-6-foreground = #ff5555
+ramp-used-7 = █
+ramp-used-7-font = 2
+ramp-used-7-foreground = #ff5555
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground =
+toggle-off-foreground = #55
+
+bar-progress-width = 45
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-indicator-font = 3
+bar-progress-fill = ─
+bar-progress-fill-foreground = #bb
+bar-progress-fill-font = 3
+bar-progress-empty = ─
+bar-progress-empty-font = 3
+bar-progress-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlp4s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/trunkie-4k.foreground}
+animation-packetloss-framerate = 500
+
+[module/wired-network-trunkie]
+type = internal/network
+interface = enp5s0
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+[module/wired-network]
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+[module/volume]
+type = internal/pulseaudio
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 9
+
+format-volume = <ramp-volume> <label-volume>
+label-muted =   muted
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/powermenu]
+type = custom/menu
+
+format-padding = 5
+
+label-open = 
+label-close = 
+
+menu-0-0 = Terminate WM
+menu-0-0-foreground = #fba922
+menu-0-0-exec = bspc quit -1
+menu-0-1 = Reboot
+menu-0-1-foreground = #fba922
+menu-0-1-exec = menu_open-1
+menu-0-2 = Power off
+menu-0-2-foreground = #fba922
+menu-0-2-exec = menu_open-2
+
+menu-1-0 = Cancel
+menu-1-0-foreground = #fba922
+menu-1-0-exec = menu_open-0
+menu-1-1 = Reboot
+menu-1-1-foreground = #fba922
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = Power off
+menu-2-0-foreground = #fba922
+menu-2-0-exec = sudo poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = #fba922
+menu-2-1-exec = menu_open-0
+
+[module/mydate]
+type = custom/script
+exec = /home/lakin/bin/mydate.sh
+tail = true
+click-left = bash -c "kill -SIGUSR1 %pid%"
+format-foreground = #BBB
+format-padding = 0
+
+[module/mytime]
+type = custom/script
+exec = /home/lakin/bin/mytime.sh
+tail = true
+click-left = bash -c "kill -SIGUSR1 %pid%"
+
+format-foreground = #FFF
+format-padding = 0
+
+
+
+[module/temperature-1]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+; I Don't have one?!
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+[module/temperature-2]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+; I Don't have one?!
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/pci0000:00/0000:00:19.3/hwmon/hwmon2/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+
+; vim:ft=dosini
+
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = false
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 1
+label-separator-foreground = #ffb52a

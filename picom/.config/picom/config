@@ -1,0 +1,39 @@
+# Uses GLX backend
+backend = "xrender";
+vsync = "opengl-mswc";	# VSync with MESA_swap_control OpenGL extension
+unredir-if-possible = false;
+
+
+# GLX Backend
+glx-no-stencil = true;
+glx-copy-from-front = false;
+
+# shadow
+shadow = false;
+no-dock-shadow = true;
+no-dnd-shadow = true;
+clear-shadow = true;
+shadow-radius = 7;
+shadow-offset-x = -7;
+shadow-offset-y = -7;
+shadow-opacity = 0.6;
+# menu = { shadow = false; }
+dropdown_menu = { shadow = false; }
+popup_menu = { shadow = false; }
+# utility = { shadow = false; }
+
+# backgrounds
+blur-background = true;
+
+# focus
+# alpha-step = 0.6
+inactive-opacity = 1.0;
+inactive-dim = 0.2;
+
+# firefox
+shadow-exclude = [
+    "class_g = 'Firefox' && argb"
+];
+fade-exclude = [
+    "class_g = 'Firefox' && argb"
+];
