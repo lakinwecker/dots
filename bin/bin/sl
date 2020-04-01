@@ -1,0 +1,2 @@
+#!/bin/bash
+streamlink --player="cvlc --file-caching 4000 --network-caching 4000" --hls-segment-threads 3 https://www.twitch.tv/$1 best
