@@ -1,3 +1,5 @@
+. ~/.config/fish/aliases.fish
+
 set -x PATH $PATH /home/lakin/.local/bin
 set -x PATH $PATH /home/lakin/bin
 set -x EDITOR nvim
