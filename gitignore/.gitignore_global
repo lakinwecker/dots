@@ -1,5 +1,10 @@
 .release
+.web-release
 .debug
+.bloop
+.env
+.metals
+.sbt
 
 # Compiled source #
 ###################
@@ -38,3 +43,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
