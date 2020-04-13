@@ -1,3 +1,4 @@
+#!/bin/bash
 trizen -Syu --needed clang clang-tools-extra cmake rsync gdb gcc \
        ccls fzf neovim python-neovim python-pylint ripgrep \
        tig python-virtualenv python-pipenv python36 subversion \
@@ -14,5 +15,5 @@ nvm install 12
 nvm use 12
 # Rustup for rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-curl -Lo cs https://git.io/coursier-cli-linux && chmod +x cs && mv cs ~/gbin/ && ./cs --help
+curl -Lo cs https://git.io/coursier-cli-linux && chmod +x cs && mv cs ~/bin/ && ./cs --help
 /home/lakin/gbin/cs bootstrap  --java-opt -Xss4m --java-opt -Xms100m --java-opt -Dmetals.client=vim-lsc org.scalameta:metals_2.12:0.8.1 -r bintray:scalacenter/releases -r sonatype:snapshots -o /home/lakin/gbin/metals-vim -f

@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh-add ~/.ssh/id_ed25519_personal ~/.ssh/id_ed25519_school ~/.ssh/id_rsa ~/.ssh/id_rsa_strabs ~/.ssh/id_rsa_repos
+ssh-add ~/.ssh/id_rsa_personal ~/.ssh/id_ed25519_personal ~/.ssh/id_ed25519_school ~/.ssh/id_rsa ~/.ssh/id_rsa_strabs ~/.ssh/id_rsa_repos
