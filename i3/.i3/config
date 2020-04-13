@@ -140,6 +140,7 @@ bindsym $mod+p focus parent
 bindsym $mod+c focus child
 
 set $ws11 "11:yd"
+set $ws12 "12"
 
 
 # switch to workspace
@@ -154,6 +155,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+y workspace $ws11
+bindsym $mod+t workspace 12
 # TODO: get this done.
 # bindsym $mod+Shift+v workspace 11: vim
 

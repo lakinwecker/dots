@@ -1,5 +1,7 @@
 .release
+.web-release
 .debug
+.venv
 
 # Compiled source #
 ###################
