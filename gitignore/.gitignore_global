@@ -1,6 +1,7 @@
 .release
 .web-release
 .debug
+.venv
 .bloop
 .env
 .metals
