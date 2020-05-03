@@ -57,6 +57,8 @@ Plug 'tpope/vim-dispatch' " Async building
 Plug 'octol/vim-cpp-enhanced-highlight' " Advanced CPP highlighting
 Plug 'derekwyatt/vim-scala'
 
+Plug 'janko/vim-test'
+
 " fuzzy find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -92,5 +94,6 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Distraction free writing.
 Plug 'junegunn/limelight.vim', { 'on': 'Goyo' } " More distraction free writing.
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'lervag/vimtex'
+
 
 call plug#end()
