@@ -28,7 +28,10 @@
       "filetypes": ["scala", "sbt"]
     }
   },
+  "python.formatting.provider": "black",
+  "python.linting.prospectorEnabled": true,
+  "python.linting.pylintEnabled": false,
   "tsserver.log": "verbose",
   "tsserver.trace.server": "verbose",
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "typescript"]
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "typescript"]
 }
