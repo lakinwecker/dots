@@ -36,6 +36,7 @@ Plug 'simeji/winresizer'
 Plug 'jremmen/vim-ripgrep'
 
 Plug 'iberianpig/tig-explorer.vim'
+Plug 'ruanyl/vim-gh-line'
 
 " Plug 'roxma/vim-tmux-clipboard'
 " Plug 'christoomey/vim-tmux-navigator'

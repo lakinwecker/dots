@@ -39,7 +39,6 @@ export TERM='xterm-256color'
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 export EDITOR=vim
 export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
-export PIPENV_VENV_IN_PROJECT=1
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
