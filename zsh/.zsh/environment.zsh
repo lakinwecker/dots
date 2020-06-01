@@ -18,6 +18,7 @@ path+=($HOME/.cargo/bin)
 path+=($HOME/.gem/ruby/2.5.0/bin)
 path+=($HOME/.npm/bin)
 path+=($HOME/.cabal/bin)
+path+=($HOME/sbin2)
 path+=($vulkan_sdk/bin)
 
 typeset -U ld_library_path

@@ -36,3 +36,4 @@ eval "$(starship init zsh)"
 # fnm
 export PATH=/home/lakin/.fnm:$PATH
 eval "`fnm env --multi`"
+
