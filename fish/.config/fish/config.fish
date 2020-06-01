@@ -2,6 +2,7 @@
 
 set -x PATH $PATH /home/lakin/.local/bin
 set -x PATH $PATH /home/lakin/bin
+set -x PATH $PATH /home/lakin/gbin
 set -x EDITOR nvim
 set fish_greeting
 
