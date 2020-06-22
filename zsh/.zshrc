@@ -15,7 +15,7 @@ ZSH=$HOME/.oh-my-zsh
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django python ssh-agent svn vagrant archlinux cargo)
+plugins=(git django python ssh-agent svn vagrant archlinux cargo dotenv)
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa_personal id_ed25519_personal id_ed25519_school id_rsa id_rsa_strabs id_rsa_repos
 

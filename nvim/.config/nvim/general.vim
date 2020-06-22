@@ -88,6 +88,7 @@ augroup end
 
 " set leader key to comma
 let mapleader=","
+" let maplocalleader=","
 " Switch between 2 / 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
