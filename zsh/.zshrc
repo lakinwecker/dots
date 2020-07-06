@@ -25,6 +25,7 @@ bindkey -e
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+fpath+=~/.zfunc
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -36,4 +37,5 @@ eval "$(starship init zsh)"
 # fnm
 export PATH=/home/lakin/.fnm:$PATH
 eval "`fnm env --multi`"
+
 
