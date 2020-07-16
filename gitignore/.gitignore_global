@@ -1,4 +1,5 @@
 .release
+.release-clang
 .web-release
 .debug
 .venv
