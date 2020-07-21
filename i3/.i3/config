@@ -146,6 +146,7 @@ set $ws13 "13:todo"
 set $ws14 "14:chat"
 set $ws15 "15:music"
 set $ws16 "16:reading"
+set $ws17 "17:windows"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -164,6 +165,7 @@ bindsym $mod+u workspace $ws13
 bindsym $mod+i workspace $ws14
 bindsym $mod+o workspace $ws15
 bindsym $mod+bracketleft workspace $ws16
+bindsym $mod+bracketright workspace $ws17
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -182,6 +184,7 @@ bindsym $mod+Shift+u move container to workspace $ws13
 bindsym $mod+Shift+i move container to workspace $ws14
 bindsym $mod+Shift+o move container to workspace $ws15
 bindsym $mod+Shift+bracketleft move container to workspace $ws16
+bindsym $mod+Shift+bracketright move container to workspace $ws17
 
 
 # reload the configuration file
