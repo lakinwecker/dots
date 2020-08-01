@@ -21,11 +21,6 @@
         "elmFormatPath": "elm-format",
         "elmTestPath": "elm-test"
       }
-    },
-    "metals": {
-      "command": "metals-vim",
-      "rootPatterns": ["build.sbt"],
-      "filetypes": ["scala", "sbt"]
     }
   },
   "python.formatting.provider": "black",
