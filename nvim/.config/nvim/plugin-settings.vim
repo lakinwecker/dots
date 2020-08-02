@@ -1,6 +1,6 @@
-if (has("termguicolors"))
- set termguicolors
-endif
+"if (has("termguicolors"))
+ "set termguicolors
+"endif
 
 execute 'source' "~/.config/nvim/ripgrep.vim"
 execute 'source' "~/.config/nvim/goyo.vim"

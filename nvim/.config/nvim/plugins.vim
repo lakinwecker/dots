@@ -22,6 +22,8 @@ Plug 'iCyMind/NeoSolarized'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'dylanaraps/wal.vim'
+Plug 'rakr/vim-one'
 
 " features
 Plug 'tpope/vim-sensible' " Sensible defaults

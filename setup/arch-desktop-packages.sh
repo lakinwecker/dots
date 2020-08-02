@@ -19,6 +19,7 @@ trizen -Sy --needed i3-gaps i3blocks i3lock scrot imagemagick \
     imgur-screenshot-git \
     siji bdf-unifont ttf-font-awesome-4 ttf-material-icons-git ttf-font-awesome \
     ncmpcpp htop \
+    python-pyaml python-jinja2 \
     evince
 
 sudo systemctl enable lightdm.service

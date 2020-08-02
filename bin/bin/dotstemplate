@@ -1,0 +1,132 @@
+#!/usr/bin/python
+import collections
+import click
+from yaml import load, FullLoader
+from jinja2 import Template
+import socket
+import nvimreload
+
+def hostname():
+    return socket.gethostname()
+
+
+@click.group()
+def cli():
+    pass
+
+
+def copy_template_impl(template, target, variables):
+    template = Template(open(template, "r").read())
+    data = {}
+    for var in variables:
+        new_dict = load(open(var, "r"), Loader=FullLoader)
+        if new_dict:
+            dict_merge(data, new_dict)
+
+    output = template.render(data)
+    open(target, "w").write(output)
+
+@cli.command()
+@click.option("--template", help="The name of the template file to use")
+@click.option("--target", help="The target for the output template")
+@click.option("--variables", help="The var files to use multiple are ok", multiple=True)
+def copy_template(template, target, variables):
+    """Simple program for templating my config files."""
+    return copy_template_impl(template, target, variables)
+
+
+def dots(name, file):
+    if name == "alacritty":
+        return f"/home/lakin/dots/alacritty/.config/alacritty/{file}"
+    if name == "nvim":
+        return f"/home/lakin/dots/nvim/.config/nvim/{file}"
+    raise RuntimeError(f"Unknown name: {name}")
+
+def config(name, file):
+    if name == "alacritty":
+        return f"/home/lakin/.config/alacritty/{file}"
+    if name == "nvim":
+        return f"/home/lakin/.config/nvim/{file}"
+    raise RuntimeError(f"Unknown name: {name}")
+
+def nvim(mode):
+    source = lambda x: dots("nvim", x)
+    target = lambda x: config("nvim", x)
+    h = hostname()
+    print(mode)
+    copy_template_impl(
+        source("ui.jinja.vim"),
+        target("ui.vim"),
+        [
+            source("default_vars.yml"),
+            source(f"{mode}.yml"),
+            source(f"{h}.yml"),
+        ]
+    )
+    nvimreload.main()
+
+def alacritty(mode):
+    source = lambda x: dots("alacritty", x)
+    target = lambda x: config("alacritty", x)
+    h = hostname()
+    copy_template_impl(
+        source("alacritty.jinja.yml"),
+        target("alacritty.yml"),
+        [
+            source("default_vars.yml"),
+            source(f"{mode}.yml"),
+            source(f"{h}.yml"),
+        ]
+    )
+
+@cli.command()
+def darkmode():
+    alacritty("dark")
+    nvim("dark")
+
+@cli.command()
+def lightmode():
+    alacritty("light")
+    nvim("light")
+
+
+# Recursive dictionary merge
+# Copyright (C) 2016 Paul Durivage <pauldurivage+github@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#import collections
+
+
+def dict_merge(dct, merge_dct):
+    """ Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
+    updating only top-level keys, dict_merge recurses down into dicts nested
+    to an arbitrary depth, updating keys. The ``merge_dct`` is merged into
+    ``dct``.
+    :param dct: dict onto which the merge is executed
+    :param merge_dct: dct merged into dct
+    :return: None
+    """
+    for k, v in merge_dct.items():
+        if (
+            k in dct
+            and isinstance(dct[k], dict)
+            and isinstance(v, collections.Mapping)
+        ):
+            dict_merge(dct[k], merge_dct[k])
+        else:
+            dct[k] = v
+
+
+if __name__ == "__main__":
+    cli()

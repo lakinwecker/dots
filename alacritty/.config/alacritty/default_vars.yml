@@ -1,0 +1,14 @@
+font:
+  normal:
+    style: "Regular"
+  italic:
+    style: "Italic"
+  bold:
+    style: "Bold"
+  family: "Fira Code"
+  size: 6.5
+  #family: "Fantasque Sans Mono"
+  #size: 6.5
+  #family: "JetBrains Mono"
+  #size: 6.5
+colorscheme: "*dark"

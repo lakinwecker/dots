@@ -70,7 +70,7 @@ let g:netrw_winsize=25
 " colorscheme monokai
 " colorscheme gruvbox
 colorscheme one
-set background=dark
+set background={{ background }}
 " colorscheme wal
 " let ayucolor="light"  " for light version of theme
 " colorscheme ayu
@@ -83,3 +83,4 @@ set termguicolors     " enable true colors support
 
 nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
