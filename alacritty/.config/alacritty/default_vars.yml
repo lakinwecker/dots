@@ -12,3 +12,4 @@ font:
   #family: "JetBrains Mono"
   #size: 6.5
 colorscheme: "*dark"
+background_opacity: 0.9
