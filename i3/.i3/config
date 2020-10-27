@@ -147,6 +147,8 @@ set $ws14 "14:chat"
 set $ws15 "15:music"
 set $ws16 "16:reading"
 set $ws17 "17:windows"
+set $ws18 "18:obs"
+set $ws19 "19:lichess"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -166,6 +168,8 @@ bindsym $mod+i workspace $ws14
 bindsym $mod+o workspace $ws15
 bindsym $mod+bracketleft workspace $ws16
 bindsym $mod+bracketright workspace $ws17
+bindsym $mod+apostrophe workspace $ws18
+bindsym $mod+semicolon workspace $ws19
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -185,6 +189,8 @@ bindsym $mod+Shift+i move container to workspace $ws14
 bindsym $mod+Shift+o move container to workspace $ws15
 bindsym $mod+Shift+bracketleft move container to workspace $ws16
 bindsym $mod+Shift+bracketright move container to workspace $ws17
+bindsym $mod+Shift+apostrophe move container to workspace $ws18
+bindsym $mod+Shift+semicolon move container to workspace $ws19
 
 
 # reload the configuration file
@@ -270,7 +276,7 @@ exec --no-startup-id /home/lakin/bin/xcommands.sh
 # exec --no-startup-id /home/lakin/bin/linode-dyndns.py &
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-#exec --no-startup-id picom --config=/home/lakin/.config/picom/config
+exec --no-startup-id picom --config=/home/lakin/.config/picom/config
 exec --no-startup-id /home/lakin/bin/polybar.sh &
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id /home/lakin/bin/wallpaper.py
