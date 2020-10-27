@@ -6,6 +6,7 @@ set -x PATH $PATH /home/lakin/gbin
 set -x EDITOR nvim
 set fish_greeting
 
+fish_ssh_agent
 starship init fish | source
 
 [ -s "/home/lakin/.jabba/jabba.fish" ]; and source "/home/lakin/.jabba/jabba.fish"
