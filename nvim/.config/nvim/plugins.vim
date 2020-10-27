@@ -92,11 +92,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Chiel92/vim-autoformat'
 
+" Git blame
+Plug 'APZelos/blamer.nvim' " Git line link
+Plug 'ruanyl/vim-gh-line' " Git line link
+
 " Writing plugins
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " Distraction free writing.
 Plug 'junegunn/limelight.vim', { 'on': 'Goyo' } " More distraction free writing.
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'lervag/vimtex'
+
+
 
 
 call plug#end()
