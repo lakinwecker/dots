@@ -1,0 +1,10 @@
+[Unit]
+Description=lila-watch
+
+[Service]
+Environment="DISPLAY=:0"
+ExecStart=/home/lakin/bin/lila-watch
+
+[Install]
+WantedBy=multi-user.target
+

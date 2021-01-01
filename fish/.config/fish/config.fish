@@ -3,10 +3,12 @@
 set -x PATH $PATH /home/lakin/.local/bin
 set -x PATH $PATH /home/lakin/bin
 set -x PATH $PATH /home/lakin/gbin
+set -x PATH $PATH /home/lakin/.pgenv/bin
+set -x PATH $PATH /home/lakin/.pgenv/pgsql/bin
 set -x EDITOR nvim
 set fish_greeting
 
-fish_ssh_agent
 starship init fish | source
+source ~/.asdf/asdf.fish
 
 [ -s "/home/lakin/.jabba/jabba.fish" ]; and source "/home/lakin/.jabba/jabba.fish"

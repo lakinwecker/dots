@@ -1,0 +1,17 @@
+[Unit]
+Description=Fishnet client
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python -m fishnet --conf /home/lakin/personal-repos/lichess/fishnet/fishnet.ini.local run
+KillMode=mixed
+WorkingDirectory=/home/lakin/personal-repos/lichess/fishnet
+ReadWriteDirectories=/home/lakin/personal-repos/lichess/fishnet
+Nice=15
+PrivateTmp=true
+DevicePolicy=closed
+ProtectSystem=full
+
+[Install]
+WantedBy=default.target
+

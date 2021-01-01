@@ -1,0 +1,10 @@
+[Unit]
+Description=lila-ws
+Requires=bloop.service
+
+[Service]
+ExecStart=bloop run root -m lila.ws.Boot -c /home/lakin/personal-repos/lichess/lila-ws/.bloop
+
+[Install]
+WantedBy=multi-user.target
+
