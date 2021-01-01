@@ -5,8 +5,8 @@ killall polybar
 if [ "$hostname" == "trunkie" ]; then
     killall polybar
     polybar trunkie-4k &
-    polybar trunkie-1080p-1 &
-    polybar trunkie-1080p-2 &
+    #polybar trunkie-1080p-1 &
+    #polybar trunkie-1080p-2 &
 fi
 if [ "$hostname" == "triss" ]; then
     killall polybar

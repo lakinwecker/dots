@@ -23,9 +23,8 @@
       }
     }
   },
-  "python.formatting.provider": "black",
+  "python.linting.mypyEnabled": true,
   "python.linting.prospectorEnabled": true,
-  "python.linting.pylintEnabled": false,
   "tsserver.log": "verbose",
   "tsserver.trace.server": "verbose",
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "typescript"]
