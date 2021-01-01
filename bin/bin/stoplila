@@ -1,0 +1,3 @@
+#!/bin/bash
+systemctl --user stop lila fishnet lila-ws lila-fishnet bloop lila-watch
+sudo systemctl stop mongodb redis

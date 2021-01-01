@@ -84,3 +84,4 @@ set termguicolors     " enable true colors support
 nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
+set backupcopy=yes

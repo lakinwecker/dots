@@ -4,12 +4,12 @@ font:
   italic:
     style: "Italic"
   bold:
-    style: "Bold"
+   style: "Bold"
   family: "Fira Code"
-  size: 6.5
+  #size: 6.5
   #family: "Fantasque Sans Mono"
   #size: 6.5
   #family: "JetBrains Mono"
-  #size: 6.5
+  size: 6.5
 colorscheme: "*dark"
 background_opacity: 0.9

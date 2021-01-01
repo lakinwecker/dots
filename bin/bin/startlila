@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo systemctl start mongodb redis
+systemctl --user start lila
