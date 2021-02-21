@@ -25,8 +25,8 @@ window:
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
   padding:
-    x: 2
-    y: 2
+    x: 30
+    y: 30
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true

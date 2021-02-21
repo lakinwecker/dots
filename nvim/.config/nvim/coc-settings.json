@@ -25,6 +25,7 @@
   },
   "python.linting.mypyEnabled": true,
   "python.linting.prospectorEnabled": true,
+  "python.formatting.provider": "black",
   "tsserver.log": "verbose",
   "tsserver.trace.server": "verbose",
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "typescript"]

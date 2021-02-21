@@ -1,2 +1,11 @@
-config.bind(',d', 'config-cycle content.user_stylesheets ~/personal-repos/os/solarized-everything-css/css/gruvbox/gruvbox-all-sites.css ""')
+import dracula.draw
 
+# Load existing settings made via :set
+config.load_autoconfig()
+
+dracula.draw.blood(c, {
+    'spacing': {
+        'vertical': 6,
+        'horizontal': 8
+    }
+})
