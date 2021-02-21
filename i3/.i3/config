@@ -30,6 +30,7 @@ set $tertiary    #1c65a0
 set $warning     #e57707
 set $transparent #000000
 set $orange #eeb42f
+set $one_back      #282c34
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -40,7 +41,7 @@ set $orange #eeb42f
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 for_window [class="^.*"] border pixel 2
-hide_edge_borders smart #none|vertical|horizontal|both|smart
+hide_edge_borders none #none|vertical|horizontal|both|smart
 font pango:Bitter Regular 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -70,10 +71,10 @@ new_window pixel 2
 new_float pixel 2
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --release $mod+h focus left
+bindsym --release $mod+j focus down
+bindsym --release $mod+k focus up
+bindsym --release $mod+l focus right
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -248,9 +249,9 @@ focus_follows_mouse no
 #-------------------------------------------------------------------------------
 # Gaps
 #-------------------------------------------------------------------------------
-smart_gaps on
-gaps inner 5
-gaps outer 0
+#smart_gaps off
+gaps inner 20
+gaps outer 10
 
 
 
@@ -265,6 +266,11 @@ client.focused_inactive $transparent $foreground       $text       $lightblue   
 client.unfocused        $transparent $background       $text       $white             $transparent
 client.urgent           $red         $white            $text       $orange            $orange
 
+
+#-------------------------------------------------------------------------------
+# Make sure certain program start in a certain way
+#-------------------------------------------------------------------------------
+# for_window [title="DGGS Sandbox"] floating enable
 
 #-------------------------------------------------------------------------------
 # run some programs
