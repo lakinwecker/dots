@@ -70,10 +70,10 @@ new_window pixel 2
 new_float pixel 2
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --release $mod+h focus left
+bindsym --release $mod+j focus down
+bindsym --release $mod+k focus up
+bindsym --release $mod+l focus right
 
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -264,6 +264,13 @@ client.focused          $border      $white            $darktext   $othergrey   
 client.focused_inactive $transparent $foreground       $text       $lightblue         $transparent
 client.unfocused        $transparent $background       $text       $white             $transparent
 client.urgent           $red         $white            $text       $orange            $orange
+
+
+
+#-------------------------------------------------------------------------------
+# Specific window rules
+#-------------------------------------------------------------------------------
+# for_window [title="DGGS Sandbox"] floating enable
 
 
 #-------------------------------------------------------------------------------

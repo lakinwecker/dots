@@ -44,7 +44,7 @@ font-6 = "DejaVu Sans:size=10;0"
 ;---------------------------------------------------------------------------------
 [bar/trunkie-4k]
 inherit = bar/4k
-monitor = DP-2
+monitor = DisplayPort-0
 
 modules-left = i3
 modules-right = volume wired-network-trunkie temperature-1 temperature-2 cpu memory mydate mytime

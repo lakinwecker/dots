@@ -1,7 +1,7 @@
 # Uses GLX backend
-backend = "xrender";
-vsync = "opengl-mswc";	# VSync with MESA_swap_control OpenGL extension
-unredir-if-possible = false;
+backend = "glx";
+vsync = "true";	# VSync with MESA_swap_control OpenGL extension
+unredir-if-possible = true;
 
 
 # GLX Backend
