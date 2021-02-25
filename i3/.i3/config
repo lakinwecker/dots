@@ -249,7 +249,7 @@ focus_follows_mouse no
 #-------------------------------------------------------------------------------
 # Gaps
 #-------------------------------------------------------------------------------
-#smart_gaps off
+smart_gaps on
 gaps inner 20
 gaps outer 10
 
@@ -272,6 +272,7 @@ client.urgent           $red         $white            $text       $orange      
 # Specific window rules
 #-------------------------------------------------------------------------------
 # for_window [title="DGGS Sandbox"] floating enable
+for_window [title="vedo"] floating enable
 
 
 #-------------------------------------------------------------------------------
