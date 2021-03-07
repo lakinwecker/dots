@@ -5,6 +5,7 @@ set -x PATH $PATH /home/lakin/bin
 set -x PATH $PATH /home/lakin/gbin
 set -x PATH $PATH /home/lakin/.pgenv/bin
 set -x PATH $PATH /home/lakin/.pgenv/pgsql/bin
+set -x CMAKE_BUILD_PARALLEL_LEVEL 32
 set -x EDITOR nvim
 set fish_greeting
 
