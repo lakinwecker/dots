@@ -5,6 +5,7 @@ set -x PATH $PATH /home/lakin/bin
 set -x PATH $PATH /home/lakin/gbin
 set -x PATH $PATH /home/lakin/.pgenv/bin
 set -x PATH $PATH /home/lakin/.pgenv/pgsql/bin
+set -x NOTMUCH_CONFIG /home/lakin/.config/notmuch/config
 set -x EDITOR nvim
 set fish_greeting
 
