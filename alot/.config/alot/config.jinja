@@ -1,0 +1,282 @@
+# vim: filetype=ini
+#theme=mutt
+quit_on_last_bclose = True
+#theme=sup
+body_mimetype=text/plain
+#theme = solarized_dark
+#theme = sup
+#prefer_plaintext=True
+#theme = solarized_dark
+theme = {{ theme }}
+search_threads_sort_order = newest_first
+complete_matching_abook_only = False
+
+#thread_statusbar = [{buffer_no}: thread:{tid}] {subject} total: {total_messages}, itags: {intersection_tags}  ttags: {thread_tags} 
+#thread_statusbar = [{buffer_no}: thread:{tid}] {subject} total: {total_messages}, tags: {thread_tags} 
+
+ansi_background=False
+
+show_count_in_tag_list = messages
+#initial_command = search tag:inbox ; search tag:sent
+#bug_on_exit = true
+#editor_cmd = /usr/bin/vim -f -c 'set filetype=mail' +
+#editor_cmd = emacs +4
+#editor_spawn = False
+#editor_in_thread = False
+
+#show_statusbar = false
+#quote_prefix = '|'
+#compose_ask_tags = True
+
+#editor_in_thread = False
+#editor_spawn = True
+#editor_cmd = vim
+
+edit_headers_whitelist = Attach,From,To,Subject
+#edit_headers_whitelist = ,
+edit_headers_blacklist = ' '
+#display_content_in_threadline = True
+
+displayed_headers = To,Cc,Bcc,Subject,Tags,Date,Message-Id
+
+notify_timeout = 4
+#show_statusbar = False
+
+#timestamp_format = '%c'
+
+#print_cmd = muttprint -F Utopia -a From_Date_*Subject*_/Tags/
+print_cmd = muttprint -2 -F Utopia -a From_Date_*Subject* -p TO_FILE:~/print.ps
+
+prompt_suffix = "> "
+
+reply_force_address = true
+forward_force_address = true
+bounce_force_address = true
+
+thread_subject= oldest
+#user_agent = alot/{version}
+
+[accounts]
+  
+  [[personal]]
+    realname = Lakin Wecker
+    address = lakin@wecker.ca
+    gpg_key = B74BF09B47C599A8F22EBFAF053849C73C85CD47
+    sign_by_default = True
+    encrypt_by_default = True
+    type = sendmail
+    sendmail_command = msmtp --account=personal -t
+    draft_box = maildir:///home/lakin/mail/personal/Drafts
+    sent_box = maildir:///home/lakin/mail/personal/Sent
+    [[[abook]]]
+      type = shellcommand
+      command = "notmuch address --output=recipients date:1Y.. AND from:lakin AND NOT to:reply.github.com"
+      regexp = (\"?(?P<name>.+)\"?)?\s*<(?P<email>.*@.+?)>
+      #regexp = \"(?P<name>.+)\"\s*<(?P<email>.*.+?@.+?)>
+      shellcommand_external_filtering = False
+  [[gmail]]
+    realname = Lakin Wecker
+    address = lakin.wecker@gmail.com
+    gpg_key = B74BF09B47C599A8F22EBFAF053849C73C85CD47
+    sign_by_default = True
+    encrypt_by_default = True
+    type = sendmail
+    sendmail_command = gmi send -t -C /home/lakin/mail/gmail
+    draft_box = maildir:///home/lakin/mail/gmail/Drafts
+    sent_box = maildir:///home/lakin/mail/gmail/Sent
+  [[lichess]]
+    realname = Lakin Wecker
+    address = lakin@lichess.org
+    gpg_key = B74BF09B47C599A8F22EBFAF053849C73C85CD47
+    sign_by_default = True
+    encrypt_by_default = True
+    type = sendmail
+    sendmail_command = gmi send -t -C /home/lakin/mail/lichess
+    draft_box = maildir:///home/lakin/mail/lichess/Drafts
+    sent_box = maildir:///home/lakin/mail/lichess/Sent
+  [[vividtheory]]
+    realname = Lakin Wecker
+    address = lakin@vividtheory.com
+    sign_by_default = False
+    encrypt_by_default = False
+    type = sendmail
+    sendmail_command = gmi send -t -C /home/lakin/mail/vividtheory
+    draft_box = maildir:///home/lakin/mail/vividtheory/Drafts
+    sent_box = maildir:///home/lakin/mail/vividtheory/Sent
+
+[bindings]
+  q=bclose;refresh
+  ', a' = "call hooks.pa(ui)"
+  '[' = compose --template bpp
+  M = compose --spawn=1
+  T = search is:todo
+  I = search is:it
+  P = search is:promotion
+  C = search is:content
+  S = search is:sent
+  % = "shellescape '/home/lakin/bin/syncmail'; refresh"
+  R = "refresh"
+  '1' = search tag:inbox AND tag:personal AND NOT tag:killed
+  '2' = search tag:todo AND NOT tag:killed
+  '3' = search tag:it AND NOT tag:killed
+  '4' = search tag:promotion AND NOT tag:killed
+  'meta 1' = search tag:inbox AND tag:lichess AND NOT tag:killed
+  'meta 2' = search tag:todo AND tag:lichess AND NOT tag:killed
+  'meta 3' = search tag:it AND tag:lichess AND NOT tag:killed
+  'meta left' = bprevious
+  'meta right' = bnext
+  'g g' = move first
+  
+  [[search]]
+    #H = untag --all LA
+    & = toggletags killed
+    '#' = toggletags killed
+    ! = toggletags flagged
+    s = toggletags unread
+    t = toggletags todo
+    i = toggletags it
+    # y = toggletags travel
+    F = toggletags flat
+    Y = toggletags inbox
+    H = toggletags family
+    ^ = toggletags spam
+    #enter = "select; fold NOT is:unread"
+  
+  [[thread]]
+    ', t' = "call hooks.translate(ui)"
+    ', w' = "call hooks.whereisit(ui)"
+    #H = "call ui.current_buffer.get_selected_message().test_parser()"
+    #G = "pipeto 'git am'"
+    t = toggletags todo
+    F = toggletags flat
+    Y = toggletags inbox
+    v = verify
+    ' ' = fold;move next;unfold
+    $ = call hooks.github(ui)
+    U = call hooks.unsubscribe()
+    D = call hooks.dimapseminar(ui)
+    u = pipeto urlscan 2> /dev/null
+
+########################################################
+16_base03 = 'dark gray'
+16_base02 = 'black'
+16_base01 = 'light green'
+16_base00 = 'yellow'
+16_base0 = 'light blue'
+16_base1 = 'light cyan'
+16_base2 = 'light gray'
+16_base3 = 'white'
+16_yellow = 'brown'
+16_orange = 'light red'
+16_red = 'dark red'
+16_magenta = 'dark magenta'
+16_violet = 'light magenta'
+16_blue = 'dark blue'
+16_cyan = 'dark cyan'
+16_green = 'dark green'
+
+# Use a slightly different mapping here to be able to use "bold" in 256c mode
+256_base03 = 'dark gray'
+256_base02 = 'black'
+256_base01 = 'light green'
+256_base00 = 'yellow'
+256_base0 = 'g66'
+256_base1 = 'g70'
+256_base2 = 'light gray'
+256_base3 = 'white'
+256_yellow = 'brown'
+256_orange = 'light red'
+256_red = 'dark red'
+256_magenta = 'dark magenta'
+256_violet = 'light magenta'
+256_blue = 'dark blue'
+256_cyan = '#088'
+256_green = 'dark green'
+########################################################
+#
+#   ⅏ 🚂🚠
+#   🔘 🔥
+[tags]
+  [[flagged]]
+      translated = ⚑
+      normal = '','','light red','','dark red',''
+  [[inbox]]
+    translated = ➤#📨●◉↘
+    normal = "", "", "", "", "", ""
+  [[sent]]
+    translated =  ↗#⇗
+    normal = '','', 'dark blue', '', 'dark blue', ''
+  [[unread]]
+    translated = ''
+  [[replied]]
+    translated = ⏎
+    normal = '','', 'dark cyan', 'default', 'dark blue', 'default'
+  [[encrypted]]
+    translated = 🔒#🔑#⚷
+#    normal = "", "", "", "", "#0ff", "#006"
+  [[signed]]
+    translated = ®
+    normal = "", "", "", "", "", ""
+  [[ring]]
+    translated = 💍#◉
+  [[killed]]
+    translated = τ  # ☠
+#    normal = "", "", "", "", g70, g27
+  [[lists]]
+    translated = 📃#⎎
+
+  [[attachment]]
+    translated = 📎
+    normal = "", "", 'light blue', '', 'light blue', ''
+  
+  [[bug]]
+    translated = 🐜
+    normal = "", "", "dark red", "", "light red", ""
+  [[todo]]
+    normal = "", "", white, "dark magenta", white, "dark magenta"
+  
+  [[C4P]]
+    normal = "", "", "", "", g74, g23
+  
+  [[lists/seminars]]
+    normal = "", "", "", "", "", "#6da"
+  
+  [[G+]]
+    normal = "", "", "", "", "#0ff", "#00f"
+  
+  [[peergroup]]
+    normal = "", "", "", "", "#006", "#08d"
+  
+  [[soc]]
+    normal = "", "", "", "", "#6da", "#08d"
+  
+  [[foo]]
+    translated = ⚽
+    #normal = "", "", "", "", "#6da", "#08d"
+  
+  [[lists/wols]]
+    translated = wols
+    normal = "", "", "", "", "#6da", "#08d"
+  
+  [[lists/sicsa]]
+    translated = UoE/sicsa
+    normal = "", "", "", "", "#6da", "#060"
+  
+  [[lists/gradschool]]
+    translated = UoE/gradschool
+    normal = "", "", "", "", "#6da", "#060"
+  
+  [[lists/students]]
+    translated = UoE/students
+    normal = "", "", "", "", g74, "#080"
+  
+  #[[lists/phd-degree-students]]
+    #translated = UoE/PhD
+    #normal = "", "", "", "", g74, "#080"
+  
+  #[[lists/urwid]]
+    #normal = "", "", "", "", "#080", "#606"
+  
+  #[[travel]]
+    #translated = ✈
+  

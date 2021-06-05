@@ -8,6 +8,8 @@
 .metals
 .sbt
 __pycache__
+.mypy_cache
+.vim
 
 # Compiled source #
 ###################

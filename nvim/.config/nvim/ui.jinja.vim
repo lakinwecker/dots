@@ -70,6 +70,7 @@ let g:netrw_winsize=25
 " colorscheme monokai
 " colorscheme gruvbox
 colorscheme one
+" colorscheme nord
 set background={{ background }}
 " colorscheme wal
 " let ayucolor="light"  " for light version of theme

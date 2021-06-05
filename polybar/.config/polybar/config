@@ -75,7 +75,7 @@ modules-right = mydate mytime
 inherit = bar/1080p
 monitor = eDP-1
 
-modules-left = i3 
+modules-left = i3
 modules-right = brightness volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ modules-right = brightness volume wireless-network wired-network battery1 batter
 inherit = bar/1080p
 monitor = eDP1
 
-modules-left = i3 
+modules-left = i3 mpd
 modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
@@ -286,7 +286,7 @@ icon-repeat = 
 toggle-on-foreground =
 toggle-off-foreground = #55
 
-bar-progress-width = 45
+bar-progress-width = 10
 bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
 bar-progress-indicator = |
 bar-progress-indicator-foreground = #ff

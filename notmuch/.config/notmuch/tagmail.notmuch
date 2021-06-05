@@ -1,0 +1,15 @@
+# Manage sent, spam, and trash folders
+#-unread -new folder:Trash
+#-unread -new folder:Spam
+#-unread -new folder:Sent
+
+# Note mail sent specifically to me (excluding bug mail)
+#+to-me to:lakin at wecker.ca and tag:new and not tag:to-me
+
+# And note all mail sent from me
+#+sent from:lakin at wecker.ca and tag:new and not tag:sent
+
+#+delete subject:lakin at wecker.ca and tag:new and not tag:sent
+
+# Remove the new tag from messages
+#-new tag:new
