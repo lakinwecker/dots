@@ -18,8 +18,11 @@ ln_wallpaper1 = "cp \"{0}\" /tmp/.wallpaper1"
 
 chmod_wallpaper = "chown lakin:lakin /tmp/.wallpaper1 /tmp/wallpapers.txt"
 
-if len(sys.argv) == 2:
+if len(sys.argv) == 2 and sys.argv[1] != "simon":
     wallpaper1 = sys.argv[1]
+elif len(sys.argv) == 2 and sys.argv[1] == "simon":
+    base_dir = "/home/lakin/wallpapers/simon/"
+    wallpaper1 = random_wallpaper()
 else:
     wallpaper1 = random_wallpaper()
 

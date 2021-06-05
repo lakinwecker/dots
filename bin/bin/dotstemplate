@@ -73,6 +73,7 @@ def alacritty(mode):
     source = lambda x: dots("alacritty", x)
     target = lambda x: config("alacritty", x)
     h = hostname()
+    print(f"{h}.yml"),
     copy_template_impl(
         source("alacritty.jinja.yml"),
         target("alacritty.yml"),

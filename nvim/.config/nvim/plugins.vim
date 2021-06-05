@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
 Plug 'arcticicestudio/nord-vim'
+Plug 'dylanaraps/wal.vim'
 
 " features
 " Plug 'tpope/vim-sensible' " Sensible defaults

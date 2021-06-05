@@ -31,8 +31,8 @@ set foldminlines=99
 set foldlevelstart=99
 
 " highlight cursor
-set cursorline
-set cursorcolumn
+" set cursorline
+"set cursorcolumn
 
 " Always show sign column
 set signcolumn="yes"
@@ -71,6 +71,7 @@ let g:netrw_winsize=25
 " colorscheme gruvbox
 colorscheme one
 " colorscheme nord
+" colorscheme wal
 set background={{ background }}
 " colorscheme wal
 " let ayucolor="light"  " for light version of theme
