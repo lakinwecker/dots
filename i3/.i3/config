@@ -271,14 +271,14 @@ client.urgent           $red         $white            $text       $orange      
 #-------------------------------------------------------------------------------
 # Specific window rules
 #-------------------------------------------------------------------------------
-for_window [title="DGGS Sandbox"] floating enable
+#for_window [title="DGGS Sandbox"] floating enable
 for_window [title="vedo 2020"] floating enable
 
 
 #-------------------------------------------------------------------------------
 # Make sure certain program start in a certain way
 #-------------------------------------------------------------------------------
-# for_window [title="DGGS Sandbox"] floating enable
+for_window [title="DGGS Sandbox"] floating enable
 
 #-------------------------------------------------------------------------------
 # run some programs
@@ -295,4 +295,6 @@ exec --no-startup-id /home/lakin/bin/polybar.sh &
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id /home/lakin/bin/wallpaper.py
 exec --no-startup-id xss-lock -- /home/lakin/bin/fuzzy-lock.sh #i3lock -n -i background_image.png &
+exec --no-startup-id setxkbmap -option compose:ralt
+exec --no-startup-id "xmodmap ~/.Xmodmap"
 # exec xautolock -time 15 -locker '~/.local/bin/fuzzy-lock.sh' &

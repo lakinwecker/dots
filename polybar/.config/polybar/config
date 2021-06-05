@@ -29,14 +29,14 @@ enable-ipc = true
 ;---------------------------------------------------------------------------------
 [bar/4k]
 inherit = bar/1080p
-height = 30
+height = 20
 
-font-0 = "Bitter-Regular:size=12;0"
-font-1 = FontAwesome:size=12;1
-font-2 = "Font Awesome 5 Free:style=Regular:size=12;1"
-font-3 = "Font Awesome 5 Free:style=Solid:size=12;1"
+font-0 = "Bitter-Regular:size=10;0"
+font-1 = FontAwesome:size=10;1
+font-2 = "Font Awesome 5 Free:style=Regular:size=10;1"
+font-3 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-4 = MaterialIcons:size=20;3
-font-5 = "Siji:size=12;0"
+font-5 = "Siji:size=10;0"
 font-6 = "DejaVu Sans:size=10;0"
 
 ;---------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ font-6 = "DejaVu Sans:size=10;0"
 inherit = bar/4k
 monitor = DisplayPort-0
 
-modules-left = i3
+modules-left = i3 mpd
 modules-right = volume wired-network-trunkie temperature-1 temperature-2 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
@@ -286,7 +286,7 @@ icon-repeat = 
 toggle-on-foreground =
 toggle-off-foreground = #55
 
-bar-progress-width = 45
+bar-progress-width = 10
 bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
 bar-progress-indicator = |
 bar-progress-indicator-foreground = #ff

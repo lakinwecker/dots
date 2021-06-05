@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
+Plug 'dylanaraps/wal.vim'
 
 " features
 " Plug 'tpope/vim-sensible' " Sensible defaults
