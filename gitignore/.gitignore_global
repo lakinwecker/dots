@@ -7,6 +7,7 @@
 .env
 .metals
 .sbt
+.tool-versions
 __pycache__
 
 # Compiled source #
@@ -47,3 +48,6 @@ __pycache__
 ehthumbs.db
 Thumbs.db
 
+
+# IMGUI
+imgui.ini

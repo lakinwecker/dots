@@ -34,6 +34,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar' " Enhanced netrw
+Plug 'will133/vim-dirdiff'
 " Plug 'simeji/winresizer'
 
 Plug 'jremmen/vim-ripgrep'

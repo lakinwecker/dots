@@ -10,7 +10,7 @@ function! s:goyo_enter()
   set wrap
   set scrolloff=999
 endfunction
-let g:goyo_width = 90
+let g:goyo_width = 60
 
 function! s:goyo_leave()
   Limelight!
