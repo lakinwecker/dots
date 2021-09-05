@@ -4,8 +4,18 @@ height = 27
 bottom = true
 width = 100%
 
-background = #CC000000
-foreground = #ccffffff
+background = #2E3440
+buffer = #4c566a
+foreground = #D8DEE9
+nord6 = #ECEFF4
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+urgent = #BF616A
+warning = #D08770
+notify = #EBCB8B
+success = #A3BE8C
+function = #B48EAD
 
 line-color = ${bar/trunkie-4k.background}
 line-size = 2
@@ -75,7 +85,7 @@ modules-right = mydate mytime
 inherit = bar/1080p
 monitor = eDP-1
 
-modules-left = i3 
+modules-left = i3
 modules-right = brightness volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
@@ -85,7 +95,7 @@ modules-right = brightness volume wireless-network wired-network battery1 batter
 inherit = bar/1080p
 monitor = eDP1
 
-modules-left = i3 
+modules-left = i3 mpd
 modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------

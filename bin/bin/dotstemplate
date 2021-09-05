@@ -40,6 +40,8 @@ def dots(name, file):
         return f"/home/lakin/dots/alacritty/.config/alacritty/{file}"
     if name == "nvim":
         return f"/home/lakin/dots/nvim/.config/nvim/{file}"
+    if name == "alot":
+        return f"/home/lakin/dots/alot/.config/alot/{file}"
     raise RuntimeError(f"Unknown name: {name}")
 
 def config(name, file):
@@ -47,6 +49,8 @@ def config(name, file):
         return f"/home/lakin/.config/alacritty/{file}"
     if name == "nvim":
         return f"/home/lakin/.config/nvim/{file}"
+    if name == "alot":
+        return f"/home/lakin/.config/alot/{file}"
     raise RuntimeError(f"Unknown name: {name}")
 
 def nvim(mode):
@@ -80,15 +84,31 @@ def alacritty(mode):
         ]
     )
 
+def alot(mode):
+    source = lambda x: dots("alot", x)
+    target = lambda x: config("alot", x)
+    h = hostname()
+    copy_template_impl(
+        source("config.jinja"),
+        target("config"),
+        [
+            source("default_vars.yml"),
+            source(f"{mode}.yml"),
+            source(f"{h}.yml"),
+        ]
+    )
+
 @cli.command()
 def darkmode():
     alacritty("dark")
     nvim("dark")
+    alot("dark")
 
 @cli.command()
 def lightmode():
     alacritty("light")
     nvim("light")
+    alot("light")
 
 
 # Recursive dictionary merge

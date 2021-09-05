@@ -6,11 +6,11 @@ font:
   bold:
    style: "Bold"
   #family: "Fira Code"
-  family: "Fira Code"
-  size: 6.5
+  #family: "Fira Code"
+  #size: 6.5
   #family: "Fantasque Sans Mono"
   #size: 6.5
-  #family: "JetBrains Mono"
-  #size: 8.5
+  family: "JetBrains Mono"
+  size: 8.5
 colorscheme: "*dark"
 background_opacity: 0.9

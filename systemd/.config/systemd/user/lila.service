@@ -6,7 +6,7 @@ Wants=lila-fishnet.service
 Wants=lila-watch.service
 
 [Service]
-ExecStart=bloop run lila -m play.core.server.ProdServerStart -c /home/lakin/personal-repos/lichess/lila/.bloop
+ExecStart=/home/lakin/.local/share/coursier/bin/bloop run lila -m play.core.server.ProdServerStart -c /home/lakin/personal-repos/lichess/lila/.bloop
 
 [Install]
 WantedBy=multi-user.target

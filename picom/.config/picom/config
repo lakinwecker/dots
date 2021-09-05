@@ -28,7 +28,8 @@ blur-background = true;
 # focus
 # alpha-step = 0.6
 inactive-opacity = 1.0;
-inactive-dim = 0.2;
+active-opacity = 1.0;
+inactive-dim = 0.1;
 
 # firefox
 shadow-exclude = [
@@ -37,3 +38,10 @@ shadow-exclude = [
 fade-exclude = [
     "class_g = 'Firefox' && argb"
 ];
+opacity-exclude = [
+    "class_g = 'Firefox' && argb"
+];
+opacity-rule = [
+  "90:class_g *?= 'alacritty'"
+];
+

@@ -1,0 +1,42 @@
+# This is the default filter chain
+[SpamFilter]
+[KillThreadsFilter]
+[ListMailsFilter]
+[ArchiveSentMailsFilter]
+
+[FolderNameFilter]
+maildir_separator = /
+
+[MailMover]
+folders = personal/Inbox gmail/mail/Inbox lichess/mail/Inbox vividtheory/mail/Inbox
+rename = True
+#max_age = 15
+
+# rules
+personal/Inbox = 'tag:spam':personal/Junk 'NOT tag:inbox':personal/Archive 'tag:killed':personal/Trash
+gmail/mail/Inbox = 'tag:spam':gmail/mail/Junk 'NOT tag:inbox':gmail/mail/Archive 'tag:killed':gmail/mail/Trash
+lichess/mail/Inbox = 'tag:spam':lichess/mail/Junk 'NOT tag:inbox':lichess/mail/Archive 'tag:killed':lichess/mail/Trash
+vividtheory/mail/Inbox = 'tag:spam':vividtheory/mail/Junk 'NOT tag:inbox':vividtheory/mail/Archive 'tag:killed':vividtheory/mail/Trash
+
+
+[Filter.0]
+message = Tag IT
+query = from:notifications@pagerduty.com OR from:feedback@slack.com OR from:website-errors@structuredabstraction.com
+tags = +it
+
+[Filter.1]
+message = Tag IT
+query = tag:lists/ubuntu-security-announce
+tags = +it
+
+[Filter.2]
+message = Tag promotion stuff
+query = from:newsletter@system76.com OR from:bingo@patreon.com OR from:noreply@steampowered.com
+tags = +promotion
+
+[Filter.3]
+message = Tag promotion stuff
+query = from:noreply@bandcamp.com AND subject:"New Release"
+tags = +promotion
+
+[InboxFilter]
