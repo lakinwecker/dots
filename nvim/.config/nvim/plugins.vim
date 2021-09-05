@@ -25,7 +25,8 @@ call plug#begin('~/.vim/plugged')
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
 Plug 'arcticicestudio/nord-vim'
-Plug 'dylanaraps/wal.vim'
+" Plug 'dylanaraps/wal.vim'
+" Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 " features
 " Plug 'tpope/vim-sensible' " Sensible defaults

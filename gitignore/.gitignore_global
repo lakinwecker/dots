@@ -10,6 +10,7 @@
 __pycache__
 .mypy_cache
 .vim
+.tool-versions
 
 # Compiled source #
 ###################
@@ -28,7 +29,6 @@ __pycache__
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip

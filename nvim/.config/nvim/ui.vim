@@ -69,8 +69,9 @@ let g:netrw_winsize=25
 " set timeoutlen=1000 ttimeoutlen=0
 " colorscheme monokai
 " colorscheme gruvbox
-colorscheme one
-" colorscheme nord
+" colorscheme one
+" colorscheme spaceduck
+colorscheme nord
 " colorscheme wal
 set background=dark
 " colorscheme wal

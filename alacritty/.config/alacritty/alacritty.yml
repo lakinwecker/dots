@@ -58,21 +58,21 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: "Fira Code"
+    family: "JetBrains Mono"
     style: Regular
 
   # The bold font face
   bold:
-    family: "Fira Code"
+    family: "JetBrains Mono"
     style: Bold
 
   # The italic font face
   italic:
-    family: "Fira Code"
+    family: "JetBrains Mono"
     style: Italic
 
   # Point size of the font
-  size: 9.5
+  size: 6.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -225,7 +225,7 @@ schemes:
       white:   '0xebdbb2'
 
 # colors: *light
-colors: *dark
+colors: *norddark
 
 # Visual Bell
 #
