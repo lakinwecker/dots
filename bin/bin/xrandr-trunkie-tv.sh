@@ -1,4 +1,3 @@
 #!/bin/bash
-xrandr --output DP-2 --mode 3840x2160 --primary --dpi 96  --pos 0x0\
-    --output HDMI-0 --mode 3840x2160 -r 59.94 --dpi 96 --same-as DP-2 \
-    --output HDMI-1 --off
+xrandr --output DisplayPort-0 --mode 1920x1080 --primary --rate 165.08 \
+    --output HDMI-A-0 --mode 1920x1080 -r 60.00 --dpi 96 --same-as DisplayPort-0

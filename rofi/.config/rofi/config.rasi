@@ -1,0 +1,15 @@
+//@theme "/home/lakin/.local/share/rofi/themes/squared-nord.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-common.rasi"
+//@theme "/home/lakin/.local/share/rofi/themes/squared-nord.rasi"
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+//@theme "/home/lakin/.config/rofi/themes/squared-nord.rasi"
+configuration {
+    font            : "JetBrains Mono Medium 12";
+    display-ssh     : "";
+    display-run     : "";
+    display-drun    : "";
+    display-window  : "";
+    display-combi   : "";
+
+}
+@theme "/home/lakin/.local/share/rofi/themes/squared-nord.rasi"
