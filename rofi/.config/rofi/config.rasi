@@ -12,4 +12,4 @@ configuration {
     display-combi   : "";
 
 }
-@theme "/home/lakin/.local/share/rofi/themes/squared-nord.rasi"
+@theme "/home/lakin/.config/rofi/themes/squared-nord.rasi"

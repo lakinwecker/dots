@@ -91,7 +91,7 @@ Plug 'freitass/todo.txt-vim'
 
 " Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' } " gdb wrapper
 
-" Intellisense!? 
+" Intellisense!?
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Chiel92/vim-autoformat'
