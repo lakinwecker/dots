@@ -64,8 +64,6 @@ Plug 'tpope/vim-dispatch' " Async building
 Plug 'octol/vim-cpp-enhanced-highlight' " Advanced CPP highlighting
 Plug 'derekwyatt/vim-scala'
 
-Plug 'janko/vim-test'
-
 " fuzzy find
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
