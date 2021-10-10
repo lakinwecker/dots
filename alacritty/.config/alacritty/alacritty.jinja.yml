@@ -17,6 +17,8 @@ env:
 # Window dimensions in character columns and lines
 # (changes require restart)
 window:
+  # Background opacity
+  opacity: {{ background_opacity|default("1.0") }}
   dimensions:
     columns: 80
     lines: 24
@@ -252,9 +254,6 @@ colors: {{ colorscheme }}
 bell:
   animation: EaseOutExpo
   duration: 0
-
-# Background opacity
-background_opacity: {{ background_opacity|default("1.0") }}
 
 # Mouse bindings
 #

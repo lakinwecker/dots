@@ -17,6 +17,8 @@ env:
 # Window dimensions in character columns and lines
 # (changes require restart)
 window:
+  # Background opacity
+  opacity: 1.0
   dimensions:
     columns: 80
     lines: 24
@@ -72,7 +74,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 6.5
+  size: 9.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -252,9 +254,6 @@ colors: *norddark
 bell:
   animation: EaseOutExpo
   duration: 0
-
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #
