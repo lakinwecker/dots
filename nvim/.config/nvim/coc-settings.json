@@ -20,5 +20,6 @@
   "tsserver.trace.server": "verbose",
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "typescript", "rust"],
   "codeLens.enable": true,
-  "rust-analyzer.checkOnSave.command": "clippy"
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "rust-analyzer.lens.methodReferences": true
 }
