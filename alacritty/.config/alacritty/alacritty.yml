@@ -13,6 +13,7 @@ env:
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
   TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: '1'
 
 # Window dimensions in character columns and lines
 # (changes require restart)
@@ -74,7 +75,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 9.5
+  size: 11.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

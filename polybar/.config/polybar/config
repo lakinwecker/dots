@@ -91,9 +91,23 @@ modules-right = brightness volume wireless-network wired-network battery1 batter
 ;---------------------------------------------------------------------------------
 ; sebbers
 ;---------------------------------------------------------------------------------
-[bar/sebbers]
+[bar/sebbers-nvidia]
 inherit = bar/1080p
-monitor = eDP1
+monitor = eDP-1-1
+
+modules-left = i3 mpd
+modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
+
+[bar/sebbers-intel]
+inherit = bar/1080p
+monitor = eDP-1
+
+modules-left = i3 mpd
+modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
+
+[bar/sebbers-intel-dp-1]
+inherit = bar/1080p
+monitor = DP-1
 
 modules-left = i3 mpd
 modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime

@@ -1,1 +1,4 @@
 text/html;  w3m -dump -o document_charset=%{charset} '%s'; nametemplate=%s.html; copiousoutput
+image/x-imgur-album; xdg-open %s; test=test -n "$DISPLAY"
+image/gif; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
+image/*; feh --auto-rotate -xZ '%s'; test=test -n "$DISPLAY"

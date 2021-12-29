@@ -8,11 +8,6 @@ if [ "$hostname" == "trunkie" ]; then
     #polybar trunkie-1080p-1 &
     #polybar trunkie-1080p-2 &
 fi
-if [ "$hostname" == "triss" ]; then
-    killall polybar
-    polybar triss &
-    #polybar triss-2 &
-fi
 if [ "$hostname" == "arry" ]; then
     killall polybar
     polybar arry &
@@ -24,5 +19,7 @@ if [ "$hostname" == "scarlet" ]; then
 fi
 if [ "$hostname" == "sebbers" ]; then
     killall polybar
-    polybar sebbers &
+    polybar sebbers-intel &
+    polybar sebbers-nvidia &
+    polybar sebbers-intel-dp-1 &
 fi

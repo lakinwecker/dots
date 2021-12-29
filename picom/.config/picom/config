@@ -23,7 +23,11 @@ popup_menu = { shadow = false; }
 # utility = { shadow = false; }
 
 # backgrounds
-blur-background = true;
+blur: {
+	method = "dual_kawase";
+	strength = 2;
+};
+
 
 # focus
 # alpha-step = 0.6

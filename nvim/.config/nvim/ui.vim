@@ -71,8 +71,9 @@ let g:netrw_winsize=25
 " colorscheme gruvbox
 " colorscheme one
 " colorscheme spaceduck
-colorscheme nord
+" colorscheme nord
 " colorscheme wal
+colorscheme nord
 set background=dark
 " colorscheme wal
 " let ayucolor="light"  " for light version of theme

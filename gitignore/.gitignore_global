@@ -11,7 +11,9 @@
 __pycache__
 .mypy_cache
 .vim
+.cache
 .tool-versions
+sebbers-sandbox.ini
 
 # Compiled source #
 ###################

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import collections
+import collections.abc
 import click
 from yaml import load, FullLoader
 from jinja2 import Template
@@ -142,7 +142,7 @@ def dict_merge(dct, merge_dct):
         if (
             k in dct
             and isinstance(dct[k], dict)
-            and isinstance(v, collections.Mapping)
+            and isinstance(v, collections.abc.Mapping)
         ):
             dict_merge(dct[k], merge_dct[k])
         else:
