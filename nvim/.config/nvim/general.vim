@@ -17,7 +17,8 @@ set noswapfile
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set signcolumn=yes
+set updatetime=100
 
 " fuzzy find
 set path+=**

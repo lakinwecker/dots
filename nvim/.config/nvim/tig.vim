@@ -1,2 +1,1 @@
-
 nmap ti :Tig<cr>

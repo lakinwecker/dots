@@ -15,18 +15,18 @@ call plug#begin('~/.vim/plugged')
 " colors
 "Plug 'xero/sourcerer.vim'
 "Plug 'xero/blaquemagick.vim'
-"Plug 'xero/vim-noctu'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'crusoexia/vim-monokai'
 "Plug 'iCyMind/NeoSolarized'
 "Plug 'liuchengxu/space-vim-dark'
-"Plug 'morhetz/gruvbox'
+"Plug 'liuchengxu/space-vim-theme'
+Plug 'morhetz/gruvbox'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
 Plug 'arcticicestudio/nord-vim'
-" Plug 'dylanaraps/wal.vim'
-" Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
+"Plug 'dylanaraps/wal.vim'
+"Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
 " features
 " Plug 'tpope/vim-sensible' " Sensible defaults
@@ -37,11 +37,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar' " Enhanced netrw
 Plug 'will133/vim-dirdiff'
+Plug 'christoomey/vim-system-copy'
+Plug 'machakann/vim-sandwich'
 " Plug 'simeji/winresizer'
 
 Plug 'jremmen/vim-ripgrep'
 
-Plug 'iberianpig/tig-explorer.vim'
+Plug 'codeindulgence/vim-tig'
 Plug 'ruanyl/vim-gh-line'
 
 " Plug 'roxma/vim-tmux-clipboard'
@@ -52,8 +54,6 @@ Plug 'matze/vim-move' " Move lines up and down
 Plug 'godlygeek/tabular' " Helps you align text.
 " Plug 'ervandew/supertab' " Better tab autocompletion
 Plug 'editorconfig/editorconfig-vim'
-
-Plug 'artur-shaik/vim-javacomplete2'
 
 " Plug 'rdnetto/YCM-Generator' " autocompletion configuration generator
 Plug 'mhinz/vim-signify' " Show a diff using the vim sign column
@@ -90,12 +90,13 @@ Plug 'freitass/todo.txt-vim'
 " Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' } " gdb wrapper
 
 " Intellisense!?
+Plug 'antoinemadec/coc-fzf'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Chiel92/vim-autoformat'
 
 " Git blame
-Plug 'APZelos/blamer.nvim' " Git line link
+" Plug 'APZelos/blamer.nvim' " Git line link
 Plug 'ruanyl/vim-gh-line' " Git line link
 
 " Writing plugins
