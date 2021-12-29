@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'iCyMind/NeoSolarized'
 "Plug 'liuchengxu/space-vim-dark'
 "Plug 'liuchengxu/space-vim-theme'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 "Plug 'ayu-theme/ayu-vim'
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
@@ -44,21 +44,12 @@ Plug 'machakann/vim-sandwich'
 Plug 'jremmen/vim-ripgrep'
 
 Plug 'codeindulgence/vim-tig'
-Plug 'ruanyl/vim-gh-line'
-
-" Plug 'roxma/vim-tmux-clipboard'
-" Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'matze/vim-move' " Move lines up and down
-" Plug 'tpope/tpope-vim-abolish' " Replace your own common errors with the correct word
 Plug 'godlygeek/tabular' " Helps you align text.
-" Plug 'ervandew/supertab' " Better tab autocompletion
 Plug 'editorconfig/editorconfig-vim'
 
-" Plug 'rdnetto/YCM-Generator' " autocompletion configuration generator
 Plug 'mhinz/vim-signify' " Show a diff using the vim sign column
-" Plug 'jlanzarotta/bufexplorer' " Buf explorer
-" Plug 'lyuts/vim-rtags' " C++ indexing, etc.
 Plug 'tpope/vim-projectionist' " Switch between pairs of files.
 Plug 'tpope/vim-dispatch' " Async building
 Plug 'octol/vim-cpp-enhanced-highlight' " Advanced CPP highlighting
@@ -92,8 +83,6 @@ Plug 'freitass/todo.txt-vim'
 " Intellisense!?
 Plug 'antoinemadec/coc-fzf'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'Chiel92/vim-autoformat'
 
 " Git blame
 " Plug 'APZelos/blamer.nvim' " Git line link
