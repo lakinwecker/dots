@@ -1,4 +1,4 @@
-bind status P !git push origin
+bind generic    P       !fish -c "git push origin (git rev-parse --abbrev-ref HEAD)"
 bind diff       D       >git difftool --tool=nvimdiff --trust-exit-code --no-prompt %(commit)^! -- %(file)
 bind stage      D       >sh -c "git difftool --tool=nvimdiff --trust-exit-code --no-prompt `expr '%(status)' : 'Staged changes' >/dev/null && echo --cached` -- '%(file)'"
 
