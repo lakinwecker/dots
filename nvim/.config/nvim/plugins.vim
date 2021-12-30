@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'dylanaraps/wal.vim'
 Plug 'rakr/vim-one'
 Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 "Plug 'dylanaraps/wal.vim'
 "Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 
