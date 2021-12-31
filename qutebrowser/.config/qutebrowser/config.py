@@ -9,3 +9,8 @@ dracula.draw.blood(c, {
         'horizontal': 8
     }
 })
+
+c.content.user_stylesheets = [
+    'solarized-dark-all-sites.css',
+]
+

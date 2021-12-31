@@ -1,3 +1,6 @@
+" Set runtime path
+set runtimepath+=~/.config/nvim/
+
 set nocompatible
 
 " security
