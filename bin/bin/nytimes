@@ -1,0 +1,3 @@
+#!/bin/fish
+cd personal-repos/nytimes-remarkable/
+bloop run nytimes-remarkable -- --target-directory='/home/lakin/tmp/nytimes/'
