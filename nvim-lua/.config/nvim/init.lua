@@ -15,15 +15,16 @@ require('packer').startup(function(use)
     -- Statuses / side bar info
     "mylualine", "mycokeline", "mygitsigns", "diffview",
     -- Collaboration
-    "editorconfig", "toggleterm_and_lazygit"
+    "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
-    "lspconfig", "dap", "rust"
+    "lspconfig", "dap", "rust", "elm", "jsts",
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
     "tree", "telescope",
     -- Random Features
-    "autopairs", "myundotree", "projectionist", "todotxt", "gitlinker"
+    "autopairs", "myundotree", "projectionist", "todotxt", "gitlinker",
+    "gist",
     -- Writing
     "writing"
   }
@@ -97,10 +98,3 @@ vim.api.nvim_set_keymap('n', '<S-Tab>', '<Plug>(cokeline-focus-prev)', {})
 --map('v', '<', '<gv', noReSilent)
 --map('v', '>', '>gv', noReSilent)
 
---local Terminal  = require('toggleterm.terminal').Terminal
---local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction='float' })
-
---local _lazygit_toggle = function()
-  --lazygit:toggle()
---end
---map('n', '<leader>ti', [[ <cmd>lua _lazygit_toggle()<CR> ]], noReSilent)

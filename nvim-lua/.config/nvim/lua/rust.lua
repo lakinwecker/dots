@@ -1,5 +1,5 @@
 M = {}
-function M.init() 
+function M.init(use) 
   use {
     'simrat39/rust-tools.nvim'
   }
@@ -13,5 +13,6 @@ function M.init()
       require('crates').setup()
     end,
   }
+  vim.cmd("autocmd FileType rust setlocal et sw=4 ts=4 sts=4")
 end
 return M
