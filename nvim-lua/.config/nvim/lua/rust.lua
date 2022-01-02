@@ -1,9 +1,6 @@
 M = {}
 function M.init(use) 
   use {
-    'simrat39/rust-tools.nvim'
-  }
-  use {
     'saecki/crates.nvim',
     tag = 'v0.1.0',
     requires = {

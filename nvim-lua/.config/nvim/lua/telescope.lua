@@ -29,24 +29,24 @@ function M.init(use)
 
   local map = require("keys")
   -- Search within open buffers
-  map.n('<leader>\'', [[ <cmd>lua require('telescope.builtin').buffers()<CR> ]])
+  map.n('<leader>\'', "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
   -- Find files relative to CWD
-  map.n('<leader>;', [[ <cmd>lua require('telescope.builtin').find_files()<CR> ]])
+  map.n('<leader>;', "<cmd>lua require('telescope.builtin').git_files()<CR>")
 
   -- Search within the open buffer to find a piece of text
-  map.n('<leader>.', [[ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR> ]])
+  map.n('<leader>.', "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
 
   -- Search for a given string using ripgrep relative to CWD
-  map.n('<leader>*', [[ <cmd>lua require('telescope.builtin').grep_string()<CR> ]])
+  map.n('<leader>*', "<cmd>lua require('telescope.builtin').grep_string()<CR>")
 
   -- Run an interactive grepping session using ripgrep
-  map.n('<leader>/', [[ <cmd>lua require('telescope.builtin').live_grep()<CR> ]])
+  map.n('<leader>/', "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 
   --  These are from icp and I"m not sure if I'll use these
-  map.n('<leader>sh', [[ <cmd>lua require('telescope.builtin').help_tags()<CR> ]])
-  map.n('<leader>st', [[ <cmd>lua require('telescope.builtin').tags()<CR> ]])
-  map.n('<leader>so', [[ <cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR> ]])
-  map.n('<leader>?', [[ <cmd>lua require('telescope.builtin').oldfiles()<CR> ]])
+  map.n('<leader>sh', "<cmd>lua require('telescope.builtin').help_tags()<CR>")
+  map.n('<leader>st', "<cmd>lua require('telescope.builtin').tags()<CR>")
+  map.n('<leader>so', "<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>")
+  map.n('<leader>?', "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 end
 return M

@@ -17,7 +17,15 @@ function M.n(pattern, command, noremap, silent)
 end
 
 function M.i(pattern, command, noremap, silent)
-  map('n', pattern, command, noremap, silent)
+  map('i', pattern, command, noremap, silent)
+end
+
+function M.x(pattern, command, noremap, silent)
+  map('x', pattern, command, noremap, silent)
+end
+
+function M.v(pattern, command, noremap, silent)
+  map('v', pattern, command, noremap, silent)
 end
 
 return M

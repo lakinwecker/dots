@@ -1,82 +1,64 @@
 M = {}
-function M.init(use)
--- show matching brackets/parenthesis
--- set showmatch
+function M.init()
 
--- disable startup message
--- set shortmess+=I
--- don't give |ins-completion-menu| messages.
--- set shortmess+=c
+  --
+  vim.wo.signcolumn = 'yes:1'
 
+  -- Ok, let' try this
+  vim.o.mouse = 'a'
 
--- hide mode display
--- set noshowmode
+  -- line-numbers :pandalove:
+  vim.wo.number = true
 
--- syntax highlighting
--- syntax on
--- set synmaxcol=512
--- filetype plugin on
+  -- disable startup message
+  vim.cmd("set shortmess+=I")
+  -- don't give |ins-completion-menu| messages.
+  vim.cmd("set shortmess+=c")
 
--- stop unnecessary rendering
--- set lazyredraw
+  -- hide mode display
+  vim.o.showmode = false
 
--- show line numbers
--- set number
+  -- Always use clipboard.
+  vim.o.clipboard = 'unnamedplus'
 
--- no line wrapping
--- set nowrap
+  -- no line wrapping
+  vim.wo.wrap = false
 
--- no folding
--- set nofoldenable
--- set foldlevel=99
--- set foldminlines=99
--- set foldlevelstart=99
+  -- highlight cursor
+  vim.o.cursorline = true
 
--- highlight cursor
--- set cursorline
--- "set cursorcolumn
+  -- show invisibles
+  vim.o.list = true
+  vim.wo.listchars = "tab:>-,trail:.,extends:»,precedes:«,nbsp:⣿"
 
--- Always show sign column
--- set signcolumn="yes"
+  -- tree style file explorer
+  vim.g.netrw_liststyle = 3
+  -- let g:netrw_browse_split=4
+  vim.g.netrw_winsize = 25
 
--- show invisibles
--- set list
--- set listchars=
--- "set listchars+=tab:𐄙\ 
---set listchars=tab:>-
---set listchars+=trail:·
---set listchars+=extends:»
---set listchars+=precedes:«
---set listchars+=nbsp:⣿
+  -- TODO: make this work with my light-mode/dark-mode switch
+  -- colorscheme {{ colorscheme }}
+  -- set background={{ background }}
 
--- split style
---set fillchars=vert:▒
+  local map = require("keys")
+  -- Clear search
+  map.n('<Esc>', ':noh <CR>')
+  map.n('<leader>n', ':nohlsearch<CR>')
 
--- tree style file explorer
---let g:netrw_liststyle=3
--- let g:netrw_browse_split=4
---let g:netrw_winsize=25
+  -- Kill current buffer
+  map.n('<C-x>', ':bdelete<CR>')
 
--- set t_Co=256
--- set background=dark
--- let g:PaperColor_Theme_Options = {
--- \   'theme': {
--- \     'default.dark': {
--- \       'transparent_background': 1
--- \     }
--- \   }
--- \ }
+  -- Allow alt+j/k to move lines up and down
+  map.n('<M-k>', '<Esc>:m .-2<CR>')
+  map.n('<M-j>', '<Esc>:m .+1<CR>')
+  map.i('<M-j>', '<Esc>:m .+1<CR>==gi')
+  map.i('<M-k>', '<Esc>:m .-2<CR>==gi')
+  map.x('<M-j>', ":m '>+1<CR>gv-gv")
+  map.x('<M-k>', ":m '<-2<CR>gv-gv")
 
--- Escape key delay
--- set timeoutlen=1000 ttimeoutlen=0
--- colorscheme monokai
--- colorscheme gruvbox
--- colorscheme one
--- colorscheme spaceduck
--- colorscheme nord
--- colorscheme wal
---colorscheme {{ colorscheme }}
---set background={{ background }}
+  -- Meh
+  map.v('<', '<gv')
+  map.v('>', '>gv')
 
 end
 return M

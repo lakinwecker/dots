@@ -2,6 +2,7 @@ M = {}
 
 
 function M.init(use)
+  use { 'simrat39/rust-tools.nvim' }
   use {
     'neovim/nvim-lspconfig',
     after = 'cmp-nvim-lsp',
@@ -18,17 +19,35 @@ function M.init(use)
         local server_available, requested_server = lsp_installer_servers.get_server(name)
         if server_available then
             requested_server:on_ready(function ()
-              local opts = {}
-              if name == 'rust_analyzer' then
+              local opts = {
+                 settings = {
+                    ["rust-analyzer"] = {
+                        completion = {
+                            postfix = {
+                                enable = false
+                            }
+                        },
+                        checkOnSave = {
+                            command = "clippy"
+                        },
+                    },
+                    Lua = {
+                      diagnostics = {
+                        globals = {'vim'}
+                      }
+                    }
+                }
+              }
+              if requested_server.name == 'rust_analyzer' then
                 -- Initialize the LSP via rust-tools instead
-                require('rust-tools').setup {
+                --require('rust-tools').setup {
                     -- The "server" property provided in rust-tools setup function are the
                     -- settings rust-tools will provide to lspconfig during init.            -- 
                     -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
                     -- with the user's own settings (opts).
-                    requested_server = vim.tbl_deep_extend("force", requested_server:get_default_options(), opts),
-                }
-                requested_server:attach_buffers()
+                    --requested_server = vim.tbl_deep_extend("force", requested_server:get_default_options(), opts),
+                --}
+                --requested_server:attach_buffers()
               else
                 requested_server:setup(opts)
               end
@@ -45,5 +64,6 @@ function M.init(use)
       table.insert(runtime_path, 'lua/?/init.lua')
     end,
   }
+  use { 'williamboman/nvim-lsp-installer' }
 end
 return M

@@ -1,6 +1,6 @@
 M = {}
 -- My General config
-function M.Config ()
+function M.init ()
   vim.g.mapleader = ","
 
   -- Security 
@@ -8,7 +8,7 @@ function M.Config ()
 
   -- Maintain undo history between sessions
   vim.o.undofile = true
-  vim.o.undodir = "~/nvim/undo"
+  vim.o.undodir = "/home/lakin/nvim/undo"
 
   -- Better display for messages
   vim.o.cmdheight = 2
@@ -22,6 +22,7 @@ function M.Config ()
   -- Searching
   vim.o.hlsearch = true
   vim.o.incsearch = true
+  vim.o.ignorecase = true
 
   -- Default indentation
   vim.o.shiftwidth = 4
@@ -29,7 +30,6 @@ function M.Config ()
   vim.o.softtabstop = 4
   vim.o.smarttab = true
   vim.o.expandtab = true
-  
-  -- TODO: vim.o.nowrap = true
+
 end
 return M
