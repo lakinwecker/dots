@@ -24,7 +24,7 @@ require('packer').startup(function(use)
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
-    "tree", "telescope",
+    "tree", "mytelescope",
     -- Random Features
     "autopairs", "myundotree", "projectionist", "todotxt", "gitlinker",
     "gist", "vimvinegar",

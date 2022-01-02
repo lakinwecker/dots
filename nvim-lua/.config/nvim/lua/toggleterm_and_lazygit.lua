@@ -10,6 +10,9 @@ function M.init(use)
   local Terminal  = require('toggleterm.terminal').Terminal
   local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction='float' })
 
-  map.n('<leader>ti', "<cmd>lua lazygit:toggle()<CR>")
+  _lazygit_toggle = function()
+    lazygit:toggle()
+  end
+  map.n('<leader>ti', "<cmd>lua _lazygit_toggle()<CR>")
 end
 return M
