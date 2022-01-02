@@ -21,7 +21,6 @@ function M.init(use)
   use { 'saadparwaiz1/cmp_luasnip' }
   use { 'rafamadriz/friendly-snippets', event = 'InsertEnter' }
   use { 'hrsh7th/cmp-nvim-lsp', event = 'BufReadPre' }
-  use { 'williamboman/nvim-lsp-installer' }
   use {
     'hrsh7th/nvim-cmp',
     config = function()

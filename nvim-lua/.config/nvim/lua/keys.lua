@@ -1,6 +1,7 @@
 M = {}
 
-function map(mode, pattern, command, noremap, silent)
+local opts = function(noremap, silent)
+  
   if noremap == nil then
     noremap = true
   end
@@ -8,25 +9,26 @@ function map(mode, pattern, command, noremap, silent)
   if silent == nil then
     silent = true
   end
-  vim.api.nvim_set_keymap(mode, pattern, command, { noremap=noremap, silent=silent })
+  return { noremap=noremap, silent=silent }
 end
 
-
-function M.n(pattern, command, noremap, silent)
-  map('n', pattern, command, noremap, silent)
+local keymap = function(mode, pattern, command, noremap, silent)
+  vim.api.nvim_set_keymap(mode, pattern, command, opts(noremap, silent))
 end
 
-function M.i(pattern, command, noremap, silent)
-  map('i', pattern, command, noremap, silent)
+local buf_keymap = function(bufnr, mode, pattern, command, noremap, silent)
+  vim.api.nvim_buf_set_keymap(bufnr, mode, pattern, command, opts(noremap, silent))
 end
 
-function M.x(pattern, command, noremap, silent)
-  map('x', pattern, command, noremap, silent)
-end
+function M.n(...) keymap('n', ...) end
+function M.i(...) keymap('i', ...) end
+function M.x(...) keymap('x', ...) end
+function M.v(...) keymap('v', ...) end
 
-function M.v(pattern, command, noremap, silent)
-  map('v', pattern, command, noremap, silent)
-end
+function M.buf_n(bufnr, ...) buf_keymap(bufnr, 'n', ...) end
+function M.buf_i(bufnr, ...) buf_keymap(bufnr, 'i', ...) end
+function M.buf_x(bufnr, ...) buf_keymap(bufnr, 'x', ...) end
+function M.buf_v(bufnr, ...) buf_keymap(bufnr, 'v', ...) end
 
 return M
 

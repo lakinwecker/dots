@@ -1,7 +1,8 @@
 M = {}
 function M.init(use)
-  use {
-    'mfussenegger/nvim-dap',
-  }
+  -- TODO: enable this.
+  -- use {
+    -- 'mfussenegger/nvim-dap',
+  -- }
 end
 return M
