@@ -6,18 +6,9 @@
 M = {}
 function M.init(use)
   use {
-    'saadparwaiz1/cmp_luasnip',
-    after = 'nvim-cmp',
-  }
-  use {
-    'rafamadriz/friendly-snippets',
-    event = 'InsertEnter',
-  }
-  use {
     'L3MON4D3/LuaSnip',
-    after = 'friendly-snippets',
     config = function()
-      local ls = require 'luasnip'
+      local ls = require('luasnip')
       ls.config.set_config {
         history = true,
         updateevents = 'TextChanged,TextChangedI',
@@ -27,19 +18,15 @@ function M.init(use)
       }
     end,
   }
-  use {
-    'hrsh7th/cmp-nvim-lsp',
-    event = 'BufReadPre',
-  }
-  use {
-    'williamboman/nvim-lsp-installer',
-  }
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'rafamadriz/friendly-snippets', event = 'InsertEnter' }
+  use { 'hrsh7th/cmp-nvim-lsp', event = 'BufReadPre' }
+  use { 'williamboman/nvim-lsp-installer' }
   use {
     'hrsh7th/nvim-cmp',
-    after = 'LuaSnip',
     config = function()
-      local luasnip = require 'luasnip'
-      local cmp = require 'cmp'
+      local luasnip = require('luasnip')
+      local cmp = require('cmp')
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -78,20 +65,9 @@ function M.init(use)
       }
     end,
   }
-  use {
-    'hrsh7th/cmp-nvim-lua',
-    after = 'cmp_luasnip',
-  }
-  use {
-    'hrsh7th/cmp-buffer',
-    after = 'cmp-nvim-lua',
-  }
-  use {
-    'hrsh7th/cmp-path',
-    after = 'cmp-buffer',
-  }
-  use {
-    "lukas-reineke/cmp-rg"
-  }
+  use { 'hrsh7th/cmp-nvim-lua' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/cmp-path' }
+  use { "lukas-reineke/cmp-rg" }
 end
 return M
