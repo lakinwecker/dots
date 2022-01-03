@@ -103,32 +103,17 @@ function M.init(use)
     end,
   }
   use { 'williamboman/nvim-lsp-installer' }
--- nmap <silent> [c <Plug>(coc-diagnostic-prev)
--- nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
+-- TODO: Old commands I had that I haven't ported yet.
 -- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 -- inoremap <silent><expr> <TAB>
 -- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 -- inoremap <silent><expr> <c-space> coc#refresh()
 -- inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 -- Remap keys for gotos
--- nmap <leader>bd <Plug>(coc-definition)
--- nmap <leader>by <Plug>(coc-type-definition)
--- nmap <leader>bi <Plug>(coc-implementation)
--- nmap <leader>br <Plug>(coc-references)
 -- nmap <leader>ws <Plug>(coc-metals-expand-decoration)
 -- nnoremap <silent> K :call <SID>show_documentation()<CR>
 -- " Remap for rename current word
--- nmap <leader>rn <Plug>(coc-rename)
--- " Remap for format selected region
--- xmap <leader>f  <Plug>(coc-format-selected)
--- nmap <leader>f  <Plug>(coc-format-selected)
--- " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
--- xmap <leader>a  <Plug>(coc-codeaction-selected)
--- nmap <leader>a  <Plug>(coc-codeaction-selected)
--- " Remap for do codeAction of current line
--- nmap <leader>ac  <Plug>(coc-codeaction)
--- nmap <leader>qf  <Plug>(coc-fix-current)
 -- nmap <silent> <TAB> <Plug>(coc-range-select)
 -- xmap <silent> <TAB> <Plug>(coc-range-select)
 -- xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
