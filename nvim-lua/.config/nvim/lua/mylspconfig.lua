@@ -1,4 +1,4 @@
-
+M = {}
 
 function M.init(use)
 
@@ -73,15 +73,15 @@ function M.init(use)
               }
               if requested_server.name == 'rust_analyzer' then
                 -- Initialize the LSP via rust-tools instead
-                --require('rust-tools').setup {
+                require('rust-tools').setup {
                     -- The "server" property provided in rust-tools setup function are the
                     -- settings rust-tools will provide to lspconfig during init.
                     --
                     -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
                     -- with the user's own settings (opts).
-                    --requested_server = vim.tbl_deep_extend("force", requested_server:get_default_options(), opts),
-                --}
-                --requested_server:attach_buffers()
+                    requested_server = vim.tbl_deep_extend("force", requested_server:get_default_options(), opts),
+                }
+                requested_server:attach_buffers()
               else
                 requested_server:setup(opts)
               end

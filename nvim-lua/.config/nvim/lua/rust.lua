@@ -1,5 +1,5 @@
 M = {}
-function M.init(use) 
+function M.init(use)
   use {
     'saecki/crates.nvim',
     tag = 'v0.1.0',
