@@ -79,7 +79,7 @@ function M.init(use)
                   --
                   -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
                   -- with the user's own settings (opts).
-                  requested_server = vim.tbl_deep_extend(
+                  server = vim.tbl_deep_extend(
                     "force",
                     requested_server:get_default_options(),
                     opts
