@@ -20,7 +20,7 @@ require('packer').startup(function(use)
     -- Collaboration
     "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
-    "mylspconfig", "dap", "rust", "elm", "jsts",
+    "mydap", "mypython", "mylspconfig", "rust", "elm", "jsts",
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
@@ -36,6 +36,11 @@ require('packer').startup(function(use)
     require(plugin).init(use)
   end
 end)
+
+local map = require("keys")
+map.n("<leader>pc", ":PackerCompile<CR>")
+map.n("<leader>ps", ":PackerSync<CR>")
+map.n("<leader>pr", ":PackerClean<CR>")
 
 vim.o.guicursor = 'n-v-c-i-ci-sm-ve:block,r-cr-o:hor20'
 vim.o.completeopt = 'menuone,preview,noinsert,noselect'

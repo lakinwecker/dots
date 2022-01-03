@@ -4,7 +4,6 @@ function M.init(use)
     "mfussenegger/nvim-dap-python",
     config = function()
       local dap = require('dap')
-      print(dap)
       dap.adapters.python = {
         type = 'executable';
         command = os.getenv('HOME') .. '/.virtualenvs/debugpy/bin/python';
