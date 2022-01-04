@@ -11,9 +11,9 @@ function M.init()
   vim.wo.number = true
 
   -- disable startup message
-  vim.opt_global.shortmess:add("I")
+  vim.opt.shortmess:append({ I = true })
   -- don't give |ins-completion-menu| messages.
-  vim.opt_global.shortmess:add("c")
+  vim.opt_global.shortmess:append({c = true})
   vim.opt_global.shortmess:remove("F")
 
   -- hide mode display
