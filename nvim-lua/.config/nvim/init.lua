@@ -1,5 +1,5 @@
-require("general").init()
-require("ui").init()
+require("eldub.general").init()
+require("eldub.ui").init()
 
 -- TODO: figure this out/configure dap (Goes with the rust thingy)
 
@@ -14,30 +14,30 @@ require('packer').startup(function(use)
     -- Plugin management / Utils
     "plenary",
     -- Colors / Style
-    "mydracula", "devicons", "treesitter", "blankline",
+    "dracula", "devicons", "treesitter", "blankline",
     -- Statuses / side bar info
-    "mylualine", "mycokeline", "mygitsigns", "diffview",
+    "lualine", "cokeline", "gitsigns", "diffview",
     -- Collaboration
     "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
-    "mydap", "mypython", "mylspconfig", "rust", "elm", "jsts",
+    "dap", "python", "lspconfig", "rust", "elm", "jsts",
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
-    "tree", "mytelescope",
+    "tree", "telescope",
     -- Random Features
-    "autopairs", "myundotree", "projectionist", "todotxt", "gitlinker",
+    "autopairs", "undotree", "projectionist", "todotxt", "gitlinker",
     "gist", "vimvinegar",
     -- Writing
     "writing"
   }
 
   for _, plugin in ipairs(plugins) do
-    require(plugin).init(use)
+    require(string.format("eldub.%s", plugin)).init(use)
   end
 end)
 
-local map = require("keys")
+local map = require("eldub.keys")
 map.n("<leader>pc", ":PackerCompile<CR>")
 map.n("<leader>ps", ":PackerSync<CR>")
 map.n("<leader>pr", ":PackerClean<CR>")
