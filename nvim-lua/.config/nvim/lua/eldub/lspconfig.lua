@@ -5,7 +5,6 @@ function M.init(use)
   use { 'simrat39/rust-tools.nvim' }
   use {
     'neovim/nvim-lspconfig',
-    after = 'cmp-nvim-lsp',
     config = function()
       vim.lsp.set_log_level("debug")
 

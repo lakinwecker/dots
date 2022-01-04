@@ -2,14 +2,7 @@ M = {}
 function M.init (use)
   use {
     'nvim-lualine/lualine.nvim',
-    after = 'nvim-web-devicons',
     config = function()
-      local function cokeline_visible()
-        return (vim.opt.showtabline._value ~= 0)
-      end
-      local function cokeline_hidden()
-        return (vim.opt.showtabline._value == 0)
-      end
       local function filestatus()
         if vim.bo.modified then
           return '  '
@@ -36,6 +29,9 @@ function M.init (use)
         end
         return table.concat(buf_client_names, ', ')
       end
+      local function metals()
+        return vim.g['metals_status'] or ""
+      end
       require('lualine').setup {
         options = {
           icons_enabled = true,
@@ -46,10 +42,10 @@ function M.init (use)
         },
         sections = {
           lualine_a = {
-            { 'mode', cond = cokeline_visible },
-            { 'filetype', icon_only = true, colored = false, cond = cokeline_hidden },
-            { 'filename', file_status = false, cond = cokeline_hidden },
-            { filestatus, padding = 0, cond = cokeline_hidden },
+            { 'mode' },
+            { 'filetype', icon_only = true, colored = false },
+            { 'filename', file_status = false },
+            { filestatus, padding = 0 },
           },
           lualine_b = { { 'b:gitsigns_head', icon = '' } },
           lualine_c = { { 'diff', source = diff_source, icon = '', color = { fg = '#f1502f' } } },
@@ -59,12 +55,10 @@ function M.init (use)
               sources = { 'nvim_diagnostic' },
               symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
             },
+            { metals },
             { lsp, icon = ' ' },
           },
-          lualine_y = {
-            'encoding',
-            { 'fileformat', symbols = { unix = 'LF', dos = 'CRLF', mac = 'CR' } },
-          },
+          lualine_y = { 'encoding' },
           lualine_z = { 'location' },
         },
         inactive_sections = {

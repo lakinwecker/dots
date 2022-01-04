@@ -1,15 +1,13 @@
 M = {}
 function M.init_scala()
-  local metals_config = require("metals").bare_config()
-  metals_config.init_options.statusBarProvider = "on"
-  require("metals").initialize_or_attach(metals_config)
+  local metals = require("metals")
   local ide = require("eldub.ide")
   local map = require("eldub.keys")
-  local n = function(...)
-    map.n( ...)
-  end
 
-  ide.init(n)
+  local config = metals.bare_config()
+  config.init_options.statusBarProvider = "on"
+  metals.initialize_or_attach(config)
+  ide.init(map.n)
 end
 function M.init(use)
   use {
