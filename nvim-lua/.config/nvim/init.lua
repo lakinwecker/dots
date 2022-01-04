@@ -20,7 +20,7 @@ require('packer').startup(function(use)
     -- Collaboration
     "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
-    "dap", "python", "lspconfig", "rust", "elm", "jsts",
+    "dap", "python", "lspconfig", "rust", "elm", "jsts", "metals",
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
@@ -42,7 +42,6 @@ map.n("<leader>pc", ":PackerCompile<CR>")
 map.n("<leader>ps", ":PackerSync<CR>")
 map.n("<leader>pr", ":PackerClean<CR>")
 
+-- TODO: figure out what these are for and then see if I want to use them or not.
 vim.o.guicursor = 'n-v-c-i-ci-sm-ve:block,r-cr-o:hor20'
 vim.o.completeopt = 'menuone,preview,noinsert,noselect'
-
--- Below this are icp's keybindings
