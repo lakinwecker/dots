@@ -6,7 +6,7 @@ function M.init(use)
       require("toggleterm").setup{}
     end,
   }
-  local map = require("keys")
+  local map = require("eldub.keys")
   local Terminal  = require('toggleterm.terminal').Terminal
   local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction='float' })
 

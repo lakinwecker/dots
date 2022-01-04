@@ -7,6 +7,8 @@ function M.init(use)
     'neovim/nvim-lspconfig',
     after = 'cmp-nvim-lsp',
     config = function()
+      vim.lsp.set_log_level("debug")
+
       local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
       for type, icon in pairs(signs) do
         local hl = 'DiagnosticSign' .. type
@@ -20,7 +22,7 @@ function M.init(use)
         if server_available then
             requested_server:on_ready(function ()
               local on_attach = function(_, bufnr)
-                local map = require("keys")
+                local map = require("eldub.keys")
                 local n = function(...)
                   map.buf_n(bufnr, ...)
                 end

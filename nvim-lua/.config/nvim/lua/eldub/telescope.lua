@@ -27,7 +27,7 @@ function M.init(use)
     end,
   }
 
-  local map = require("keys")
+  local map = require("eldub.keys")
   -- Search within open buffers
   map.n('<leader>\'', "<cmd>lua require('telescope.builtin').buffers()<CR>")
 

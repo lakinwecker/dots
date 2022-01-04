@@ -1,7 +1,5 @@
 M = {}
-local map = require("keys")
-
-function M.init(use, map)
+function M.init(use)
   use {
     'kyazdani42/nvim-tree.lua',
     cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
@@ -18,7 +16,7 @@ function M.init(use, map)
     end,
   }
 
-  local map = require("keys")
+  local map = require("eldub.keys")
   map.n('<C-n>', ':NvimTreeToggle<CR>')
   map.n('<C-b>', ':NvimTreeFocus<CR>')
 

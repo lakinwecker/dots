@@ -41,7 +41,7 @@ function M.init()
   -- colorscheme {{ colorscheme }}
   -- set background={{ background }}
 
-  local map = require("keys")
+  local map = require("eldub.keys")
   -- Clear search
   map.n('<Esc>', ':noh <CR>')
   map.n('<leader>n', ':nohlsearch<CR>')

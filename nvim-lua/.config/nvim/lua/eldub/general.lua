@@ -3,7 +3,7 @@ M = {}
 function M.init ()
   vim.g.mapleader = ","
 
-  -- Security 
+  -- Security
   vim.o.modelines = 0
 
   -- Maintain undo history between sessions
