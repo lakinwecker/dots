@@ -16,7 +16,7 @@ require('packer').startup(function(use)
     -- Colors / Style
     "dracula", "devicons", "treesitter", "blankline",
     -- Statuses / side bar info
-    "lualine", "cokeline", "gitsigns", "diffview",
+    "lualine", "gitsigns", "diffview",
     -- Collaboration
     "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
