@@ -21,6 +21,7 @@ require('packer').startup(function(use)
     "editorconfig", "toggleterm_and_lazygit",
     -- Language Servers/Support
     "dap", "python", "lspconfig", "rust", "elm", "jsts", "metals",
+    "troubles",
     -- Completion stuff
     "completion",
     -- Searching / Browsing etc.
