@@ -107,7 +107,7 @@ modules-right = brightness volume wireless-network wired-network battery1 cpu me
 
 [bar/sebbers-intel-dp-3]
 inherit = bar/1080p
-monitor = DP-1
+monitor = DP-3
 
 modules-left = i3 mpd
 modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
