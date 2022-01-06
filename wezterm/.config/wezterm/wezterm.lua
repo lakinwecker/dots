@@ -6,12 +6,12 @@ return {
     "PowerlineExtraSymbols",
     "Noto Color Emoji",
   }),
-  font_size = 10.0,
+  font_size = 11.0,
   window_padding = {
-    left = 30,
-    right = 30,
-    top = 30,
-    bottom = 30,
+    left = 20,
+    right = 20,
+    top = 20,
+    bottom = 20,
   },
   colors = {
     foreground = "#f8f8f2",
