@@ -21,6 +21,7 @@ function M.init(use)
   use { 'saadparwaiz1/cmp_luasnip' }
   use { 'rafamadriz/friendly-snippets', event = 'InsertEnter' }
   use { 'hrsh7th/cmp-nvim-lsp', event = 'BufReadPre' }
+  use { 'kdheepak/cmp-latex-symbols' }
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -55,18 +56,12 @@ function M.init(use)
           end,
         },
         sources = {
-          -- { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'buffer' },
-          { name = 'path' },
-          { name = 'rg' },
+          { name = 'nvim_lsp' },
+          { name = 'latex_symbols' },
         },
       }
     end,
   }
   use { 'hrsh7th/cmp-nvim-lua' }
-  use { 'hrsh7th/cmp-buffer' }
-  use { 'hrsh7th/cmp-path' }
-  use { "lukas-reineke/cmp-rg" }
 end
 return M
