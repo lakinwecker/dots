@@ -15,7 +15,7 @@ function M.init(use)
       end
 
       local lsp_installer_servers = require('nvim-lsp-installer.servers')
-      local wanted_language_servers = {'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd'}
+      local wanted_language_servers = {'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd', 'tsserver'}
       for _, name in ipairs(wanted_language_servers) do
         local server_available, requested_server = lsp_installer_servers.get_server(name)
         if server_available then
