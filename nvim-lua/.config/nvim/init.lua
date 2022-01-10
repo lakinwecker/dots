@@ -4,7 +4,6 @@ require("eldub.ui").init()
 -- TODO: figure this out/configure dap (Goes with the rust thingy)
 
 require('packer').startup(function(use)
-  -- Go Packers. Except for anti-vaxer Aaron Rodgers. Fuck him.
   use { 'wbthomason/packer.nvim' }
 
   -- These files are all located in lua/{name}.lua
@@ -13,22 +12,51 @@ require('packer').startup(function(use)
   local plugins = {
     -- Plugin management / Utils
     "plenary",
+
     -- Colors / Style
-    "dracula", "devicons", "treesitter", "blankline",
+    "dracula",
+    "devicons",
+    "treesitter",
+    "blankline",
+
     -- Statuses / side bar info
-    "lualine", "gitsigns", "diffview",
+    "lualine",
+    "gitsigns",
+    "diffview",
+
     -- Collaboration
-    "editorconfig", "toggleterm_and_lazygit",
+    "editorconfig",
+    "toggleterm_and_lazygit",
+
     -- Language Servers/Support
-    "dap", "python", "lspconfig", "rust", "elm", "jsts", "metals",
+    "dap",
+    "python",
+    "lspconfig",
+    "rust",
+    "elm",
+    "jsts",
+    "metals",
     "troubles",
+
     -- Completion stuff
     "completion",
+
     -- Searching / Browsing etc.
-    "tree", "telescope",
+    "tree",
+    "telescope",
+
+    -- Life org
+    "neorg",
+
     -- Random Features
-    "autopairs", "undotree", "projectionist", "todotxt", "gitlinker",
-    "gist", "vimvinegar",
+    "autopairs",
+    "undotree",
+    "projectionist",
+    "headlines",
+    "gitlinker",
+    "gist",
+    "vimvinegar",
+
     -- Writing
     "writing"
   }
