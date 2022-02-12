@@ -1,6 +1,7 @@
 alias ta='tmux attach-session -d -t'
 alias tl='tmux list-sessions'
 alias tc='tmux'
+alias ls='exa'
 #alias vim='nvim'
 alias irssi='TERM=screen-256color irssi'
 alias emacs="nvim"

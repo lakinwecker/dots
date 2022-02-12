@@ -3,7 +3,8 @@ trizen -Syu --needed clang clang-tools-extra cmake rsync gdb gcc \
        ccls fzf neovim python-neovim python-pylint ripgrep \
        tig python-virtualenv python-pipenv python36 subversion \
        vagrant virtualbox virtualbox-host-modules-arch linux-headers \
-       bloop gulp sbt pass ruby-sass watchman
+       bloop gulp sbt pass ruby-sass watchman \
+       bear 
 
 # Jabba for java
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
