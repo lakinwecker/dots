@@ -63,7 +63,7 @@ bindsym $mod+Shift+d exec zsh -c "rofi -show run"
 
 # Desktop/laptop mode
 bindsym $mod+Shift+n exec --no-startup-id ~/bin/xrandr-sebbers.sh
-bindsym $mod+Shift+m exec --no-startup-id ~/bin/xrandr-sebbers-desk.sh
+bindsym $mod+Shift+m exec --no-startup-id ~/bin/xrandr-sebbers-vivid-desk.sh
 
 #bindsym $mod+d exec i3-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
