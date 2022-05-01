@@ -86,7 +86,7 @@ inherit = bar/1080p
 monitor = eDP-1
 
 modules-left = i3
-modules-right = brightness volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+modules-right = brightness volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
 ; sebbers
@@ -120,7 +120,7 @@ inherit = bar/1080p
 monitor = HDMI-1
 
 modules-left = i3
-modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+modules-right = volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
 ; scarlet
@@ -130,7 +130,7 @@ inherit = bar/1080p
 monitor = DP-0
 
 modules-left = i3
-modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+modules-right = volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
 [bar/scarlet-dp-4]
@@ -138,7 +138,7 @@ inherit = bar/4k
 monitor = HDMI-0
 
 modules-left = i3
-modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+modules-right = volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 ;---------------------------------------------------------------------------------
 [bar/triss-2]
@@ -146,7 +146,7 @@ inherit = bar/1080p
 monitor = HDMI-2
 
 modules-left = i3
-modules-right = volume wireless-network wired-network battery1 battery2 cpu memory mydate mytime
+modules-right = volume wireless-network wired-network battery1 cpu memory mydate mytime
 
 
 
@@ -158,7 +158,7 @@ type = custom/script
 exec = "printf "  %.0f" `light -G`"
 scroll-up = light -A 5
 scroll-down = light -U 5
-interval = 5.0
+interval = 10.0
 
 [module/battery1]
 type = internal/battery
@@ -191,45 +191,12 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-framerate = 750
-
-[module/battery2]
-type = internal/battery
-full-at = 90
-battery = BAT0
-
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
+animation-charging-framerate = 5000
 
 
 [module/cpu]
 type = internal/cpu
-interval = 2.0
+interval = 5.0
 format = <label> <ramp-coreload>
 label = 
 
@@ -325,7 +292,7 @@ bar-progress-empty-foreground = #44
 [module/wireless-network]
 type = internal/network
 interface = wlp4s0
-interval = 3.0
+interval = 5.0
 ping-interval = 10
 
 format-connected = <ramp-signal> <label-connected>
@@ -348,7 +315,7 @@ animation-packetloss-framerate = 500
 [module/wired-network-trunkie]
 type = internal/network
 interface = enp5s0
-interval = 3.0
+interval = 5.0
 
 label-connected =    %{T3}%local_ip%%{T-}
 label-disconnected-foreground = #66
@@ -356,7 +323,7 @@ label-disconnected-foreground = #66
 [module/wired-network]
 type = internal/network
 interface = enp0s31f6
-interval = 3.0
+interval = 5.0
 
 label-connected =    %{T3}%local_ip%%{T-}
 label-disconnected-foreground = #66
@@ -415,6 +382,7 @@ tail = true
 click-left = bash -c "kill -SIGUSR1 %pid%"
 format-foreground = #BBB
 format-padding = 0
+interval = 60
 
 [module/mytime]
 type = custom/script
@@ -424,6 +392,7 @@ click-left = bash -c "kill -SIGUSR1 %pid%"
 
 format-foreground = #FFF
 format-padding = 0
+interval = 60
 
 
 
@@ -432,7 +401,7 @@ type = internal/temperature
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 0.5
+interval = 5
 
 ; Thermal zone to use
 ; To list all the zone types, run
@@ -457,7 +426,7 @@ type = internal/temperature
 
 ; Seconds to sleep between updates
 ; Default: 1
-interval = 0.5
+interval = 5
 
 ; Thermal zone to use
 ; To list all the zone types, run
