@@ -22,6 +22,10 @@ function M.init(use)
   use { 'rafamadriz/friendly-snippets', event = 'InsertEnter' }
   use { 'hrsh7th/cmp-nvim-lsp', event = 'BufReadPre' }
   use { 'kdheepak/cmp-latex-symbols' }
+  --use { 'hrsh7th/cmp-buffer' }
+  --use { 'hrsh7th/cmp-path' }
+  --use { 'hrsh7th/cmp-cmdline' }
+  --use { 'hrsh7th/nvim-cmp' }
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -54,6 +58,13 @@ function M.init(use)
               fallback()
             end
           end,
+          ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+          ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+          ['<C-e>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+          }),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         },
         sources = {
           { name = 'nvim_lsp' },

@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -fsSL https://starship.rs/install.sh | bash -s -- -b /home/lakin/.local/bin
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir=/home/lakin/bin

@@ -1,0 +1,14 @@
+[Unit]
+Description=Get me my morning/evening news
+RefuseManualStart=no
+RefuseManualStop=no
+ 
+[Timer]
+Persistent=false
+OnCalendar=*-*-* 06:30:00
+OnCalendar=*-*-* 17:15:00
+Persistent=true
+Unit=nytimes.service
+ 
+[Install]
+WantedBy=default.target

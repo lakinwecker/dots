@@ -15,6 +15,7 @@ require('packer').startup(function(use)
 
     -- Colors / Style
     "dracula",
+    -- "one",
     "devicons",
     "treesitter",
     "blankline",
@@ -49,7 +50,7 @@ require('packer').startup(function(use)
     "neorg",
 
     -- Random Features
-    "autopairs",
+    -- "autopairs",
     "undotree",
     "projectionist",
     "headlines",
