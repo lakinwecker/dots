@@ -63,7 +63,7 @@ bindsym $mod+Shift+d exec zsh -c "rofi -show run"
 
 # Desktop/laptop mode
 bindsym $mod+Shift+n exec --no-startup-id ~/bin/xrandr-sebbers.sh
-bindsym $mod+Shift+m exec --no-startup-id ~/bin/xrandr-sebbers-desk.sh
+bindsym $mod+Shift+m exec --no-startup-id ~/bin/xrandr-sebbers-vivid-desk.sh
 
 #bindsym $mod+d exec i3-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -300,6 +300,7 @@ exec --no-startup-id picom --config=/home/lakin/.config/picom/config
 exec --no-startup-id /home/lakin/bin/polybar.sh &
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id /home/lakin/bin/wallpaper.py
+exec --no-startup-id dropbox
 exec --no-startup-id xss-lock -- /home/lakin/bin/fuzzy-lock.sh #i3lock -n -i background_image.png &
 exec --no-startup-id setxkbmap -option compose:ralt
 exec --no-startup-id "xmodmap ~/.Xmodmap"

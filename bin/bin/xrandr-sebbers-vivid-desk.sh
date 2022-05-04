@@ -2,7 +2,7 @@
 xrandr
 xrandr --auto --output eDP1 --mode 1920x1080
 #xrandr --auto --output DP-1 --off
-xrandr --auto --output DP3 --mode 1920x1080 --left-of eDP1
+xrandr --auto --output DP3 --mode 1920x1080 --above eDP1
 xrandr --auto --output VIRTUAL-1 --off
 xrandr --auto --output HDM-1 --off
 xrandr --auto --output HDM-2 --off
