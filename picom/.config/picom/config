@@ -1,6 +1,6 @@
 # Uses GLX backend
 backend = "glx";
-vsync = "true";	# VSync with MESA_swap_control OpenGL extension
+vsync = true;	# VSync with MESA_swap_control OpenGL extension
 unredir-if-possible = true;
 
 

@@ -1,0 +1,8 @@
+[Unit]
+Description=Get me my morning/evening news
+RefuseManualStart=no
+RefuseManualStop=yes
+
+[Service]
+ExecStart=/home/lakin/bin/nytimes.fish
+Type=oneshot
