@@ -51,7 +51,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec /home/lakin/bin/hostkitty
 bindsym $mod+Ctrl+d exec /home/lakin/bin/dotstemplate darkmode
 bindsym $mod+Ctrl+l exec /home/lakin/bin/dotstemplate lightmode
-bindsym $mod+Return exec /home/lakin/bin/hostwezterm
+bindsym $mod+Return exec /home/lakin/bin/hostalacritty
 # bindsym $mod+Return exec konsole
 
 # kill focused window
