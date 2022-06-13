@@ -4,6 +4,8 @@ cd /home/lakin/mail/gmail/
 gmi sync
 cd /home/lakin/mail/lichess/
 gmi sync
+cd /home/lakin/mail/lichess/
+gmi sync
 cd
 mbsync -c ~/.config/mbsync/mbsyncrc personal
 notmuch new
