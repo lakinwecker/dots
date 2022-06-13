@@ -65,7 +65,7 @@ thread_subject= oldest
     sign_by_default = True
     encrypt_by_default = True
     type = sendmail
-    sendmail_command = msmtp --account=wecker_ca -t
+    sendmail_command = msmtp --account=personal -t
     draft_box = maildir:///home/lakin/mail/personal/Drafts
     sent_box = maildir:///home/lakin/mail/personal/Sent
     [[[abook]]]
@@ -114,6 +114,7 @@ thread_subject= oldest
   P = search is:promotion
   C = search is:content
   S = search is:sent
+  B = search tag:killed AND NOT tag:trash
   % = "shellescape '/home/lakin/bin/syncmail'; refresh"
   R = "refresh"
   '1' = search tag:inbox AND tag:personal AND NOT tag:killed

@@ -13,10 +13,10 @@ rename = True
 #max_age = 15
 
 # rules
-personal/Inbox = 'tag:spam':personal/Junk 'NOT tag:inbox':personal/Archive 'tag:killed':personal/Trash
-gmail/mail/Inbox = 'tag:spam':gmail/mail/Junk 'NOT tag:inbox':gmail/mail/Archive 'tag:killed':gmail/mail/Trash
-lichess/mail/Inbox = 'tag:spam':lichess/mail/Junk 'NOT tag:inbox':lichess/mail/Archive 'tag:killed':lichess/mail/Trash
-vividtheory/mail/Inbox = 'tag:spam':vividtheory/mail/Junk 'NOT tag:inbox':vividtheory/mail/Archive 'tag:killed':vividtheory/mail/Trash
+personal/Inbox = 'tag:spam':personal/Junk 'NOT tag:inbox':personal/Archive 'tag:trash':personal/Trash
+gmail/mail/Inbox = 'tag:spam':gmail/mail/Junk 'NOT tag:inbox':gmail/mail/Archive 'tag:trash':gmail/mail/Trash
+lichess/mail/Inbox = 'tag:spam':lichess/mail/Junk 'NOT tag:inbox':lichess/mail/Archive 'tag:trash':lichess/mail/Trash
+vividtheory/mail/Inbox = 'tag:spam':vividtheory/mail/Junk 'NOT tag:inbox':vividtheory/mail/Archive 'tag:trash':vividtheory/mail/Trash
 
 
 [Filter.0]

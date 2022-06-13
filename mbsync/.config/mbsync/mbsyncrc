@@ -1,0 +1,67 @@
+#-----------------------------SCHOOL------------------------------------------
+IMAPAccount school
+# Address to connect to
+Host 127.0.0.1
+Port 1143
+User lakin.wecker@ucalgary.ca
+PassCmd "pass school/email"
+SSLType None
+AuthMechs LOGIN
+
+IMAPStore school-remote
+Account school
+
+MaildirStore school-local
+# Copy folder hierarchy
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/mail/school/
+Inbox ~/mail/school/Inbox
+
+Channel school
+Far :school-remote:
+Near :school-local:
+# Include everything
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
+
+#-----------------------------SCHOOL------------------------------------------
+IMAPAccount personal
+# Address to connect to
+Host imap.mailbox.org
+Port 993
+User lakin@wecker.ca
+PassCmd "pass personal/email"
+SSLType IMAPS
+AuthMechs *
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+# Copy folder hierarchy
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/mail/personal/
+Inbox ~/mail/personal/Inbox
+
+Channel personal
+Far :personal-remote:
+Near :personal-local:
+# Include everything
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+Expunge Both
+Sync Full
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
+
+
