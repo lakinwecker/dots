@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh root@$1.lichess.ovh
+ssh root@$1.lichess.ovh -A
