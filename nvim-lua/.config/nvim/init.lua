@@ -12,10 +12,10 @@ require('packer').startup(function(use)
   local plugins = {
     -- Plugin management / Utils
     "plenary",
-
     -- Colors / Style
     "dracula",
     -- "one",
+    -- "gruvbox",
     "devicons",
     "treesitter",
     "blankline",

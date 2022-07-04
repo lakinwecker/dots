@@ -15,7 +15,8 @@ set $mod Mod4
 set $red         #ff0000
 set $white       #ffffff
 set $grey        #474d5d
-set $othergrey   #5c616c set $orange      #ff9500
+set $othergrey   #5c616c
+set $orange      #ff9500
 set $blue        #5294e2
 set $lightblue   #cfd6e6
 set $background  #e7e8eb
@@ -51,7 +52,7 @@ floating_modifier $mod
 #bindsym $mod+Return exec /home/lakin/bin/hostkitty
 bindsym $mod+Ctrl+d exec /home/lakin/bin/dotstemplate darkmode
 bindsym $mod+Ctrl+l exec /home/lakin/bin/dotstemplate lightmode
-bindsym $mod+Return exec /home/lakin/bin/hostalacritty
+bindsym $mod+Return exec /home/lakin/bin/hostkitty
 # bindsym $mod+Return exec konsole
 
 # kill focused window

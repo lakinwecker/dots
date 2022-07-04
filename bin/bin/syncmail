@@ -1,8 +1,12 @@
 #!/bin/sh
+# Move things that are killed but not in the trash to be in the trash
+notmuch tag +trash -- tag:killed AND NOT tag:trash
 afew --move-mails --all
 cd /home/lakin/mail/gmail/
 gmi sync
 cd /home/lakin/mail/lichess/
+gmi sync
+cd /home/lakin/mail/vividtheory/
 gmi sync
 cd
 mbsync -c ~/.config/mbsync/mbsyncrc personal
