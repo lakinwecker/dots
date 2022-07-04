@@ -14,7 +14,8 @@ require('packer').startup(function(use)
     "plenary",
     -- Colors / Style
     "dracula",
-    --"one",
+    -- "one",
+    -- "gruvbox",
     "devicons",
     "treesitter",
     "blankline",
