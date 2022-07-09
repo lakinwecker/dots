@@ -47,7 +47,7 @@ opacity-exclude = [
 ];
 opacity-rule = [
   "90:class_g *?= 'wezterm'",
-  "95:class_g *?= 'kitty'",
+  "98:class_g *?= 'kitty'",
   "95:class_g *?= 'alacritty'"
 ];
 

@@ -20,5 +20,5 @@ fi
 if [ "$hostname" == "sebbers" ]; then
     killall polybar
     polybar sebbers-intel &
-    #polybar sebbers-intel-dp3 &
+    polybar sebbers-intel-dp3 &
 fi
