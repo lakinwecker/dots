@@ -13,7 +13,8 @@ require('packer').startup(function(use)
     -- Plugin management / Utils
     "plenary",
     -- Colors / Style
-    "dracula",
+    -- "dracula",
+    "catppuccin",
     -- "one",
     -- "gruvbox",
     "devicons",
@@ -40,11 +41,13 @@ require('packer').startup(function(use)
     "troubles",
 
     -- Completion stuff
-    "completion",
+    -- "completion",
+    "coq", -- Fast completion
 
     -- Searching / Browsing etc.
     "tree",
     "telescope",
+    "hop",
 
     -- Life org
     "neorg",
