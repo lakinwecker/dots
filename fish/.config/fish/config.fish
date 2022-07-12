@@ -11,6 +11,7 @@ set -x CMAKE_BUILD_PARALLEL_LEVEL 12
 set -x EDITOR nvim
 set fish_greeting
 set -x BROWSER /usr/bin/firefox
+set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
 
 starship init fish | source
 source ~/.asdf/asdf.fish
