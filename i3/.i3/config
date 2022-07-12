@@ -256,7 +256,7 @@ focus_follows_mouse no
 #-------------------------------------------------------------------------------
 smart_gaps on
 gaps inner 5
-gaps outer 5
+gaps outer 2
 
 
 
