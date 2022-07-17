@@ -33,12 +33,14 @@ require('packer').startup(function(use)
     -- Language Servers/Support
     "dap",
     "python",
+    "metals",
     "lspconfig",
+    -- "formatting",
     "rust",
     "elm",
     "jsts",
-    "metals",
     "troubles",
+    "hover",
 
     -- Completion stuff
     -- "completion",
