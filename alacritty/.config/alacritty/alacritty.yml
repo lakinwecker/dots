@@ -280,7 +280,7 @@ schemes:
       white:   '0xebdbb2'
 
 # colors: *light
-colors: *dracula
+colors: *light
 
 # Visual Bell
 #

@@ -17,6 +17,7 @@ function M.init(use)
       vim.cmd [[augroup metals]]
       vim.cmd [[au!]]
       vim.cmd [[au FileType java,scala,sbt lua require("eldub.metals").init_scala()]]
+      vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
       vim.cmd [[augroup end]]
     end
   }

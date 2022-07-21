@@ -73,8 +73,8 @@ let g:netrw_winsize=25
 " colorscheme spaceduck
 " colorscheme nord
 " colorscheme wal
-colorscheme dracula
-set background=dark
+colorscheme one
+set background=light
 " colorscheme wal
 " let ayucolor="light"  " for light version of theme
 " colorscheme ayu
