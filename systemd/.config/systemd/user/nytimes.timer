@@ -5,8 +5,8 @@ RefuseManualStop=no
  
 [Timer]
 Persistent=false
-OnCalendar=*-*-* 06:30:00
-OnCalendar=*-*-* 17:15:00
+OnCalendar=*-*-* 07:00:00
+OnCalendar=*-*-* 18:00:00
 Persistent=true
 Unit=nytimes.service
  
