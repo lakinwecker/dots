@@ -1,4 +1,3 @@
 #!/usr/bin/bash
 hostname=`hostname`
-export KITTYCOLOR=dark
 kitty --config=/home/lakin/.config/kitty/kitty-$hostname.conf --single-instance --listen-on=unix:/home/lakin/tmp/kitty.sock

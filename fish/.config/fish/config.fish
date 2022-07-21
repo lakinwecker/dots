@@ -12,6 +12,7 @@ set -x EDITOR nvim
 set fish_greeting
 set -x BROWSER /usr/bin/firefox
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
+. ~/.asdf/plugins/java/set-java-home.fish
 
 starship init fish | source
 source ~/.asdf/asdf.fish

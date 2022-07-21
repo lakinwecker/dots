@@ -11,7 +11,7 @@ function M.init(use)
       vim.g.dracula_transparent_bg = true
       -- set custom lualine background color
       vim.g.dracula_lualine_bg_color = "#44475a"
-      vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+      vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
       vim.cmd('colorscheme catppuccin')
     end
   }
