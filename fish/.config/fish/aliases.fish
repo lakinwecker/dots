@@ -4,7 +4,6 @@ alias tc='tmux'
 alias ls='exa'
 #alias vim='nvim'
 alias irssi='TERM=screen-256color irssi'
-alias ssh='TERM=xterm-256color ssh'
 alias emacs="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"

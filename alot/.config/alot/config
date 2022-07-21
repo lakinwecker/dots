@@ -4,10 +4,10 @@ quit_on_last_bclose = True
 #theme=sup
 body_mimetype=text/plain
 #theme = solarized_dark
-#theme = sup
+theme = sup
 #prefer_plaintext=True
 #theme = solarized_dark
-theme = solarized_light
+#theme = solarized_light
 search_threads_sort_order = newest_first
 complete_matching_abook_only = False
 
