@@ -1,0 +1,80 @@
+#!/usr/bin/env python
+import os
+import random
+import sqlite3
+
+base_dir = "/home/lakin/wallpapers"
+database = "/tmp/wallpapers.db"
+
+DEBUG = True
+
+def pp(v):
+    if DEBUG:
+        print(v)
+    return v
+
+def create_db():
+    con = sqlite3.connect(database)
+    execute(con, """
+        CREATE TABLE IF NOT EXISTS current_wallpaper (
+            id INTEGER PRIMARY KEY,
+            path TEXT NOT NULL
+        );"""
+    )
+    return con
+
+def execute(con, sql):
+    if DEBUG:
+        print(f"SQL: {sql}")
+    try:
+        cur = con.cursor()
+        return cur.execute(sql)
+    finally:
+        con.commit()
+
+def run(command):
+    if DEBUG:
+        print(f"command: {command}")
+    os.system(command)
+
+def random_wallpaper():
+    possibilities = set()
+    for root, _, files in os.walk(base_dir):
+        for file in files:
+            full_path = os.path.join(root, file)
+            if '.git' not in full_path:
+                possibilities.add(full_path)
+
+    return random.choice(list(possibilities))
+
+def unload_old_wallpapers(con, current):
+    results = execute(con, "SELECT id, path FROM current_wallpaper ORDER BY id DESC")
+    if results:
+        for _id, path in results.fetchall():
+            if path == current:
+                continue
+            unload_wallpaper(path)
+            execute(con, f"DELETE FROM current_wallpaper WHERE id={_id}")
+
+def save_current(con, wallpaper):
+    execute(con, f'INSERT INTO current_wallpaper (path) VALUES ("{wallpaper}")')
+
+def load_wallpaper(wallpaper):
+    run(f'hyprctl hyprpaper preload "{wallpaper}"')
+    run(f'hyprctl hyprpaper wallpaper eDP-1,"{wallpaper}"')
+
+def unload_wallpaper(wallpaper):
+    run(f"hyprctl hyprpaper unload {wallpaper}")
+
+def main():
+    con = create_db()
+
+    new_wallpaper = pp(random_wallpaper())
+    load_wallpaper(new_wallpaper)
+
+    save_current(con, new_wallpaper)
+    unload_old_wallpapers(con, new_wallpaper)
+
+if __name__ == "__main__":
+    main()
+

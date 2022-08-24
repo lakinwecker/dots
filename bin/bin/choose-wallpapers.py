@@ -5,6 +5,8 @@ import random
 import os.path
 import sys
 
+base_dir = "/home/lakin/wallpapers"
+
 def random_wallpaper():
     possibilities = set()
     for root, _, files in os.walk(base_dir):
@@ -13,8 +15,6 @@ def random_wallpaper():
 
     return random.choice(list(possibilities))
 
-base_dir = "/home/lakin/wallpapers"
-ln_wallpaper1 = "cp \"{0}\" /tmp/.wallpaper1"
 
 chmod_wallpaper = "chown lakin:lakin /tmp/.wallpaper1 /tmp/wallpapers.txt"
 
@@ -30,5 +30,4 @@ else:
     wallpaper1 = random_wallpaper()
 
 open("/tmp/wallpapers.txt", "w").write("\n".join([wallpaper1]) + "\n")
-os.system(ln_wallpaper1.format(wallpaper1))
 os.system(chmod_wallpaper)

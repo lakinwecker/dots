@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo powertop --auto-tune
+export SDL_VIDEODRIVER=wayland
+export MOZ_ENABLE_WAYLAND=1
+export GTK_THEME=Catppuccin-blue:dark
+exec Hyprland

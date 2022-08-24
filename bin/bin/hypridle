@@ -1,0 +1,6 @@
+#!/bin/bash
+swayidle -w \
+     timeout 300 '/home/lakin/bin/hyprlock' \
+     timeout 600 'hyprctl dispatch dpms off' \
+          resume 'hyprctl dispatch dpms on' \
+     before-sleep '/home/lakin/bin/hyprlock'

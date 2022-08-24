@@ -1,0 +1,22 @@
+#!/bin/bash
+# --font 'NotoSans Nerd Font Mono:style=Thin,Regular 40' \
+swaylock \
+    --screenshots \
+    --clock \
+    --debug \
+    --trace \
+    --indicator \
+    --indicator-radius 150 \
+    --indicator-thickness 12 \
+    --effect-blur 15x8 \
+    --effect-pixelate 24 \
+    --font "Fira Code Retina:style=Retina,Regular" \
+    --font-size 64 \
+    --ring-color eed49f \
+    --text-color cad3f5 \
+    --key-hl-color a6da95 \
+    --line-color 11111b \
+    --inside-color 24273a \
+    --separator-color 11111b \
+    --grace 2 \
+    --fade-in 0.2

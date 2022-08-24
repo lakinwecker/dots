@@ -33,6 +33,7 @@ require('packer').startup(function(use)
     -- Language Servers/Support
     "dap",
     "python",
+    "yuck",
     "metals",
     "lspconfig",
     -- "formatting",
