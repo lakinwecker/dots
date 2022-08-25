@@ -1,6 +1,8 @@
 #!/bin/sh
 # Move things that are killed but not in the trash to be in the trash
 notmuch tag +trash -- tag:killed AND NOT tag:trash
+# Get rid of capital Inbox tag and replace it with inbox
+notmuch tag +inbox -Inbox -- tag:Inbox
 afew --move-mails --all
 cd /home/lakin/mail/gmail/
 gmi sync
