@@ -3,21 +3,25 @@ import sys
 import subprocess
 
 def get_current_perc():
-    result = subprocess.run(["sudo", "/usr/bin/brightnessctl", "-m", "info"], capture_output=True)
-    _, _, _, perc, _ = result.stdout.decode().split(",")
-    return perc.replace("%", "")
+    result = subprocess.run(["/usr/bin/light", "-G"], capture_output=True)
+    return float(result.stdout.decode())
 
-command = sys.argv[1]
+def set_bright(new):
+    new = min(100, max(1, new))
+    cur = get_current_perc()
+    subprocess.run(["light", "-S", f"{new}"])
+    print(f"{cur} -> {new}")
+
+command = sys.argv[1] if len(sys.argv) > 1 else "value"
 
 if command == "up":
-    perc = get_current_perc()
-    perc = min(100, int(perc) + 5)
+    set_bright(min(100, get_current_perc() + 5))
 elif command == "down":
-    perc = get_current_perc()
-    perc = max(0, int(perc) - 5)
+    set_bright(max(0, get_current_perc() - 5))
 elif command == "ac":
-    perc = 100
+    set_bright(100)
 elif command == "battery":
-    perc = 15
-subprocess.run(["sudo", "brightnessctl", "set", f"{perc}%"])
+    set_bright(15)
+elif command == "value":
+    print(get_current_perc())
 
