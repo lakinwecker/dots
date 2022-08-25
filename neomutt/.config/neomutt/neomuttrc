@@ -1,0 +1,133 @@
+# Neomutt configuration file - demo configuration
+#
+
+set realname       = "Lakin Wecker"
+
+alternates lakin.wecker@email.com lakin@lichess.org lakin@wecker.ca
+
+#==========================================================
+# Mailbox setup
+#==========================================================
+
+set mbox_type      = "Maildir"
+set folder         = "~/mail/gmail"
+set virtual_spool_file = no
+set spoolfile      = "+mail"
+
+#set postponed      = "+drafts"
+#set record         = "+sent"
+#set trash          = "+trash"
+
+set tmpdir         = "/tmp"
+
+#mailboxes          = "+inbox" "+linux"
+
+#==========================================================
+# Compose
+#==========================================================
+set nm_default_url = "notmuch:///home/lakin/mail"
+virtual-mailboxes "Inbox" "notmuch://?query=tag:inbox AND NOT tag:killed"
+
+
+#==========================================================
+# Compose
+#==========================================================
+
+set editor         = "nvim -c 'set tw=60' -c 'startinsert' -c 'set spell spelllang=en'
+set edit_headers
+
+
+#==========================================================
+# alias - neomutt's addressbook
+#==========================================================
+
+set reverse_alias
+
+
+#==========================================================
+# Index
+#==========================================================
+set pager_index_lines        = 10
+set date_format="%a, %d. %b %H:%M"
+set folder_format="%2C %8s %d %t %N %f"
+set index_format="%1H %4C %Z %D [%-22.22F] (%<l?%4l&%4c>) %s"
+
+#==========================================================
+# View E-Mail - pager
+#==========================================================
+
+ignore *
+unignore From Subject To Cc Bcc 
+unignore Reply-To User-Agent
+unignore Organization
+unignore List-Id
+
+#==========================================================
+# 
+#==========================================================
+
+subscribe -group neomutt neomutt@mail
+
+
+
+
+#==========================================================
+# Colors
+#==========================================================
+color normal		  default default         # Text is "Text"
+color index		    color2 default ~N       # New Messages are Green
+color index		    color1 default ~F       # Flagged messages are Red
+color index		    color13 default ~T      # Tagged Messages are Red
+color index		    color1 default ~D       # Messages to delete are Red
+color attachment	color5 default          # Attachments are Pink
+color signature	  color8 default          # Signatures are Surface 2
+color search		  color4 default          # Highlighted results are Blue
+
+color indicator		default color8          # currently highlighted message Surface 2=Background Text=Foreground
+color error		    color1 default          # error messages are Red
+color status		  color15 default         # status line "Subtext 0"
+color tree        color15 default         # thread tree arrows Subtext 0
+color tilde       color15 default         # blank line padding Subtext 0
+
+color hdrdefault  color13 default         # default headers Pink
+color header		  color13 default "^From:"
+color header	 	  color13 default "^Subject:"
+
+color quoted		  color15 default         # Subtext 0
+color quoted1		  color7 default          # Subtext 1
+color quoted2		  color8 default          # Surface 2
+color quoted3		  color0 default          # Surface 1
+color quoted4		  color0 default
+color quoted5		  color0 default
+
+color body		color2 default		[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses Green
+color body	  color2 default		(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs Green
+color body		color4 default		(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text Blue
+color body		color4 default		(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text Blue
+color body		color4 default		(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text Blue
+
+color sidebar_flagged   color1 default    # Mailboxes with flagged mails are Red
+color sidebar_new       color10 default   # Mailboxes with new mail are Green
+
+
+
+#==========================================================
+# Neomutt Guide Colors
+#==========================================================
+
+#==========================================================
+set pager_index_lines = 5
+set help = yes
+set sidebar_visible
+#set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+bind index,pager \CP sidebar-prev
+# Ctrl-P – Previous Mailbox
+bind index,pager \CN sidebar-next
+# Ctrl-N – Next Mailbox
+bind index,pager \CO sidebar-open
+# Ctrl-O – Open Highlighted Mailbox
+
+# <KEY>
+

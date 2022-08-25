@@ -1,0 +1,32 @@
+#!/bin/bash
+
+local_hour() {
+    date +"%H"
+}
+local_minute() {
+    date +"%M"
+}
+local_date() {
+    date +"%b %d"
+}
+pr_hour() {
+    TZ='America/Moncton' date +"%H"
+}
+utc_hour() {
+    date --utc +"%H"
+}
+uk_hour() {
+    TZ='Europe/London' date +"%H"
+}
+fr_hour() {
+    TZ='Europe/Paris' date +"%H"
+}
+case "$1" in
+	--local-hour) local_hour;;
+	--pr-hour) pr_hour;;
+	--utc-hour) utc_hour;;
+	--uk-hour) uk_hour;;
+	--fr-hour) fr_hour;;
+	--local-minute) local_minute;;
+	--local-date) local_date;;
+esac

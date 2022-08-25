@@ -2,6 +2,7 @@
 paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     lib32-libpulse lib32-alsa-plugins \
     wayland mesa-demos hyprpaper sddm-git \
+    socat macchina\
     pulseaudio pulseaudio-alsa pavucontrol \
     imagemagick \
     keepassxc \
@@ -16,7 +17,7 @@ paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     neomutt offlineimap pass alot afew isync \
     signal-desktop kitty \
     blender inkscape \
-    light mpd \
+    light mpd mpc \
     slack-desktop discord zulip-desktop \
     arc-gtk-theme arc-icon-theme arc-solid-gtk-theme \
     wayshot-bin slurp \
