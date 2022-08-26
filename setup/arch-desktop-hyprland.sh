@@ -7,9 +7,9 @@ paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     pulseaudio pulseaudio-alsa pavucontrol \
     imagemagick \
     keepassxc \
-    imv \
+    imv vlc-git \
     spirv-tools vulkan-devel \
-    firefox libx264 gedit \
+    firefox firefox-tridactyl libx264 gedit \
     noto-fonts noto-fonts-extra ttf-droid ttf-ubuntu-font-family powerline-fonts \
     gnumeric gimp libreoffice \
     breeze \
@@ -24,7 +24,7 @@ paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     wayshot-bin slurp wl-copy\
     siji-git bdf-unifont ttf-font-awesome-4 ttf-material-icons-git ttf-font-awesome \
     ncmpcpp htop \
-    python-pyaml \
+    python-poetry \
     zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf
 
 mkdir -p ~/.mpd/

@@ -14,6 +14,7 @@ __pycache__
 .cache
 .tool-versions
 sebbers-sandbox.ini
+compile_commands.json
 
 # Compiled source #
 ###################

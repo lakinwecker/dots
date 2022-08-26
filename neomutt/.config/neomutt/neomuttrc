@@ -30,14 +30,6 @@ virtual-mailboxes "Inbox" "notmuch://?query=tag:inbox AND NOT tag:killed"
 virtual-mailboxes "Personal" "notmuch://?query=tag:inbox AND NOT tag:killed AND tag:personal"
 virtual-mailboxes "Lichess" "notmuch://?query=tag:inbox AND NOT tag:killed AND tag:lichess"
 
-# --------------------------------------------------------------------------
-# NOTMUCH tagging
-# --------------------------------------------------------------------------
-set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
-bind index,pager \` modify-labels
-#bind index,pager Y modify-labels("+inbox")
-
-
 #==========================================================
 # Compose
 #==========================================================
@@ -137,6 +129,15 @@ bind index,pager \CN sidebar-next
 # Ctrl-N – Next Mailbox
 bind index,pager \CO sidebar-open
 # Ctrl-O – Open Highlighted Mailbox
+#
+# --------------------------------------------------------------------------
+# NOTMUCH tagging
+# --------------------------------------------------------------------------
+set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
+bind index,pager \` modify-labels
+macro index,pager Y "<modify-labels>-inbox<enter><sidebar-open>" "Archive"
+
+
 
 # <KEY>
 
