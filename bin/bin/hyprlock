@@ -8,8 +8,7 @@ swaylock \
     --indicator \
     --indicator-radius 150 \
     --indicator-thickness 12 \
-    --effect-blur 15x8 \
-    --effect-pixelate 24 \
+    --effect-blur 16x16 \
     --font "Fira Code Retina:style=Retina,Regular" \
     --font-size 64 \
     --ring-color eed49f \

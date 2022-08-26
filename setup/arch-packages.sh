@@ -9,6 +9,7 @@ paru -Syu --needed sudo syncthing neovim zellij ripgrep unzip python-virtualenv 
     fd \
     fzf \
     zoxide \
+    inxi \
     lsd
 
 sudo systemctl enable syncthing@lakin.service
