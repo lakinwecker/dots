@@ -1,9 +1,9 @@
 #!/bin/bash
-paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
+paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle dunst \
     lib32-libpulse lib32-alsa-plugins \
     wayland wl-clipboard mesa-demos hyprpaper sddm-git \
     rofi-lbonn-wayland-git \
-    socat macchina\
+    socat macchina obsidian \
     pulseaudio pulseaudio-alsa pavucontrol \
     imagemagick \
     keepassxc \

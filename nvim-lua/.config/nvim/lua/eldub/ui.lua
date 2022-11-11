@@ -30,7 +30,7 @@ function M.init()
 
   -- show invisibles
   vim.o.list = true
-  vim.wo.listchars = "tab:>-,trail:.,extends:»,precedes:«,nbsp:⣿"
+  vim.wo.listchars = "tab:>-,trail:⎵,extends:»,precedes:«,nbsp:⣿"
 
   -- tree style file explorer
   vim.g.netrw_liststyle = 3

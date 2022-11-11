@@ -15,6 +15,7 @@ require('packer').startup(function(use)
     -- Colors / Style
     -- "dracula",
     "catppuccin",
+    -- "zenbones",
     -- "one",
     -- "gruvbox",
     "devicons",
@@ -36,7 +37,7 @@ require('packer').startup(function(use)
     "yuck",
     "metals",
     "lspconfig",
-    -- "formatting",
+    "formatting",
     "rust",
     "elm",
     "jsts",

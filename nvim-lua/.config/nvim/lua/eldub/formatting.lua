@@ -29,7 +29,9 @@ function M.init(use)
               }
             end
           },
-
+          typescript = {
+            require("formatter.defaults").prettier
+          },
           -- Use the special "*" filetype for defining formatter configurations on
           -- any filetype
           ["*"] = {

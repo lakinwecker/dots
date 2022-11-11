@@ -1,6 +1,7 @@
 M = {}
 
 function M.init(n)
+  -- vim.lsp.buf.format = { async = true }
   n("[c", '<cmd>lua vim.diagnostic.goto_prev()<CR>')
   n("]c", '<cmd>lua vim.diagnostic.goto_next()<CR>')
   n("K", '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -13,7 +14,8 @@ function M.init(n)
   n('<leader>bk', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
   n('<leader>ba', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   n('<leader>bR', '<cmd>lua vim.lsp.buf.rename()<CR>')
-  n('<leader>F', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+  n('<leader>F', '<cmd>lua vim.lsp.buf.format()<CR>')
+  --n('<leader>F', '<cmd>FormatWrite<CR>')
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   --n('<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')

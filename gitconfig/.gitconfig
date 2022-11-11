@@ -20,3 +20,7 @@
 
 [diff]
     colorMoved = default
+[github]
+	user = lakinwecker
+[init]
+	defaultBranch = main
