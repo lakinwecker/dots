@@ -3,4 +3,6 @@ sudo powertop --auto-tune
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 export GTK_THEME=Catppuccin-blue:dark
-exec Hyprland
+export LD_LIBRARY_PATH=/home/lakin/personal-repos/custo/Hyprland/subprojects/wlroots/build/:$LD_LIBRARY_PATH
+exec /home/lakin/personal-repos/custo/Hyprland/build/Hyprland
+#exec Hyprland

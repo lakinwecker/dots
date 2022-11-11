@@ -9,6 +9,7 @@ function M.init_scala()
   metals.initialize_or_attach(config)
   ide.init(map.n)
 end
+
 function M.init(use)
   use {
     'scalameta/nvim-metals',
@@ -22,4 +23,5 @@ function M.init(use)
     end
   }
 end
+
 return M

@@ -48,36 +48,26 @@ def random_wallpaper():
 
     return random.choice(list(possibilities))
 
-def unload_old_wallpapers(con, current):
-    results = execute(con, "SELECT id, path FROM current_wallpaper ORDER BY id DESC")
-    if results:
-        for _id, path in results.fetchall():
-            if path == current:
-                continue
-            unload_wallpaper(path)
-            execute(con, f"DELETE FROM current_wallpaper WHERE id={_id}")
 
 def save_current(con, wallpaper):
     execute(con, f'INSERT INTO current_wallpaper (path) VALUES ("{wallpaper}")')
 
 def load_wallpaper(wallpaper):
-    run(f'hyprctl hyprpaper preload "{wallpaper}"')
-    run(f'hyprctl hyprpaper wallpaper eDP-1,"{wallpaper}"')
-    run(f'hyprctl hyprpaper preload "{wallpaper}"')
-    run(f'hyprctl hyprpaper wallpaper DP-2,"{wallpaper}"')
+    run(f'swaybg -m fill -i "{wallpaper}"')
 
-def unload_wallpaper(wallpaper):
-    run(f"hyprctl hyprpaper unload {wallpaper}")
+def unload_wallpaper():
+    run(f"killall swaybg")
 
 def main(new_wallpaper=None):
     con = create_db()
+
+    unload_wallpaper()
 
     if not new_wallpaper:
         new_wallpaper = random_wallpaper()
     load_wallpaper(pp(new_wallpaper))
 
     save_current(con, new_wallpaper)
-    unload_old_wallpapers(con, new_wallpaper)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and os.path.exists(sys.argv[0]):

@@ -1,0 +1,3 @@
+#!/bin/bash
+notmuch tag -inbox -- tag:inbox AND NOT tag:killed AND "Report domain"
+

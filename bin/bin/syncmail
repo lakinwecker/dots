@@ -13,4 +13,4 @@ gmi sync
 cd
 mbsync -c ~/.config/mbsync/mbsyncrc personal
 notmuch new
-
+~/bin/mail.defaultfilters
