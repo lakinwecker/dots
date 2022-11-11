@@ -13,7 +13,7 @@ paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     noto-fonts noto-fonts-extra ttf-droid ttf-ubuntu-font-family powerline-fonts \
     gnumeric gimp libreoffice \
     breeze \
-    ranger python-pillow atool elink ffmpegthumbnailer highlight poppler mediainfo libcaca \
+    ranger python-pillow atool ffmpegthumbnailer highlight poppler mediainfo libcaca \
     ntfs-3g \
     neomutt offlineimap pass alot afew isync \
     kitty \
@@ -21,7 +21,7 @@ paru -Syu --needed hyprland eww-wayland-git swaylock-effects-git swayidle \
     light mpd mpc \
     slack-desktop webcord zulip-desktop signal-desktop \
     arc-gtk-theme arc-icon-theme arc-solid-gtk-theme \
-    wayshot-bin slurp wl-copy\
+    wayshot-bin slurp \
     siji-git bdf-unifont ttf-font-awesome-4 ttf-material-icons-git ttf-font-awesome \
     ncmpcpp htop \
     python-poetry \
