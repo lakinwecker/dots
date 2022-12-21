@@ -3,10 +3,13 @@ M = {}
 function M.init(use)
 
   use { 'simrat39/rust-tools.nvim' }
-  use {
-    'neovim/nvim-lspconfig',
+  use { "williamboman/mason.nvim" }
+  use { "williamboman/mason-lspconfig.nvim" }
+  use { "neovim/nvim-lspconfig",
     config = function()
       vim.lsp.set_log_level("debug")
+      require("mason").setup()
+      require("mason-lspconfig").setup()
 
       local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
       for type, icon in pairs(signs) do
@@ -14,77 +17,101 @@ function M.init(use)
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
 
-      local lsp_installer_servers = require('nvim-lsp-installer.servers')
-      local wanted_language_servers = { 'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd', 'tsserver', 'elmls', 'zls' }
+      local on_attach = function(_, bufnr)
+        local map = require("eldub.keys")
+        local ide = require("eldub.ide")
+        local n = function(...)
+          map.buf_n(bufnr, ...)
+        end
+        -- Enable completion triggered by <c-x><c-o>
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+        ide.init(n)
+      end
+
+      --local lsp_installer_servers = require('nvim-lsp-installer.servers')
+      local wanted_language_servers = {
+        'rust_analyzer',
+        'pyright',
+        'sumneko_lua',
+        'clangd',
+        'tsserver',
+        'elmls',
+        'zls',
+        'gopls',
+        'taplo'
+      }
       for _, name in ipairs(wanted_language_servers) do
-        local server_available, requested_server = lsp_installer_servers.get_server(name)
-        if server_available then
-          requested_server:on_ready(function()
-            local on_attach = function(_, bufnr)
-              local map = require("eldub.keys")
-              local ide = require("eldub.ide")
-              local n = function(...)
-                map.buf_n(bufnr, ...)
-              end
-              -- Enable completion triggered by <c-x><c-o>
-              vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-              ide.init(n)
-            end
-            local opts = {
-              on_attach = on_attach,
-              flags = {
-                debounce_text_changes = 150,
-              },
-              settings = {
-                ["rust-analyzer"] = {
-                  completion = {
-                    postfix = {
-                      enable = false
-                    }
-                  },
-                  checkOnSave = {
-                    command = "clippy"
-                  },
-                },
-                Lua = {
-                  diagnostics = {
-                    globals = { 'vim' } -- allows vim settings
-                  }
-                }
-              },
-            }
-            if requested_server.name == 'rust_analyzer' then
-              -- Initialize the LSP via rust-tools instead
-              require('rust-tools').setup {
+        require('lspconfig')[name].setup{
+          on_attach = on_attach,
+        }
+      end
+      --require("lspconfig").rust_analyzer.setup {}
+      --require("lspconfig").pyright.setup {}
+      --require("lspconfig").clangd.setup {}
+      --require("lspconfig").elmls.setup {}
+      --require("lspconfig").zls.setup {}
+      --require("lspconfig").gopls.setup {}
+      -- local wanted_language_servers = { 'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd', 'tsserver', 'elmls', 'zls' }
+      --for _, name in ipairs(wanted_language_servers) do
+        ---- local server_available, requested_server = lsp_installer_servers.get_server(name)
+        --if server_available then
+          --requested_server:on_ready(function()
+            --local on_attach = function(_, bufnr)
+            --end
+            --local opts = {
+              --on_attach = on_attach,
+              --flags = {
+                --debounce_text_changes = 150,
+              --},
+              --settings = {
+                --["rust-analyzer"] = {
+                  --completion = {
+                    --postfix = {
+                      --enable = false
+                    --}
+                  --},
+                  --checkOnSave = {
+                    --command = "clippy"
+                  --},
+                --},
+                --Lua = {
+                  --diagnostics = {
+                    --globals = { 'vim' } -- allows vim settings
+                  --}
+                --}
+              --},
+            --}
+            --if requested_server.name == 'rust_analyzer' then
+              ---- Initialize the LSP via rust-tools instead
+              --require('rust-tools').setup {
                 -- The "server" property provided in rust-tools setup function are the
                 -- settings rust-tools will provide to lspconfig during init.
                 --
                 -- We merge the necessary settings from nvim-lsp-installer (server:get_default_options())
                 -- with the user's own settings (opts).
-                server = vim.tbl_deep_extend(
-                  "force",
-                  requested_server:get_default_options(),
-                  opts
-                ),
-              }
-              requested_server:attach_buffers()
-            else
-              requested_server:setup(opts)
-            end
-          end)
-          if not requested_server:is_installed() then
+                --server = vim.tbl_deep_extend(
+                  --"force",
+                  --requested_server:get_default_options(),
+                  --opts
+                --),
+              --}
+              --requested_server:attach_buffers()
+            --else
+              --requested_server:setup(opts)
+            --end
+          --end)
+          --if not requested_server:is_installed() then
             -- Queue the server to be installed
-            requested_server:install()
-          end
-        end
-      end
+            --requested_server:install()
+          --end
+        --end
+      --end
 
       local runtime_path = vim.split(package.path, ';')
       table.insert(runtime_path, 'lua/?.lua')
       table.insert(runtime_path, 'lua/?/init.lua')
     end,
   }
-  use { 'williamboman/nvim-lsp-installer' }
 
   -- TODO: Old commands I had that I haven't ported yet.
   -- Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
