@@ -43,6 +43,7 @@ require('packer').startup(function(use)
     "jsts",
     "troubles",
     "hover",
+    "zig",
 
     -- Completion stuff
     -- "completion",
