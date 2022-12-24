@@ -3,8 +3,8 @@ require("eldub.ui").init()
 
 -- TODO: figure this out/configure dap (Goes with the rust thingy)
 
-require('packer').startup(function(use)
-  use { 'wbthomason/packer.nvim' }
+require("packer").startup(function(use)
+  use({ "wbthomason/packer.nvim" })
 
   -- These files are all located in lua/{name}.lua
   -- NOTE: be careful to anem them differently than the
@@ -44,6 +44,7 @@ require('packer').startup(function(use)
     "troubles",
     "hover",
     "zig",
+    "colorhighlight",
 
     -- Completion stuff
     -- "completion",
@@ -67,7 +68,7 @@ require('packer').startup(function(use)
     "vimvinegar",
 
     -- Writing
-    "writing"
+    "writing",
   }
 
   for _, plugin in ipairs(plugins) do
@@ -81,5 +82,5 @@ map.n("<leader>ps", ":PackerSync<CR>")
 map.n("<leader>pr", ":PackerClean<CR>")
 
 -- TODO: figure out what these are for and then see if I want to use them or not.
-vim.o.guicursor = 'n-v-c-i-ci-sm-ve:block,r-cr-o:hor20'
-vim.o.completeopt = 'menuone,preview,noinsert,noselect'
+vim.o.guicursor = "n-v-c-i-ci-sm-ve:block,r-cr-o:hor20"
+vim.o.completeopt = "menuone,preview,noinsert,noselect"
