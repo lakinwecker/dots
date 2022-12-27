@@ -17,7 +17,9 @@ function M.init(n)
 	n("<leader>bt", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
 	n("<leader>bk", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 	n("<leader>ba", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-	n("<leader>bR", "<cmd>lua vim.lsp.buf.rename()<CR>")
+	--n("<leader>bR", "<cmd>lua vim.lsp.buf.rename()<CR>")
+	-- Rename
+	n("<leader>bR", "<cmd>Lspsaga rename<CR>")
 	n("<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 	-- Lsp finder find the symbol definition implement reference
@@ -30,9 +32,6 @@ function M.init(n)
 	-- also support open/vsplit/etc operation check definition_action_keys
 	-- support tagstack C-t jump back
 	n("gd", "<cmd>Lspsaga peek_definition<CR>")
-
-	-- Rename
-	n("gr", "<cmd>Lspsaga rename<CR>")
 
 	-- Code action
 	-- keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
