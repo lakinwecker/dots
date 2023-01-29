@@ -46,6 +46,10 @@ require("packer").startup(function(use)
     "zig",
     "colorhighlight",
 
+    -- session / start screen
+    "session",
+    "start",
+
     -- Completion stuff
     -- "completion",
     "coq", -- Fast completion
@@ -65,7 +69,7 @@ require("packer").startup(function(use)
     "headlines",
     "gitlinker",
     "gist",
-    "vimvinegar",
+    "todos",
 
     -- Writing
     "writing",
