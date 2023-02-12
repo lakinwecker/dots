@@ -62,9 +62,9 @@ def save_current(con, wallpaper):
 
 def load_wallpaper(wallpaper):
     run(f'hyprctl hyprpaper preload "{wallpaper}"')
-    run(f'hyprctl hyprpaper wallpaper eDP-1,"{wallpaper}"')
+    run(f'hyprctl hyprpaper wallpaper eDP-1,contain:"{wallpaper}"')
     run(f'hyprctl hyprpaper preload "{wallpaper}"')
-    run(f'hyprctl hyprpaper wallpaper DP-2,"{wallpaper}"')
+    run(f'hyprctl hyprpaper wallpaper DP-2,contain:"{wallpaper}"')
 
 def unload_wallpaper(wallpaper):
     run(f"hyprctl hyprpaper unload {wallpaper}")
