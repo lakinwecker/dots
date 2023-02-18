@@ -286,6 +286,7 @@ for_window [title="vedo 2020"] floating enable
 # Make sure certain program start in a certain way
 #-------------------------------------------------------------------------------
 for_window [title="DGGS Sandbox"] floating enable
+for_window [title="BigGeo Search Visualization"] floating enable
 
 #-------------------------------------------------------------------------------
 # run some programs
