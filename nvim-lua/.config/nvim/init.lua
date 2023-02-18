@@ -14,7 +14,7 @@ require("packer").startup(function(use)
     "plenary",
     -- Colors / Style
     -- "dracula",
-    -- "catppuccin",
+    --"catppuccin",
     "rose",
     -- "zenbones",
     -- "one",

@@ -27,9 +27,7 @@ def copy_template_impl(template, target, variables):
     open(target, "w").write(output)
 
 @cli.command()
-@click.option("--template", help="The name of the template file to use")
-@click.option("--target", help="The target for the output template")
-@click.option("--variables", help="The var files to use multiple are ok", multiple=True)
+@click.option("--template", help="The name of the template file to use") @click.option("--target", help="The target for the output template") @click.option("--variables", help="The var files to use multiple are ok", multiple=True)
 def copy_template(template, target, variables):
     """Simple program for templating my config files."""
     return copy_template_impl(template, target, variables)
@@ -73,7 +71,6 @@ def alacritty(mode):
     source = lambda x: dots("alacritty", x)
     target = lambda x: config("alacritty", x)
     h = hostname()
-    print(f"{h}.yml"),
     copy_template_impl(
         source("alacritty.jinja.yml"),
         target("alacritty.yml"),
