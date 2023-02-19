@@ -36,10 +36,6 @@ function M.init()
   -- let g:netrw_browse_split=4
   vim.g.netrw_winsize = 25
 
-  -- TODO: make this work with my light-mode/dark-mode switch
-  -- colorscheme {{ colorscheme }}
-  -- set background={{ background }}
-
   local map = require("eldub.keys")
   -- Clear search
   map.n("<Esc>", ":noh <CR>")
