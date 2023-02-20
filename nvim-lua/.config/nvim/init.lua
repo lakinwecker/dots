@@ -61,7 +61,7 @@ require("packer").startup(function(use)
     "hop",
 
     -- Life org
-    "neorg",
+    -- "neorg",
 
     -- Random Features
     -- "autopairs",
