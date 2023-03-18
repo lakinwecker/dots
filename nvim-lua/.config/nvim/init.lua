@@ -46,6 +46,7 @@ require("packer").startup(function(use)
     "hover",
     "zig",
     "colorhighlight",
+    "glsl",
 
     -- session / start screen
     "session",
