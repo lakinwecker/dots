@@ -63,6 +63,14 @@ function M.init(use)
       require("telescope").load_extension("project")
     end,
   })
+  use { "nvim-telescope/telescope-bibtex.nvim",
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    config = function()
+      require "telescope".load_extension("bibtex")
+    end,
+  }
 
   local map = require("eldub.keys")
   -- Search within open buffers
@@ -87,6 +95,7 @@ function M.init(use)
   map.n("<leader>?", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
   map.n("<leader>P", "<cmd>lua require('telescope').extensions.project.project()<CR>")
   map.n("<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>")
+  map.n("<leader>zb", "<cmd>Telescope bibtex<CR>")
 end
 
 return M

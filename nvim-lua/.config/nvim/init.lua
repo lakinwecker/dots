@@ -62,6 +62,7 @@ require("packer").startup(function(use)
 
     -- Life org
     -- "neorg",
+    "zettelkasten",
 
     -- Random Features
     -- "autopairs",
