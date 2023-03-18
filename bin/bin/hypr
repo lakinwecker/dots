@@ -1,5 +1,7 @@
 #!/bin/bash
 sudo powertop --auto-tune
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 export GTK_THEME=Catppuccin-blue:dark
