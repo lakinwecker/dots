@@ -58,22 +58,21 @@ function M.init(use)
             sync_with_nvim_tree = true, -- default false
           },
         },
+        pickers = {
+          buffers = {
+            ignore_current_buffer = true,
+            sort_mru = true
+          }
+        },
       })
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("project")
     end,
   })
-  use { "nvim-telescope/telescope-bibtex.nvim",
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = function()
-      require "telescope".load_extension("bibtex")
-    end,
-  }
 
   local map = require("eldub.keys")
   -- Search within open buffers
+  -- map.n("<leader>'", "<cmd>lua require('telescope.builtin').buffers({ sort_mru=true })<CR>")
   map.n("<leader>'", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 
   -- Find files relative to CWD
@@ -94,8 +93,7 @@ function M.init(use)
   map.n("<leader>so", "<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>")
   map.n("<leader>?", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
   map.n("<leader>P", "<cmd>lua require('telescope').extensions.project.project()<CR>")
-  map.n("<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>")
-  map.n("<leader>zb", "<cmd>Telescope bibtex<CR>")
+  -- map.n("<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>")
 end
 
 return M
