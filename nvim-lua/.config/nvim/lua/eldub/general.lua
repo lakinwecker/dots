@@ -1,6 +1,6 @@
 M = {}
 -- My General config
-function M.init ()
+function M.init()
   vim.g.mapleader = ","
 
   -- Security
@@ -22,7 +22,7 @@ function M.init ()
   -- Searching
   vim.o.hlsearch = true
   vim.o.incsearch = true
-  vim.o.ignorecase = true
+  -- vim.o.ignorecase = true
 
   -- Default indentation
   vim.o.shiftwidth = 4
@@ -30,6 +30,6 @@ function M.init ()
   vim.o.softtabstop = 4
   vim.o.smarttab = true
   vim.o.expandtab = true
-
 end
+
 return M

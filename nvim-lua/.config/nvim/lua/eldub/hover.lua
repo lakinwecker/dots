@@ -1,6 +1,4 @@
-M = {}
-function M.init(use)
-  use{
+return {
     'lewis6991/hover.nvim',
     config = function()
       require('hover').setup{
@@ -22,7 +20,3 @@ function M.init(use)
       --vim.keymap.set('n', 'gK', require('hover').hover_select, { desc='hover.nvim (select)' })
     end
   }
-end
-
-
-return M

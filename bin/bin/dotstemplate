@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os
 import collections.abc
 import click
 from yaml import load, FullLoader
@@ -27,7 +28,9 @@ def copy_template_impl(template, target, variables):
     open(target, "w").write(output)
 
 @cli.command()
-@click.option("--template", help="The name of the template file to use") @click.option("--target", help="The target for the output template") @click.option("--variables", help="The var files to use multiple are ok", multiple=True)
+@click.option("--template", help="The name of the template file to use")
+@click.option("--target", help="The target for the output template")
+@click.option("--variables", help="The var files to use multiple are ok", multiple=True)
 def copy_template(template, target, variables):
     """Simple program for templating my config files."""
     return copy_template_impl(template, target, variables)
@@ -95,17 +98,27 @@ def alot(mode):
         ]
     )
 
+def kitty(mode):
+    if mode == "light":
+        os.system('kitty +kitten themes --reload-in=all "Rosé Pine Dawn"')
+        # os.system('kitty +kitten themes --reload-in=all "zenbones_light"')
+    elif mode == "dark":
+        os.system('kitty +kitten themes --reload-in=all "Rosé Pine"')
+        # os.system('kitty +kitten themes --reload-in=all "zenbones_dark"')
+
 @cli.command()
 def darkmode():
     alacritty("dark")
     nvim("dark")
     alot("dark")
+    kitty("dark")
 
 @cli.command()
 def lightmode():
     alacritty("light")
     nvim("light")
     alot("light")
+    kitty("light")
 
 
 # Recursive dictionary merge

@@ -1,93 +1,66 @@
 require("eldub.general").init()
-require("eldub.ui").init()
+require("eldub.uiconf").init()
+require("eldub.lazy").init()
+
+require("lazy").setup({
+  { import = "eldub/util" },
+  { import = "eldub/colors" },
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
+  "folke/neodev.nvim",
+  { import = "eldub/ui" },
+  { import = "eldub/treesitter" },
+  { import = "eldub/editor" },
+  { import = "eldub/coding" },
+  -- TODO: get the lsp stuff working
+  -- TODO: unify keymaps, put them into a common directory.
+  { import = "eldub/lsp" },
+  { import = "eldub/telescope" },
+  { import = "eldub/undotree" },
+  { import = "eldub/headlines" },
+  { import = "eldub/todos" },
+  { import = "eldub/hover" }, -- Nicer hover panes
+})
+-- require("eldub.ide").init()
 
 -- TODO: figure this out/configure dap (Goes with the rust thingy)
 
-require("packer").startup(function(use)
-  use({ "wbthomason/packer.nvim" })
-
-  -- These files are all located in lua/{name}.lua
-  -- NOTE: be careful to anem them differently than the
-  --       plugins they install
-  local plugins = {
-    -- Plugin management / Utils
-    "plenary",
-    -- Colors / Style
-    -- "dracula",
-    --"catppuccin",
-    "rose",
-    -- "zenbones",
-    -- "one",
-    -- "gruvbox",
-    "devicons",
-    "treesitter",
-    "blankline",
-
-    -- Statuses / side bar info
-    "lualine",
-    "gitsigns",
-    "diffview",
-
-    -- Collaboration
-    "editorconfig",
-    "toggleterm_and_lazygit",
-
-    -- Language Servers/Support
-    "dap",
-    "python",
-    "yuck",
-    "lspconfig",
-    "metals",
-    "formatting",
-    "rust",
-    "elm",
-    "jsts",
-    "troubles",
-    "hover",
-    "zig",
-    "colorhighlight",
-    "glsl",
-
-    -- session / start screen
-    "session",
-    "start",
-
-    -- Completion stuff
-    -- "completion",
-    "coq", -- Fast completion
-
-    -- Searching / Browsing etc.
-    "tree",
-    "telescope",
-    "hop",
-
-    -- Life org
-    -- "neorg",
-    "zettelkasten",
-
-    -- Random Features
-    -- "autopairs",
-    "undotree",
-    "projectionist",
-    "headlines",
-    "gitlinker",
-    "gist",
-    "todos",
-
-    -- Writing
-    "writing",
-  }
-
-  for _, plugin in ipairs(plugins) do
-    require(string.format("eldub.%s", plugin)).init(use)
-  end
-end)
-
-local map = require("eldub.keys")
-map.n("<leader>pc", ":PackerCompile<CR>")
-map.n("<leader>ps", ":PackerSync<CR>")
-map.n("<leader>pr", ":PackerClean<CR>")
-
--- TODO: figure out what these are for and then see if I want to use them or not.
-vim.o.guicursor = "n-v-c-i-ci-sm-ve:block,r-cr-o:hor20"
-vim.o.completeopt = "menuone,preview,noinsert,noselect"
+--require("packer").startup(function(use)
+--  local plugins = {
+--    -- Collaboration
+--
+--    -- Language Servers/Support
+--    "dap",
+--    "python",
+--    "yuck",
+--    "metals",
+--    "formatting",
+--    "rust",
+--    "elm",
+--    "jsts",
+--    "troubles",
+--    "hover",
+--    "zig",
+--    "colorhighlight",
+--    "glsl",
+--
+--    -- Searching / Browsing etc.
+--    "telescope",
+--    "hop",
+--
+--    -- Life org
+--    -- "neorg",
+--
+--    -- Random Features
+--    -- "autopairs",
+--    "projectionist",
+--    "gitlinker",
+--    "gist",
+--
+--    -- Writing
+--    "writing",
+--  }
+--
+--  for _, plugin in ipairs(plugins) do
+--    require(string.format("eldub.%s", plugin)).init(use)
+--  end
+--end)

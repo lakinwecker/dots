@@ -1,9 +1,6 @@
-M = {}
-function M.init(use)
-	-- Lua
-	use({
+return {
 		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
+		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("todo-comments").setup({
 				-- your configuration comes here
@@ -14,7 +11,4 @@ function M.init(use)
 			local map = require("eldub.keys")
 			map.n("<leader>xt", ":TodoTelescope keywords=TODO,FIX<CR>")
 		end,
-	})
-end
-
-return M
+	}

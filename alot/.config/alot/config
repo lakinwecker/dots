@@ -7,7 +7,7 @@ body_mimetype=text/plain
 #theme = sup
 #prefer_plaintext=True
 #theme = solarized_dark
-theme = solarized_light
+theme = one
 search_threads_sort_order = newest_first
 complete_matching_abook_only = False
 
