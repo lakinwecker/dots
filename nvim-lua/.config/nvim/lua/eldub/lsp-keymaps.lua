@@ -10,15 +10,21 @@ function M.get()
   ---@class PluginLspKeys
     -- stylua: ignore
     M._keys =  {
-      { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-      { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition", has = "definition" },
-      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-      { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
-      { "gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
-      { "gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
-      { "K", vim.lsp.buf.hover, desc = "Hover" },
-      { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
+      { "<leader>cd", "<cmd>Lspsaga peek_definition<CR>", desc = "Peak definition"},
+      { "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", desc = "Incoming calls"},
+      { "<leader>ch", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find in structure"},
+      { "<leader>so", "<cmd>Lspsaga outline<CR>", desc = "Code Outline"},
+      { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure"},
+      { "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Find in structure"},
+      { "<leader>cb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure"},
+      { "<leader>gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition", has = "definition" },
+      { "<leader>gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+      { "<leader>gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+      { "<leader>gI", "<cmd>Telescope lsp_implementations<cr>", desc = "Goto Implementation" },
+      { "<leader>gt", "<cmd>Telescope lsp_type_definitions<cr>", desc = "Goto Type Definition" },
+      { "<leader>K", "<cmd>Lspsaga hover_doc<cr>", desc = "Hover" },
+      { "<leader>gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
       { "]d", M.diagnostic_goto(true), desc = "Next Diagnostic" },
       { "[d", M.diagnostic_goto(false), desc = "Prev Diagnostic" },
@@ -89,12 +95,16 @@ function M.on_attach(client, buffer)
 end
 
 function M.diagnostic_goto(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
+  if next then
+    return function()
+      require("lspsaga.diagnostic"):goto_next({ severity = severity })
+    end
+  else
+    return function()
+      require("lspsaga.diagnostic"):goto_prev({ severity = severity })
+    end
   end
 end
 
 return M
-

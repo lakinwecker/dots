@@ -20,7 +20,6 @@ require("lazy").setup({
   { import = "eldub/todos" },
   { import = "eldub/hover" }, -- Nicer hover panes
 })
--- require("eldub.ide").init()
 
 -- TODO: figure this out/configure dap (Goes with the rust thingy)
 
@@ -44,7 +43,6 @@ require("lazy").setup({
 --    "glsl",
 --
 --    -- Searching / Browsing etc.
---    "telescope",
 --    "hop",
 --
 --    -- Life org
@@ -52,7 +50,6 @@ require("lazy").setup({
 --
 --    -- Random Features
 --    -- "autopairs",
---    "projectionist",
 --    "gitlinker",
 --    "gist",
 --

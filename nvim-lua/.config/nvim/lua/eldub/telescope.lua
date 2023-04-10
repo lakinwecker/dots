@@ -59,14 +59,14 @@ return {
         pickers = {
           buffers = {
             ignore_current_buffer = true,
-            sort_mru = true
-          }
+            sort_mru = true,
+          },
         },
       })
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("project")
 
-			local map = require("eldub.keys")
+      local map = require("eldub.keys")
 
       -- Search within open buffers
       -- map.n("<leader>'", "<cmd>lua require('telescope.builtin').buffers({ sort_mru=true })<CR>")
@@ -91,8 +91,6 @@ return {
       map.n("<leader>?", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
       map.n("<leader>P", "<cmd>lua require('telescope').extensions.project.project()<CR>")
       -- map.n("<leader>z", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>")
-
-
     end,
   },
 }

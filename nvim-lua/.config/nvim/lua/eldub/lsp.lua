@@ -2,24 +2,24 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("mason-lspconfig").setup {
-          ensure_installed = {
-            "stylua",
-            "shfmt",
-            "rust_analyzer",
-            "pyright",
-            "lua_ls",
-            "clangd",
-            "tsserver",
-            "elmls",
-            "zls",
-            "goplnis",
-            "taplo",
-            "prismals",
-            "flake8",
-          }
-      }
-    end
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "stylua",
+          "shfmt",
+          "rust_analyzer",
+          "pyright",
+          "lua_ls",
+          "clangd",
+          "tsserver",
+          "elmls",
+          "zls",
+          "goplnis",
+          "taplo",
+          "prismals",
+          "flake8",
+        },
+      })
+    end,
   },
   -- lspconfig
   {
@@ -171,8 +171,7 @@ return {
     "williamboman/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-    opts = {
-    },
+    opts = {},
     ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)
       require("mason").setup(opts)
@@ -204,15 +203,13 @@ return {
     end,
   },
   {
-    'saecki/crates.nvim',
-    tag = 'v0.1.0',
+    "saecki/crates.nvim",
+    tag = "v0.1.0",
     dependencies = {
-      'nvim-lua/plenary.nvim'
+      "nvim-lua/plenary.nvim",
     },
     config = function()
-      require('crates').setup()
+      require("crates").setup()
     end,
-  }
-
+  },
 }
-
