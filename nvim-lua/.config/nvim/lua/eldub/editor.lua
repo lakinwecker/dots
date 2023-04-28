@@ -68,6 +68,16 @@ return {
 
   -- fuzzy finder
   {
+    "vijaymarupudi/nvim-fzf",
+    before = "nvim-telescope/telescope-fzf-native.nvim",
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+  },
+  { "nvim-telescope/telescope-project.nvim" },
+  { "jvgrootveld/telescope-zoxide" },
+  {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
@@ -102,6 +112,7 @@ return {
       { "<leader>sw", Util.telescope("grep_string"), desc = "Word (root dir)" },
       { "<leader>sW", Util.telescope("grep_string", { cwd = false }), desc = "Word (cwd)" },
       { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+      { "<leader>P", "<cmd>lua require('telescope').extensions.project.project()<CR>" },
       {
         "<leader>ss",
         Util.telescope("lsp_document_symbols", {
@@ -178,6 +189,30 @@ return {
         },
       },
     },
+    config = function()
+      require("telescope").load_extension("fzf")
+      require("telescope").load_extension("project")
+      require("telescope").setup({
+        extensions = {
+          project = {
+            base_dirs = {
+              { path = "~/school-repos/givdetypes/" },
+              { path = "~/school-repos/givdefp/" },
+              { path = "~/school-repos/givdelib/" },
+              { path = "~/school-repos/givdeapp/" },
+              { path = "~/school-repos/givderender/" },
+              { path = "~/school-repos/vsg/" },
+              { path = "~/school-repos/poggles/" },
+              { path = "~/school-repos/multiatlas-demo/" },
+              { path = "~/.config/nvim/" },
+            },
+            theme = "dropdown",
+            order_by = "asc",
+            search_by = "title",
+          },
+        },
+      })
+    end,
   },
 
   -- easily jump to any location and enhanced f/t motions for Leap
@@ -283,7 +318,7 @@ return {
       end,
     },
   },
-    { 'editorconfig/editorconfig-vim' },
+  { "editorconfig/editorconfig-vim" },
 
   -- references
   {

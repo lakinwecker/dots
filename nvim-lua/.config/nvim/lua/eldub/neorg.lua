@@ -1,10 +1,19 @@
-M = {}
-function M.init(use)
-  use {
-    "nvim-neorg/neorg",
-    config = function()
-    end,
-    requires = "nvim-lua/plenary.nvim"
-  }
-end
-return M
+return {
+  "nvim-neorg/neorg",
+  build = ":Neorg sync-parsers",
+  opts = {
+    load = {
+      ["core.defaults"] = {}, -- Loads default behaviour
+      ["core.concealer"] = {}, -- Adds pretty icons to your documents
+      ["core.completion"] = {}, -- Adds pretty icons to your documents
+      ["core.dirman"] = { -- Manages Neorg workspaces
+        config = {
+          workspaces = {
+            notes = "~/zk",
+          },
+        },
+      },
+    },
+  },
+  dependencies = { { "nvim-lua/plenary.nvim" } },
+}

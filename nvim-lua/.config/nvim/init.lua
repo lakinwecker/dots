@@ -1,24 +1,51 @@
 require("eldub.general").init()
 require("eldub.uiconf").init()
 require("eldub.lazy").init()
+require("eldub.config").setup()
 
 require("lazy").setup({
-  { import = "eldub/util" },
-  { import = "eldub/colors" },
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim",
-  { import = "eldub/ui" },
-  { import = "eldub/treesitter" },
-  { import = "eldub/editor" },
-  { import = "eldub/coding" },
-  -- TODO: get the lsp stuff working
-  -- TODO: unify keymaps, put them into a common directory.
-  { import = "eldub/lsp" },
-  { import = "eldub/telescope" },
-  { import = "eldub/undotree" },
-  { import = "eldub/headlines" },
-  { import = "eldub/todos" },
-  { import = "eldub/hover" }, -- Nicer hover panes
+  spec = {
+    { import = "eldub/util" },
+    { import = "eldub/colors" },
+    { "folke/neoconf.nvim", cmd = "Neoconf" },
+    "folke/neodev.nvim",
+    { import = "eldub/ui" },
+    { import = "eldub/treesitter" },
+    { import = "eldub/editor" },
+    { import = "eldub/coding" },
+    -- TODO: get the lsp stuff working
+    -- TODO: unify keymaps, put them into a common directory.
+    { import = "eldub/lsp" },
+    { import = "eldub/undotree" },
+    { import = "eldub/headlines" },
+    { import = "eldub/todos" },
+    { import = "eldub/hover" }, -- Nicer hover panes
+    { import = "eldub/neorg" },
+  },
+  defaults = {
+    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
+    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
+    lazy = false,
+    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
+    -- have outdated releases, which may break your Neovim install.
+    version = false, -- always use the latest git commit
+    -- version = "*", -- try installing the latest stable version for plugins that support semver
+  },
+  performance = {
+    rtp = {
+      -- disable some rtp plugins
+      disabled_plugins = {
+        "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
 })
 
 -- TODO: figure this out/configure dap (Goes with the rust thingy)

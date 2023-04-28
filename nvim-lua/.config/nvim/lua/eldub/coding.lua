@@ -33,7 +33,7 @@ return {
   -- auto completion
   {
     "ms-jpq/coq-nvim",
-    branch = "coq"
+    branch = "coq",
   },
   { "ms-jpq/coq.artifacts" },
   { "ms-jpq/coq.thirdparty" },
@@ -170,6 +170,21 @@ return {
           a = a,
         })
       end
+    end,
+  },
+  { "tikhomirov/vim-glsl" },
+  {
+    "scalameta/nvim-metals",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      vim.cmd([[augroup metals]])
+      vim.cmd([[au!]])
+      vim.cmd([[au FileType java,scala,sbt lua require("eldub.metals").init_scala()]])
+      -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+      vim.cmd([[augroup end]])
+      vim.keymap.set("n", "<Leader>f", function()
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+      end, { desc = "[lsp] format" })
     end,
   },
 }

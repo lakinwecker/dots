@@ -3,14 +3,15 @@
 local Util = require("eldub.lazyutil")
 
 local function map(mode, lhs, rhs, opts)
-  local keys = require("lazy.core.handler").handlers.keys
+  -- TODO: why does this check fail for me?
+  --local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
   -- do not create the keymap if a lazy keys handler exists
-  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
-  end
+  --if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+  opts = opts or {}
+  opts.silent = opts.silent ~= false
+  vim.keymap.set(mode, lhs, rhs, opts)
+  --end
 end
 
 -- better up/down
@@ -103,7 +104,7 @@ end
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", require("eldub.lsp.format").toggle, { desc = "Toggle format on Save" })
+map("n", "<leader>uf", require("eldub.lsp-format").toggle, { desc = "Toggle format on Save" })
 map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
 map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "<leader>ul", function() Util.toggle("relativenumber", true) Util.toggle("number") end, { desc = "Toggle Line Numbers" })
@@ -143,4 +144,3 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-

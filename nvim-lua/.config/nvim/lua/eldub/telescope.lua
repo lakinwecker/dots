@@ -1,15 +1,5 @@
 return {
   {
-    "vijaymarupudi/nvim-fzf",
-    before = "nvim-telescope/telescope-fzf-native.nvim",
-  },
-  {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
-  },
-  { "nvim-telescope/telescope-project.nvim" },
-  { "jvgrootveld/telescope-zoxide" },
-  {
     "nvim-telescope/telescope.nvim",
     module = "telescope",
     cmd = "Telescope",
@@ -43,19 +33,6 @@ return {
             ["<C-q>"] = { action = require("telescope._extensions.zoxide.utils").create_basic_command("split") },
           },
         },
-        extensions = {
-          project = {
-            base_dirs = {
-              { path = "~/work-repos/strabs-redwood/" },
-              { path = "~/work-repos/playstrategy/lila/" },
-              { path = "~/work-repos/vivid-theory/vt-result/" },
-            },
-            theme = "dropdown",
-            order_by = "asc",
-            search_by = "title",
-            sync_with_nvim_tree = true, -- default false
-          },
-        },
         pickers = {
           buffers = {
             ignore_current_buffer = true,
@@ -67,6 +44,7 @@ return {
       require("telescope").load_extension("project")
 
       local map = require("eldub.keys")
+      local builtin = require("telescope.builtin")
 
       -- Search within open buffers
       -- map.n("<leader>'", "<cmd>lua require('telescope.builtin').buffers({ sort_mru=true })<CR>")
