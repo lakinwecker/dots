@@ -3,8 +3,8 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     config = function()
-      -- require("rose-pine").setup()
-      -- vim.cmd("colorscheme rose-pine")
+      require("rose-pine").setup()
+      vim.cmd("colorscheme rose-pine")
     end,
   },
   {
@@ -25,11 +25,11 @@ return {
     "mcchrish/zenbones.nvim",
     dependencies = { "rktjmp/lush.nvim" },
     config = function()
-      vim.g.rosebones_transparent_background = true
-      vim.o.termguicolors = true
+      -- vim.g.rosebones_transparent_background = true
+      -- vim.o.termguicolors = true
       -- vim.o.background = "dark"
       -- vim.cmd('colorscheme zenbones')
-      vim.cmd("colorscheme rosebones")
+      -- vim.cmd("colorscheme rosebones")
     end,
   },
   {

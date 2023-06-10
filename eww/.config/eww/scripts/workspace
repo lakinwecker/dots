@@ -1,45 +1,45 @@
 #! /bin/bash
 
-#define icons for workspaces 1-9
-ic=(0       輸   )
+#define icons for workspaces 1-12
+ic=(0     󰇮 󰞋 󱗁    󰭹)
 
 #initial check for occupied workspaces
-for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do 
-  export o"$num"="$num"
+for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do
+	export o"$num"="$num"
 done
- 
+
 #initial check for focused workspace
-for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
-  export f"$num"="$num"
-  export fnum=f"$num"
+for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do
+	export f"$num"="$num"
+	export fnum=f"$num"
 done
 
 workspaces() {
-if [[ ${1:0:9} == "workspace" ]]; then #set focused workspace
-  unset -v "$fnum" 
-  num=${1:11}
-  export f"$num"="$num"
-  export fnum=f"$num"
+	if [[ ${1:0:9} == "workspace" ]]; then #set focused workspace
+		unset -v "$fnum"
+		num=${1:11}
+		export f"$num"="$num"
+		export fnum=f"$num"
 
-elif [[ ${1:0:10} == "focusedmon" ]]; then #set focused workspace
-  unset -v "$fnum"
-  num=${1##*,}
-  export f"$num"="$num"
-  export fnum=f"$num"
+	elif [[ ${1:0:14} == "focusedmon" ]]; then #set focused workspace
+		unset -v "$fnum"
+		num=${1##*,}
+		export f"$num"="$num"
+		export fnum=f"$num"
 
-elif [[ ${1:0:15} == "createworkspace" ]]; then #set Occupied workspace
-  num=${1:17}
-  export o"$num"="$num"
-  export onum=o"$num"
+	elif [[ ${1:0:15} == "createworkspace" ]]; then #set Occupied workspace
+		num=${1:17}
+		export o"$num"="$num"
+		export onum=o"$num"
 
-elif [[ ${1:0:16} == "destroyworkspace" ]]; then #unset unoccupied workspace
-  num=${1:18}
-  unset -v o"$num"
-fi
+	elif [[ ${1:0:16} == "destroyworkspace" ]]; then #unset unoccupied workspace
+		num=${1:18}
+		unset -v o"$num"
+	fi
 }
 module() {
-#output eww widget
-echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
+	#output eww widget
+	echo "(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\" \
           (box	:class \"works\"	:orientation \"h\" :spacing 5 :space-evenly \"true\" 	\
               (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 1\'\" :onrightclick \"hyprctl dispatch workspace 1 && $HOME/.config/hypr/default_app\" :class \"0$o1$f1\" \"${ic[1]}\") \
               (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 2\'\" :onrightclick \"hyprctl dispatch workspace 2 && $HOME/.config/hypr/default_app\" :class \"0$o2$f2\" \"${ic[2]}\") \
@@ -50,13 +50,16 @@ echo 	"(eventbox :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xar
               (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 7\'\" :onrightclick \"hyprctl dispatch workspace 7 && $HOME/.config/hypr/default_app\" :class \"0$o7$f7\" \"${ic[7]}\") \
               (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 8\'\" :onrightclick \"hyprctl dispatch workspace 8 && $HOME/.config/hypr/default_app\" :class \"0$o8$f8\" \"${ic[8]}\") \
               (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 9\'\" :onrightclick \"hyprctl dispatch workspace 9 && $HOME/.config/hypr/default_app\" :class \"0$o9$f9\" \"${ic[9]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 10\'\" :onrightclick \"hyprctl dispatch workspace 10 && $HOME/.config/hypr/default_app\" :class \"0$o10$f10\" \"${ic[10]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 11\'\" :onrightclick \"hyprctl dispatch workspace 11 && $HOME/.config/hypr/default_app\" :class \"0$o11$f11\" \"${ic[11]}\") \
+              (button :onclick \"hyprctl dispatch exec \'~/.config/hypr/workspace 12\'\" :onrightclick \"hyprctl dispatch workspace 12 && $HOME/.config/hypr/default_app\" :class \"0$o12$f12\" \"${ic[12]}\") \
           )\
         )"
 }
 
 module
 
-socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do 
-workspaces "$event"
-module
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do
+	workspaces "$event"
+	module
 done

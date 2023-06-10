@@ -7,17 +7,17 @@ M._keys = nil
 function M.get()
   local format = require("eldub.lsp-format").format
   if not M._keys then
-  ---@class PluginLspKeys
+    ---@class PluginLspKeys
     -- stylua: ignore
-    M._keys =  {
+    M._keys = {
       { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
-      { "<leader>cd", "<cmd>Lspsaga peek_definition<CR>", desc = "Peak definition"},
-      { "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", desc = "Incoming calls"},
-      { "<leader>ch", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find in structure"},
-      { "<leader>so", "<cmd>Lspsaga outline<CR>", desc = "Code Outline"},
-      { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure"},
-      { "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Find in structure"},
-      { "<leader>cb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure"},
+      { "<leader>cd", "<cmd>Lspsaga peek_definition<CR>", desc = "Peak definition" },
+      { "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>", desc = "Incoming calls" },
+      { "<leader>ch", "<cmd>Lspsaga lsp_finder<CR>", desc = "Find in structure" },
+      { "<leader>so", "<cmd>Lspsaga outline<CR>", desc = "Code Outline" },
+      { "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure" },
+      { "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Find in structure" },
+      { "<leader>cb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Find in structure" },
       { "<leader>gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Goto Definition", has = "definition" },
       { "<leader>gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
       { "<leader>gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },

@@ -25,7 +25,7 @@
 (defpoll current_status :interval "1s"  "scripts/music_info --time")
 (defpoll song_status :interval "2s"  "scripts/music_info --status")
 (defpoll cover_art :interval "2s"  "scripts/music_info --cover")
-(deflisten workspace "scripts/workspace")
+(deflisten workspace "scripts/workspace.py")
 
 (defvar vol_reveal false)
 (defvar br_reveal false)
@@ -101,7 +101,7 @@
                 :min 1
                 :onchange "light -S {}" ))
         (label
-            :text ""
+            :text "󰃟"
             :class "bright_icon"
             :tooltip "brightness"))))
 
@@ -129,7 +129,7 @@
             (button
                 :onclick "scripts/pop audio"
                 :class "volume_icon"
-                "墳"))))
+                "󰕾"))))
 
 (defwidget wifi [] 
   (eventbox 
@@ -149,7 +149,7 @@
                 :orientation "h"
               ))
         (button
-            :class "module-wif"
+            :class "module-wifi"
             :onclick "networkmanager_dmenu"
             :wrap "false" 
             :limit-width 12 WLAN_ICON))))
@@ -170,7 +170,7 @@
                     :show_truncated false
                     :onclick "scripts/pop system"
                     :wrap false
-                    {battery_status == "Discharging" ? "" : "⚡"}))))
+                    {battery_status == "Discharging" ? "󰁹" : "⚡"}))))
 
 (defwidget mem []
         (box :class "mem_module" :vexpand "false" :hexpand "false" 
@@ -184,7 +184,7 @@
                     :onclick "scripts/pop system"
                     :show_truncated false
                     :wrap false
-                    ""))))
+                    "󰍛"))))
 
 (defwidget hour [text class]
   (label
