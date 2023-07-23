@@ -25,7 +25,7 @@
 (defpoll current_status :interval "1s"  "scripts/music_info --time")
 (defpoll song_status :interval "2s"  "scripts/music_info --status")
 (defpoll cover_art :interval "2s"  "scripts/music_info --cover")
-(deflisten workspace "scripts/workspace.py")
+(deflisten workspace "scripts/workspace.py --debug")
 
 (defvar vol_reveal false)
 (defvar br_reveal false)
