@@ -37,25 +37,24 @@ def workspaces_init():
     if DEBUG: DEBUG_both()
 
 workspaces = [
-    (1, "", ""),
+    (1, "", ""),
     (2, "", ""),
     (3, "", ""),
     (4, "", ""),
-    (5, "", ""),
+    (5, "󰇮", "󰇮"),
     (6, "", ""),
     (7, "", ""),
     (8, "", ""),
-    (9, "", ""),
-    (10, "", ""),
-    (11, "", ""),
-    (12, "", ""),
+    (9, "", ""),
+    (10, "", ""),
+    (11, "󰋍", "󰋍"),
+    (12, "󰭹", "󰭹"),
     (13, "", ""),
-    (14, "", ""),
+    (14, "", ""),
     (15, "", ""),
-    (16, "", ""),
+    (16, "", ""),
 ]
 """workspaces = [
-    (1, ""),
     (2, ""),
     (3, ""),
     (4, ""),
@@ -77,9 +76,10 @@ workspaces = [
 def workspaces_view():
     buttons: List[str] = []
     for id, occupied_icon, focused_icon in workspaces:
+        empty_icon = ""
         focus_class = " focused" if focused[id] else ""
         occupied_class = " occupied" if occupied[id] else ""
-        icon =  focused_icon if focused[id] else occupied_icon
+        icon =  focused_icon if focused[id] else occupied_icon if occupied[id] else empty_icon
         buttons.append(f"""(button :onclick "hyprctl dispatch exec '~/.config/hypr/workspace {id}'" :onrightclick "hyprctl dispatch workspace {id} && $HOME/.config/hypr/default_app" :class "workspace{focus_class}{occupied_class}" "{icon}")""")
     # echo 	"(button :onclick \"bspc desktop -f $ws1\"	:class	\"$un$o1$f1\"	\"$ic_1\") (button :onclick \"bspc desktop -f $ws2\"	:class \"$un$o2$f2\"	 \"$ic_2\") (button :onclick \"bspc desktop -f $ws3\"	:class \"$un$o3$f3\" \"$ic_3\") (button :onclick \"bspc desktop -f $ws4\"	:class \"$un$o4$f4\"	\"$ic_4\") (button :onclick \"bspc desktop -f $ws5\"	:class \"$un$o5$f5\" \"$ic_5\")  (button :onclick \"bspc desktop -f $ws6\"	:class \"$un$o6$f6\" \"$ic_6\"))"
     message = f"""(box :class "works" :orientation "h" :spacing 5 :space-evenly "false" {" ".join(buttons)})"""
