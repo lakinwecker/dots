@@ -21,6 +21,8 @@ require("lazy").setup({
     { import = "eldub/todos" },
     { import = "eldub/hover" }, -- Nicer hover panes
     { import = "eldub/neorg" },
+    { import = "eldub/writing" },
+    { import = "eldub/fs" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

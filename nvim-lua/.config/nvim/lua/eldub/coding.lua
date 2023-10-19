@@ -36,7 +36,14 @@ return {
     branch = "coq",
   },
   { "ms-jpq/coq.artifacts" },
-  { "ms-jpq/coq.thirdparty" },
+  {
+    "ms-jpq/coq.thirdparty",
+    -- config = function(_)
+    -- require("coq_3p")({
+    -- { src = "copilot", short_name = "COP", accept_key = "<c-f>" },
+    -- })
+    -- end,
+  },
 
   -- auto pairs
   {
