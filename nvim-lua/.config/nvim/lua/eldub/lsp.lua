@@ -1,5 +1,5 @@
 return {
-  -- { "github/copilot.vim" },
+  { "github/copilot.vim" },
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
@@ -27,8 +27,8 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-      { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
+      { "folke/neoconf.nvim", cmd = "Neoconf",                                config = true },
+      { "folke/neodev.nvim",  opts = { experimental = { pathStrict = true } } },
       "simrat39/rust-tools.nvim",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -55,6 +55,11 @@ return {
       ---@type lspconfig.options
       servers = {
         jsonls = {},
+        clangd = {
+          capabilities = {
+            offsetEncoding = { "utf-16" },
+          }
+        },
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           settings = {
@@ -147,25 +152,7 @@ return {
   },
 
   -- formatters
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = { "mason.nvim" },
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-        sources = {
-          nls.builtins.formatting.fish_indent,
-          nls.builtins.diagnostics.fish,
-          nls.builtins.formatting.stylua,
-          nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.prettierd,
-          -- nls.builtins.diagnostics.flake8,
-        },
-      }
-    end,
-  },
+  -- TODO: find new formatters
 
   -- cmdline tools and lsp servers
   {
@@ -214,5 +201,10 @@ return {
     config = function()
       require("crates").setup()
     end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
 }

@@ -153,8 +153,11 @@ end
 -- delay notifications till vim.notify was replaced or after 500ms
 function M.lazy_notify()
   local notifs = {}
-  local function temp(...)
-    table.insert(notifs, vim.F.pack_len(...))
+  local function temp(msg, ...)
+    if msg:match("warning: multiple different client offset_encodings") then
+      return
+    end
+    table.insert(notifs, vim.F.pack_len(msg, ...))
   end
 
   local orig = vim.notify

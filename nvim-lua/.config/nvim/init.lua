@@ -7,14 +7,12 @@ require("lazy").setup({
   spec = {
     { import = "eldub/util" },
     { import = "eldub/colors" },
-    { "folke/neoconf.nvim", cmd = "Neoconf" },
+    { "folke/neoconf.nvim",   cmd = "Neoconf" },
     "folke/neodev.nvim",
     { import = "eldub/ui" },
     { import = "eldub/treesitter" },
     { import = "eldub/editor" },
     { import = "eldub/coding" },
-    -- TODO: get the lsp stuff working
-    -- TODO: unify keymaps, put them into a common directory.
     { import = "eldub/lsp" },
     { import = "eldub/undotree" },
     { import = "eldub/headlines" },
