@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BAT=`ls /sys/class/power_supply | grep BAT | head -n 1`
+BAT=`ls /sys/class/power_supply | grep BAT | head -n 1 | awk '{print $1}'`
 
 battery() {
 	cat /sys/class/power_supply/${BAT}/capacity

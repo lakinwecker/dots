@@ -17,6 +17,7 @@
 
 [merge]
     conflictstyle = diff3
+	tool = meld
 
 [diff]
     colorMoved = default
@@ -24,3 +25,18 @@
 	user = lakinwecker
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[protocol "file"]
+	allow = always
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

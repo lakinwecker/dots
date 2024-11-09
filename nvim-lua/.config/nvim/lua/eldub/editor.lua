@@ -365,13 +365,15 @@ return {
   -- better diagnostics list and others
   {
     "folke/trouble.nvim",
-    cmd = { "TroubleToggle", "Trouble" },
+    cmd = { "TroubleToggle", "Trouble toggle" },
     opts = { use_diagnostic_signs = true },
     keys = {
-      { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-      { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<CR>" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>" },
+      { "<leader>xs", "<cmd>Trouble symbols toggle focus=false<cr>" },
+      { "<leader>xl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>" },
       {
         "[q",
         function()

@@ -27,8 +27,8 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      { "folke/neoconf.nvim", cmd = "Neoconf",                                config = true },
-      { "folke/neodev.nvim",  opts = { experimental = { pathStrict = true } } },
+      { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+      { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
       "simrat39/rust-tools.nvim",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
@@ -43,7 +43,7 @@ return {
         severity_sort = true,
       },
       -- Automatically format on save
-      autoformat = true,
+      -- autoformat = true,
       -- options for vim.lsp.buf.format
       -- `bufnr` and `filter` is handled by the LazyVim formatter,
       -- but can be also overridden when specified
@@ -58,8 +58,9 @@ return {
         clangd = {
           capabilities = {
             offsetEncoding = { "utf-16" },
-          }
+          },
         },
+        gleam = {},
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           settings = {

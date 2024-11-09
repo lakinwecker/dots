@@ -3,6 +3,8 @@ require("eldub.uiconf").init()
 require("eldub.lazy").init()
 require("eldub.config").setup()
 
+vim.cmd([[set backupcopy=yes]])
+
 require("lazy").setup({
   spec = {
     { import = "eldub/util" },

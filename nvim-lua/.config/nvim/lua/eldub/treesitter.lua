@@ -27,6 +27,7 @@ return {
           end
         end,
       },
+      { "nushell/tree-sitter-nu" },
     },
     keys = {
       { "<c-space>", desc = "Increment selection" },

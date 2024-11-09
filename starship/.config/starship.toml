@@ -1,3 +1,9 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+scala.disabled = true
+nodejs.disabled = true
+
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
 success_symbol = "[->](green)"     # The "symbol" segment is being set to "➜"
