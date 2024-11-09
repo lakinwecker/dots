@@ -1,1 +1,0 @@
-map <leader>* :Rg<CR>
