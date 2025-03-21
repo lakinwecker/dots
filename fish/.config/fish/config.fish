@@ -8,7 +8,7 @@ set -x PATH $PATH /home/lakin/.pgenv/pgsql/bin
 set -x PATH $PATH /home/lakin/.local/share/coursier/bin
 set -x PATH $PATH /home/lakin/.yarn/bin
 set -x PATH $PATH /home/lakin/go/bin
-set -x GOPATH $GOPATH /home/lakin/go
+set -x PATH $PATH /home/lakin/.depot/bin/
 set -x NOTMUCH_CONFIG /home/lakin/.config/notmuch/config
 set -x CMAKE_BUILD_PARALLEL_LEVEL 16
 set -x EDITOR nvim
@@ -23,16 +23,16 @@ starship init fish | source
 source ~/.asdf/asdf.fish
 
 function envsource
-  for line in (cat $argv | grep -v '^#')
-    set item (string split -m 1 '=' $line)
-    set -gx $item[1] $item[2]
-    echo "Exported key $item[1]"
-  end
+    for line in (cat $argv | grep -v '^#')
+        set item (string split -m 1 '=' $line)
+        set -gx $item[1] $item[2]
+        echo "Exported key $item[1]"
+    end
 end
 
 # pnpm
 set -gx PNPM_HOME "/home/lakin/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end

@@ -99,25 +99,26 @@ def alot(mode):
     )
 
 def kitty(mode):
+
     if mode == "light":
-        os.system('kitty +kitten themes --reload-in=all "Rosé Pine Dawn"')
+        os.system('/home/lakin/personal-repos/gogh/installs/tokyo-night-light.sh')
         # os.system('kitty +kitten themes --reload-in=all "zenbones_light"')
     elif mode == "dark":
-        os.system('kitty +kitten themes --reload-in=all "Rosé Pine"')
+        os.system('/home/lakin/personal-repos/gogh/installs/tokyo-night-storm.sh')
         # os.system('kitty +kitten themes --reload-in=all "zenbones_dark"')
 
 @cli.command()
 def darkmode():
-    alacritty("dark")
-    nvim("dark")
-    alot("dark")
+    #alacritty("dark")
+    #nvim("dark")
+    #alot("dark")
     kitty("dark")
 
 @cli.command()
 def lightmode():
-    alacritty("light")
-    nvim("light")
-    alot("light")
+    #alacritty("light")
+    #nvim("light")
+    #alot("light")
     kitty("light")
 
 
